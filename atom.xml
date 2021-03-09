@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://zikercn.com</id>
+    <title>张慧敏的博客</title>
+    <updated>2021-03-09T06:00:11.977Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://zikercn.com"/>
+    <link rel="self" href="https://zikercn.com/atom.xml"/>
+    <subtitle>张慧敏的瞎折腾</subtitle>
+    <logo>https://zikercn.com/images/avatar.png</logo>
+    <icon>https://zikercn.com/favicon.ico</icon>
+    <rights>All rights reserved 2021, 张慧敏的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[在VS Code中编译C++使用Mingw-w64]]></title>
+        <id>https://zikercn.com/post/zai-vs-code-zhong-bian-yi-cshi-yong-mingw-w64/</id>
+        <link href="https://zikercn.com/post/zai-vs-code-zhong-bian-yi-cshi-yong-mingw-w64/">
+        </link>
+        <updated>2020-01-14T05:00:09.000Z</updated>
+        <summary type="html"><![CDATA[<p>1.安装<a href="https://code.visualstudio.com">Visual Studio Code</a>程序。建议选择其他下载<code>System Installer 64bit</code>,这个可以选择安装路径到其他盘符<br>
+<img src="https://s2.ax1x.com/2020/01/14/lbTdvF.png" alt="System Installer 64bit.png" loading="lazy"></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>1.安装<a href="https://code.visualstudio.com">Visual Studio Code</a>程序。建议选择其他下载<code>System Installer 64bit</code>,这个可以选择安装路径到其他盘符<br>
+<img src="https://s2.ax1x.com/2020/01/14/lbTdvF.png" alt="System Installer 64bit.png" loading="lazy"></p>
+<!-- more -->
+<p>2.安装<code>VS Code</code>的<code>C/C++</code>扩展。您可以通过在&quot;扩展(Extension)&quot;视图(<code>Ctrl + Shift + X</code>)中搜索<code>c++</code>来安装C/C++扩展。<br>
+<img src="https://s2.ax1x.com/2020/01/14/lbT28K.png" alt="VS Code的C/C++扩展.png" loading="lazy"><br>
+如果需要中文界面可以下载<code>Chinese (Simplified)</code>扩展<br>
+<img src="https://s2.ax1x.com/2020/01/14/lb7jW6.png" alt="extension for Chinese (Simplified).png" loading="lazy"><br>
+3.通过SourceForge网站将<a href="https://sourceforge.net/projects/mingw-w64/files/">Mingw-w64</a>安装到其路径中没有空格的文件夹（换句话说,不是C/Program Files/的默认位置）。在本教程中，我们假定将其安装在下<code>C:\mingw-w64</code>.<br>
+<img src="https://s2.ax1x.com/2020/01/14/lbTRgO.png" alt="mingw-w64-install.png" loading="lazy"><br>
+您也可以下载离线版本<a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-win32/seh/x86_64-8.1.0-release-win32-seh-rt_v6-rev0.7z">x86_64-win32-seh</a>直接解压到指定目录即可如:<code>C:\mingw64</code><br>
+4. 将您的Mingw-w64 bin文件夹的路径添加到Windows PATH环境变量。<br>
+<img src="https://s2.ax1x.com/2020/01/14/lbxoyq.png" alt="Mingw-w64 PATH环境变量.png" loading="lazy"><br>
+5. 检查您的MinGW安装<br>
+要检查您的Mingw-w64工具是否已正确安装并可用，请打开新的命令提示符并键入：<br>
+<code>g++ --version</code> 检查GCC编译器版本<br>
+<code>gdb --version</code> 检查GDB调试器版本<br>
+<img src="https://s2.ax1x.com/2020/01/14/lbzkkD.png" alt="检查您的MinGW安装.png" loading="lazy"><br>
+6. 创建工作区<br>
+在本地创建一个文件夹当作<code>VSCode</code>的工作区,在该文件夹中按<code>Shift+右键</code>,选择<code>在此处打开 Powershell 窗口</code>,并通过输入以下命令在该文件夹中打开VS Code：</p>
+<pre><code>mkdir projects
+cd projects
+mkdir helloworld
+cd helloworld
+code .
+</code></pre>
+<p><img src="https://s2.ax1x.com/2020/01/14/lbqpad.png" alt="该文件夹中打开VS Code.png" loading="lazy"><br>
+7. 添加源代码文件<br>
+在文件资源管理器标题栏中，选择“ 新建文件”按钮并命名该文件<code>helloworld.cpp</code><br>
+<img src="https://s2.ax1x.com/2020/01/14/lbqZqg.png" alt="VSCode新建文件.png" loading="lazy"><br>
+现在粘贴此源代码：</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main()
+{
+   vector&lt;string&gt; msg {&quot;Hello&quot;, &quot;C++&quot;, &quot;World&quot;, &quot;from&quot;, &quot;VS Code&quot;, &quot;and the C++ extension!&quot;};
+
+   for (const string&amp; word : msg)
+   {
+      cout &lt;&lt; word &lt;&lt; &quot; &quot;;
+   }
+   cout &lt;&lt; endl;
+}
+</code></pre>
+<p>现在按<code>Ctrl + S</code>保存文件。文件资源管理器视图（Ctrl + Shift + E）<br>
+您还可以通过选中<code>文件</code>主菜单中的<code>自动保存</code>，启用<code>自动保存</code>以自动保存文件更改。<br>
+<img src="https://s2.ax1x.com/2020/01/14/lbqzlV.png" alt="文件自动保存.png" loading="lazy"><br>
+8. 尝试自动补全感知<br>
+在新<code>helloworld.cpp</code>文件中，将鼠标悬停在<code>vector</code>或上<code>string</code>以查看类型信息。声明<code>msg</code>变量后，<code>msg.</code>像在调用成员函数时一样开始键入。您应该立即看到一个显示所有成员函数的完成列表，以及一个显示该<code>msg</code>对象的类型信息的窗口：<br>
+<img src="https://s2.ax1x.com/2020/01/14/lbLXHe.png" alt="自动补全感知.png" loading="lazy"><br>
+您可以按<code>Tab</code>键插入选定的成员。然后，当您添加左括号时，您将看到有关该函数所需的任何参数的信息。<br>
+9. 编译helloworld.cpp<br>
+接下来，您将创建一个<code>tasks.json</code>文件来告诉VS Code如何构建（编译）程序。该任务将调用g++编译器以基于源代码创建可执行文件。<br>
+从主菜单中，选择<code>终端(Terminal) &gt; 配置默认生成任务(Configure Default Build Task)</code>。在下拉列表中，将显示任务下拉列表，其中列出了C ++编译器的各种预定义构建任务。选择<code>g++.exe build active file</code>，该文件将构建编辑器中当前显示（活动）的文件。<br>
+<img src="https://s2.ax1x.com/2020/01/14/lbXMid.png" alt="配置默认生成任务.png" loading="lazy"><br>
+<img src="https://s2.ax1x.com/2020/01/14/lbjS6P.png" alt="g++.exe构建活动文件.png" loading="lazy"><br>
+这将tasks.json在.vscode文件夹中创建一个文件，然后在编辑器中将其打开。<br>
+您的新tasks.json文件应类似于以下JSON：</p>
+<pre><code>{
+// 有关 tasks.json 格式的文档，请参见
+    // https://go.microsoft.com/fwlink/?LinkId=733558
+    &quot;version&quot;: &quot;2.0.0&quot;,
+    &quot;tasks&quot;: [
+        {
+            &quot;type&quot;: &quot;shell&quot;,
+            &quot;label&quot;: &quot;g++.exe build active file&quot;,
+            &quot;command&quot;: &quot;C:\\mingw64\\bin\\g++.exe&quot;,
+            &quot;args&quot;: [
+                &quot;-g&quot;,
+                &quot;${file}&quot;,
+                &quot;-o&quot;,
+                &quot;${fileDirname}\\${fileBasenameNoExtension}.exe&quot;
+            ],
+            &quot;options&quot;: {
+                &quot;cwd&quot;: &quot;C:\\mingw64\\bin&quot;
+            },
+            &quot;problemMatcher&quot;: [
+                &quot;$gcc&quot;
+            ],
+            &quot;group&quot;: {
+                &quot;kind&quot;: &quot;build&quot;,
+                &quot;isDefault&quot;: true
+            }
+        }
+    ]
+}
+</code></pre>
+<p>该<code>command</code>设置指定要运行的程序；在这种情况下是<code>g++</code>。该<code>args</code>数组指定将传递给g++的命令行参数。必须按照编译器期望的顺序指定这些参数。该任务告诉g ++获取活动文件（<code>${file}</code>），对其进行编译，然后在当前目录（<code>${fileDirname}</code>）中创建一个与活动文件同名但<code>.exe</code>扩展名为（<code>${fileBasenameNoExtension}.exe</code>）的可执行文件，<code>helloworld.exe</code>以我们的示例为例。<br>
+该<code>label</code>值就是您将在任务列表中看到的值；您可以随意命名。<br>
+对象中的<code>&quot;isDefault&quot;: true</code>值<code>group</code>指定当您按<code>Ctrl + Shift + B</code>时将运行此任务。此属性仅出于方便起见；如果将其设置为<code>false</code>，您仍然可以从“<code>终端</code>”菜单中使用<code>运行生成任务</code>来运行它。</p>
+<ol>
+<li>运行构建</li>
+</ol>
+<ul>
+<li>1.回到<code>helloworld.cpp</code>。您的任务将生成活动文件，并且您要生成<code>helloworld.cpp</code>。</li>
+<li>2.要运行中定义的构建任务<code>tasks.json</code>，请按<code>Ctrl + Shift + B</code>或从<code>终端</code>主菜单中选择<code>运行生成任务</code>。</li>
+<li>3.任务开始时，您应该看到“集成终端”面板出现在源代码编辑器下方。任务完成后，终端将显示编译器的输出，指示构建成功还是失败。对于成功的g ++构建，输出如下所示：<br>
+<img src="https://s2.ax1x.com/2020/01/14/lqSAbV.png" alt="集成终端指示构建成功还是失败.png" loading="lazy"></li>
+<li>4.使用+按钮创建一个新终端，您将拥有一个新终端（运行PowerShell），并将该<code>helloworld</code>文件夹作为工作目录。运行<code>dir</code>，您现在应该看到可执行文件<code>helloworld.exe</code>。<br>
+<img src="https://s2.ax1x.com/2020/01/14/lqnz5j.png" alt="终端运行.helloworld.png" loading="lazy"></li>
+<li>5.您可以<code>helloworld</code>在终端中输入来运行<code>.\helloworld.exe</code>。</li>
+</ul>
+<ol>
+<li>修改task.json<br>
+您可以<code>tasks.json</code>使用<code>&quot;${workspaceFolder}\\*.cpp&quot;</code>代替的参数来修改以构建多个C ++文件<code>${file}</code>。这将生成<code>.cpp</code>当前文件夹中的所有文件。您也可以通过替换<code>&quot;${fileDirname}\\${fileBasenameNoExtension}.exe&quot;</code>为硬编码的文件名（例如<code>&quot;${workspaceFolder}\\myProgram.exe&quot;</code>）来修改输出文件名。</li>
+<li>调试helloworld.cpp<br>
+接下来，您将创建一个<code>launch.json</code>文件来配置VS Code，以在您按<code>F5</code>调试程序时启动<code>GDB调试器</code>。从主菜单中，选择<code>调试</code>&gt;<code>添加配置...</code>，然后选择<code>C++(GDB/LLDB)</code>。<br>
+<img src="https://s2.ax1x.com/2020/01/14/lqu4yV.png" alt="调试 添加配置.png" loading="lazy"><br>
+<img src="https://s2.ax1x.com/2020/01/14/lqKSeO.png" alt="C++(GDB/LLDB).png" loading="lazy"><br>
+然后，您将看到各种预定义调试配置的下拉列表。选择<code>g++.exe build and debug active file</code>。<br>
+<img src="https://s2.ax1x.com/2020/01/14/lqKQYj.png" alt="g++.exe构建并调试活动文件.png" loading="lazy"><br>
+VS Code创建一个<code>launch.json</code>文件，在编辑器中将其打开，然后生成并运行“ helloworld”。</li>
+</ol>
+<pre><code>{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    &quot;version&quot;: &quot;0.2.0&quot;,
+    &quot;configurations&quot;: [
+        {
+            &quot;name&quot;: &quot;g++.exe build and debug active file&quot;,
+            &quot;type&quot;: &quot;cppdbg&quot;,
+            &quot;request&quot;: &quot;launch&quot;,
+            &quot;program&quot;: &quot;${fileDirname}\\${fileBasenameNoExtension}.exe&quot;,
+            &quot;args&quot;: [],
+            &quot;stopAtEntry&quot;: false,
+            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,
+            &quot;environment&quot;: [],
+            &quot;externalConsole&quot;: false,
+            &quot;MIMode&quot;: &quot;gdb&quot;,
+            &quot;miDebuggerPath&quot;: &quot;C:\\mingw64\\bin\\gdb.exe&quot;,
+            &quot;setupCommands&quot;: [
+                {
+                    &quot;description&quot;: &quot;为 gdb 启用整齐打印&quot;,
+                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,
+                    &quot;ignoreFailures&quot;: true
+                }
+            ],
+            &quot;preLaunchTask&quot;: &quot;g++.exe build active file&quot;
+        }
+    ]
+}
+</code></pre>
+<p>该<code>program</code>设置指定要调试的程序。在这里，它被设置为活动文件文件夹<code>${fileDirname}</code>和<code>.exe</code>扩展名的活动文件名<code>${fileBasenameNoExtension}.exe</code>，如果<code>helloworld.cpp</code>是，则为活动文件<code>helloworld.exe</code>。<br>
+默认情况下，C ++扩展名不会在源代码中添加任何断点，并且其<code>stopAtEntry</code>值设置为<code>false</code>。将<code>stopAtEntry</code>值更改<code>true</code>为会导致调试器<code>main</code>在启动调试时在该方法上停止。<br>
+13. 开始调试会话<br>
+回到<code>helloworld.cpp</code>它是活动文件。<br>
+按<code>F5</code>或从主菜单中选择<code>调试</code>&gt;<code>启动调试</code>。在开始浏览源代码之前，让我们花一点时间注意用户界面中的一些更改：<br>
+集成终端出现在源代码编辑器的底部。在<code>调试输出</code>选项卡中，您将看到指示调试器已启动并正在运行的输出。<br>
+编辑器突出显示方法中的第一条语句<code>main</code>。这是C ++扩展自动为您设置的断点：<br>
+左侧的“调试”视图显示调试信息。您将在本教程的后面看到一个示例。</p>
+<p>在代码编辑器的顶部，将显示一个调试控制面板。您可以通过抓住左侧的点在屏幕上移动它。</p>
+<p>14.C/C++配置<br>
+如果要对C / C ++扩展进行更多控制，可以创建一个<code>c_cpp_properties.json</code>文件，该文件将允许您更改设置，例如编译器的路径，包含路径，C ++标准（默认为C ++ 17）等。</p>
+<p>您可以从命令面板（Ctrl + Shift + P）编辑配置（UI）通过运行命令<code>C/C++: 编辑配置(UI) C/C++: Edit configurations(UI)</code><br>
+<img src="https://s2.ax1x.com/2020/01/14/lq1e3j.png" alt="C/C++: 编辑配置(UI).png" loading="lazy"><br>
+这将打开<code>C/ C++配置</code>页面。当您在此处进行更改时，VS Code会将其写入到文件夹中称为<code>c_cpp_properties.json</code>的<code>.vscode</code>文件中。<br>
+<img src="https://s2.ax1x.com/2020/01/14/lq3ks1.png" alt="C/C++配置页面.png" loading="lazy"><br>
+Visual Studio Code将这些设置放在中.vscode\c_cpp_properties.json。如果直接打开该文件，则它应如下所示：</p>
+<pre><code>{
+    &quot;configurations&quot;: [
+        {
+            &quot;name&quot;: &quot;Win32&quot;,
+            &quot;includePath&quot;: [
+                &quot;${workspaceFolder}/**&quot;
+            ],
+            &quot;defines&quot;: [
+                &quot;_DEBUG&quot;,
+                &quot;UNICODE&quot;,
+                &quot;_UNICODE&quot;
+            ],
+            &quot;compilerPath&quot;: &quot;C:\\mingw64\\bin\\gcc.exe&quot;,
+            &quot;cStandard&quot;: &quot;c11&quot;,
+            &quot;cppStandard&quot;: &quot;c++17&quot;,
+            &quot;intelliSenseMode&quot;: &quot;clang-x64&quot;
+        }
+    ],
+    &quot;version&quot;: 4
+}
+</code></pre>
+<p>仅当程序包含不在工作空间或标准库路径中的头文件时，才需要添加到<code>包含路径数组</code>设置中。<br>
+15.编译路径<br>
+该<code>compilerPath</code>设置是您配置中的重要设置。该扩展使用它来推断C ++标准库头文件的路径。当扩展知道在哪里可以找到那些文件时，它可以提供有用的功能，例如智能补全和<code>转到定义</code>导航。<br>
+C/C++扩展尝试<code>compilerPath</code>根据其在系统上找到的内容来使用默认的编译器位置进行填充。该扩展在几个常见的编译器位置中查找。<br>
+该<code>compilerPath</code>搜索顺序是：<br>
+首先检查Microsoft Visual C ++编译器<br>
+然后在Windows Subsystem for Linux（WSL）上寻找g ++<br>
+然后用g ++编写Mingw-w64。<br>
+如果安装了Visual Studio或WSL，则可能需要进行更改compilerPath以匹配项目的首选编译器。例如，如果使用Win32线程和SEH异常处理选项在C:\mingw64下安装Mingw-w64版本8.1.0，则路径如下所示：<code>C:\\mingw64\\bin\\g++.exe</code></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C语言第三方库 SDL 多媒体库 使用教程]]></title>
+        <id>https://zikercn.com/post/SDL-Library-Simple-DirectMedia-Layer/</id>
+        <link href="https://zikercn.com/post/SDL-Library-Simple-DirectMedia-Layer/">
+        </link>
+        <updated>2020-01-12T02:29:23.000Z</updated>
+        <summary type="html"><![CDATA[<p>Simple DirectMedia Layer是一个跨平台开发库，旨在通过OpenGL和Direct3D提供对音频，键盘，鼠标，操纵杆和图形硬件的低级访问。视频播放软件，仿真器和受欢迎的游戏（包括Valve屡获殊荣的目录和许多Humble Bundle游戏）都使用它。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Simple DirectMedia Layer是一个跨平台开发库，旨在通过OpenGL和Direct3D提供对音频，键盘，鼠标，操纵杆和图形硬件的低级访问。视频播放软件，仿真器和受欢迎的游戏（包括Valve屡获殊荣的目录和许多Humble Bundle游戏）都使用它。</p>
+<!-- more -->
+<p>SDL官网: <a href="https://www.libsdl.org/">https://www.libsdl.org/</a><br>
+下载开发库:<br>
+Windows：<br>
+<a href="https://www.libsdl.org/release/SDL2-devel-2.0.10-VC.zip">SDL2-devel-2.0.10-VC.zip</a>（Visual C ++ 32/64位）<br>
+<a href="https://www.libsdl.org/release/SDL2-devel-2.0.10-mingw.tar.gz">SDL2-devel-2.0.10-mingw.tar.gz</a>（<a href="http://mingw-w64.sourceforge.net/">MinGW</a> 32/64位）</p>
+<h1 id="windows-visual-studio-2019-中配置sdl">Windows Visual Studio 2019 中配置SDL</h1>
+<p>1.下载好<code>SDL2-devel-2.0.10-VC</code>,解压到固定目录下(如:E:\CLibrary\SDL2\SDL2-VC)<br>
+2.打开Visual Studio，新建一个控制台空项目,新建一个.cpp源文件<br>
+<img src="https://s2.ax1x.com/2020/01/12/louI1O.png" alt="Visual Studio控制台空项目.png" loading="lazy"><br>
+3.配置SDL环境:在解决方案管理器中右键项目名称,选择属性<br>
+4.在<code>C/C++ -&gt;常规-&gt;附加包含目录</code>中添加SDL2文件夹下的<code>include文件夹</code>,确认,应用<br>
+<img src="https://s2.ax1x.com/2020/01/12/loeASg.png" alt="CC++ -常规-附加包含目录.png" loading="lazy"><br>
+5.在<code>链接器-&gt;常规-&gt;附加库目录</code>中添加SDL2文件夹下的<code>lib\x86文件夹</code>（因为此时活动平台为32位，所以选择x86。如果需要使用64位，则选择”lib\x64”文件夹）<br>
+<img src="https://s2.ax1x.com/2020/01/12/loe59S.png" alt="链接器-常规-附加库目录.png" loading="lazy"><br>
+6.在<code>链接器-&gt;输入-&gt;附加依赖项</code>中添加<code>SDL2.lib和SDL2main.lib</code>,中间用英文分号或回车间隔<br>
+<img src="https://s2.ax1x.com/2020/01/12/lomZ9O.png" alt="链接器-输入-附加依赖项.png" loading="lazy"><br>
+7.将<code>lib\x86文件夹</code>下<code>SDL2.dll</code>复制到工程跟目录与.cpp文件同一目录中<br>
+同样要注意x86和x64要分别对应，如果是配置x64平台则复制粘贴”lib\x64”下的SDL2.dll。此处选择x86：<br>
+<img src="https://s2.ax1x.com/2020/01/12/lomDU0.png" alt="SDL2.dll复制到工程跟目录.png" loading="lazy"><br>
+8.测试SDL2配置环境:<br>
+<code>//注意:SDL环境需要main函数有输入的参数（即使用不到）</code><br>
+<img src="https://s2.ax1x.com/2020/01/12/logOyT.png" alt="测试SDL2配置环境.png" loading="lazy"></p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &quot;SDL.h&quot;
+//注意:SDL环境需要main函数有输入的参数（即使用不到）
+int main(int argc, char* argv[])
+{
+    SDL_Init(SDL_INIT_VIDEO); 
+    SDL_Window* window = SDL_CreateWindow(&quot;SDL2&quot;, 100, 100, 640, 480, SDL_WINDOW_OPENGL);
+    if (window == NULL)
+    {
+        printf(&quot;Could not create window: %s\n&quot;, SDL_GetError());
+        return 1;
+    }
+    SDL_Delay(5000);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+    return 0;
+}
+</code></pre>
+<h1 id="windows-mingw-codeblocks-中配置sdl">Windows MinGW CodeBlocks 中配置SDL</h1>
+<p>1.下载好<code>SDL2-devel-2.0.10-mingw</code>,解压到固定目录下(如:E:\CLibrary\SDL2\SDL2-mingw)<br>
+2.打开CodeBlocks，新建一个控制台空项目,自带一个main.cpp源文件<br>
+<img src="https://s2.ax1x.com/2020/01/12/lobNAx.png" alt="CodeBlocks控制台空项目.png" loading="lazy"><br>
+3.配置SDL环境:在当前项目右键选择<code>构建选项</code><br>
+<img src="https://s2.ax1x.com/2020/01/12/loqtMQ.png" alt="当前项目右键选择.png" loading="lazy"><br>
+4.在<code>项目build选项</code>中找到<code>搜索目录</code>,在<code>编译器</code>选项里点<code>添加</code>,添加SDL2include目录<br>
+<code>E:\CLibrary\SDL2\SDL2-mingw\i686-w64-mingw32\include\SDL2</code><br>
+<img src="https://s2.ax1x.com/2020/01/12/loO9tx.png" alt="添加SDL2include目录.png" loading="lazy"><br>
+5.在<code>项目build选项</code>中找到<code>搜索目录</code>,在<code>链接器</code>选项里点<code>添加</code>,添加SDL2lib目录<br>
+<code>E:\CLibrary\SDL2\SDL2-mingw\i686-w64-mingw32\lib</code><br>
+<img src="https://s2.ax1x.com/2020/01/12/loXuqJ.png" alt="添加SDL2lib目录.png" loading="lazy"><br>
+6.切换到<code>链接器设置</code>选项页,在<code>其他链接器选项</code>中添加GCC编译参数<br>
+<code>-lmingw32 -lSDL2main -lSDL2</code><br>
+顺序不能错,点击确定,这样SDL2在CodeBlocks中就配置好了<br>
+7.将<code>i686-w64-mingw32\bin文件夹</code>下<code>SDL2.dll</code>复制到工程跟目录与.cpp文件同一目录中<br>
+<code>E:\CLibrary\SDL2\SDL2-mingw\i686-w64-mingw32\bin</code><br>
+8.测试SDL2配置环境:<br>
+<img src="https://s2.ax1x.com/2020/01/12/lTPloF.png" alt="测试SDL2配置环境.png" loading="lazy">)</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;SDL.h&gt;
+
+//注意:SDL环境需要main函数有输入的参数（即使用不到）
+int main(int argc,char* argv[])
+{
+    SDL_Init(SDL_INIT_VIDEO);
+    SDL_Window* window = SDL_CreateWindow(&quot;SDL 窗口&quot;,100,100,640,400,SDL_WINDOW_SHOWN);
+    if(window == NULL)
+    {
+        printf(&quot;Could not create window: %s\n&quot;,SDL_GetError());
+        return 1;
+    }
+    SDL_Delay(5000);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+    return 0;
+}
+</code></pre>
+<p>构建并运行,弹窗窗口,表示测试成功</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在MacOS中启动SSH服务]]></title>
+        <id>https://zikercn.com/post/zai-macos-zhong-qi-dong-ssh-fu-wu/</id>
+        <link href="https://zikercn.com/post/zai-macos-zhong-qi-dong-ssh-fu-wu/">
+        </link>
+        <updated>2020-01-08T14:32:06.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="使用图形界面开启-ssh">使用图形界面开启 SSH</h1>
+<p>1.点击桌面左上角的小苹果,然后选择&quot;系统偏好设置...&quot;<br>
+<img src="https://s2.ax1x.com/2020/01/09/lRW1pD.jpg" alt="系统偏好设置.jpg" loading="lazy"></p>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="使用图形界面开启-ssh">使用图形界面开启 SSH</h1>
+<p>1.点击桌面左上角的小苹果,然后选择&quot;系统偏好设置...&quot;<br>
+<img src="https://s2.ax1x.com/2020/01/09/lRW1pD.jpg" alt="系统偏好设置.jpg" loading="lazy"></p>
+<!-- more -->
+<p>2.在系统偏好设置界面选择 &quot;共享&quot;<br>
+<img src="https://s2.ax1x.com/2020/01/09/lRfGCT.jpg" alt="在系统偏好设置界面选择 &quot;共享.jpg&quot;" loading="lazy"><br>
+3.在共享界面勾选&quot;远程登录&quot;<br>
+<img src="https://s2.ax1x.com/2020/01/09/lR4wh6.jpg" alt="在共享界面勾选&quot;远程登录.jpg&quot;" loading="lazy"><br>
+<code>若要远程登录这台电脑，请键入“ssh zhm@192.168.234.138”。</code><br>
+4.在Windows中用&quot;Xshell&quot;连接<br>
+<img src="https://s2.ax1x.com/2020/01/09/lRIcFI.jpg" alt="在Windows中用&quot;Xshell&quot;连接.jpg" loading="lazy"></p>
+<h1 id="使用终端命令行方式开启-ssh">使用终端命令行方式开启 SSH</h1>
+<p>1.查看 SSH服务 是否已经运行<br>
+<code>sudo launchctl list | grep sshd</code><br>
+<img src="https://s2.ax1x.com/2020/01/09/lRTtxK.jpg" alt="查看 SSH服务 是否已经运行.jpg" loading="lazy"><br>
+PS:如果 SSH服务 已运行,会显示:<br>
+<code>-	0	com.openssh.sshd</code><br>
+2.没有开始 SSH服务 状态<br>
+<img src="https://s2.ax1x.com/2020/01/09/lR72f1.jpg" alt="没有开始 SSH服务 状态.jpg" loading="lazy"><br>
+3.输入命令开启SSH服务<br>
+<code>sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist</code><br>
+<img src="https://s2.ax1x.com/2020/01/09/lRqVwF.jpg" alt="开启SSH服务命令.jpg" loading="lazy"><br>
+4.输入命令停止SSH服务<br>
+<code>sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist</code><br>
+<img src="https://s2.ax1x.com/2020/01/09/lRb2M6.jpg" alt="停止SSH服务命令.jpg" loading="lazy"><br>
+5.在Linux中用SSH命令连接<br>
+<img src="https://s2.ax1x.com/2020/01/09/lROTJJ.jpg" alt="在Linux中用SSH命令连接.jpg" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HTML黑白灰度页面的实现]]></title>
+        <id>https://zikercn.com/post/html-hei-bai-ye-mian/</id>
+        <link href="https://zikercn.com/post/html-hei-bai-ye-mian/">
+        </link>
+        <updated>2019-12-13T10:57:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>有时候网站在某种特定的情况下，需要使整个网站变成黑白的颜色。<br>
+<code>&lt;html lang=&quot;zh-CN&quot; style=&quot;filter: grayscale(100%);&quot;&gt;</code><br>
+<img src="https://s2.ax1x.com/2020/01/09/lRxSFU.jpg" alt="HTML黑白灰度页面的实现.jpg" loading="lazy"></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>有时候网站在某种特定的情况下，需要使整个网站变成黑白的颜色。<br>
+<code>&lt;html lang=&quot;zh-CN&quot; style=&quot;filter: grayscale(100%);&quot;&gt;</code><br>
+<img src="https://s2.ax1x.com/2020/01/09/lRxSFU.jpg" alt="HTML黑白灰度页面的实现.jpg" loading="lazy"></p>
+<!-- more -->
+<p>filter是滤镜的意思，filter:grayscale的意思就是说给页面加上一个灰度的滤镜，所以html里面的所有内容都会变成黑白的了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Visual Studio Downloads]]></title>
+        <id>https://zikercn.com/post/visual-studio-downloads/</id>
+        <link href="https://zikercn.com/post/visual-studio-downloads/">
+        </link>
+        <updated>2019-11-11T02:50:22.000Z</updated>
+        <content type="html"><![CDATA[<p>https://visualstudio.microsoft.com/zh-hans/downloads/</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows编程模板文件]]></title>
+        <id>https://zikercn.com/post/windows-bian-cheng-mo-ban-wen-jian/</id>
+        <link href="https://zikercn.com/post/windows-bian-cheng-mo-ban-wen-jian/">
+        </link>
+        <updated>2019-10-24T14:37:03.000Z</updated>
+        <content type="html"><![CDATA[<pre><code>#include &lt;Windows.h&gt;
+#include &quot;resource.h&quot;
+// 出现在应用程序标题栏中的字符串.
+static TCHAR szTitle[] = TEXT(&quot;资源测试&quot;);
+static TCHAR szWindowClass[] = TEXT(&quot;WindowsDesktop&quot;);//全局窗口类前置声明
+HINSTANCE hInst;//全局实例句柄前置声明
+LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);//窗口过程函数前置声明
+//********************程序入口********************
+int CALLBACK WinMain(
+	_In_ HINSTANCE hInstance,
+	_In_opt_ HINSTANCE hPrevInstance,
+	_In_ LPSTR     lpCmdLine,
+	_In_ int       nCmdShow)
+{
+	WNDCLASSEX wcex;//窗口类
+
+	wcex.cbSize = sizeof(WNDCLASSEX);
+	wcex.style = CS_HREDRAW | CS_VREDRAW;//水平垂直变化时重绘窗口
+	wcex.lpfnWndProc = WndProc;//窗口过程
+	wcex.cbClsExtra = 0;
+	wcex.cbWndExtra = 0;
+	wcex.hInstance = hInstance;//实例句柄,入口函数传入
+	wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1));//图标
+	wcex.hCursor = LoadCursor(hInstance, MAKEINTRESOURCE(IDC_CURSOR1));//光标
+	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);//背景色
+	wcex.lpszMenuName = NULL;
+	wcex.lpszClassName = szWindowClass;	//窗口类的名字
+	wcex.hIconSm = LoadIcon(wcex.hInstance, IDI_APPLICATION);
+	if (!RegisterClassEx(&amp;wcex))
+	{
+		MessageBox(NULL,
+			TEXT(&quot;调用RegisterClassEx失败!&quot;),	//窗口类注册失败弹窗提示内容
+			TEXT(&quot;Windows桌面指南&quot;),	//注册失败弹窗标题
+			NULL);
+
+		return 1;
+	}
+
+//********************创建窗口********************
+	HWND hWnd = CreateWindow(
+		szWindowClass,			//窗口类的名字,说明基于哪个窗口类
+		szTitle,				//窗口标题,在顶部定义szTitle
+		WS_OVERLAPPEDWINDOW,	//窗口样式
+		CW_USEDEFAULT, CW_USEDEFAULT, //窗口距离屏幕左上角距离x,y
+		500, 400,				//窗口长度x,高度y
+		NULL,					//父窗口句柄
+		NULL,					//窗口菜单句柄
+		hInstance,				//程序实例句柄
+		NULL					//
+	);
+	if (!hWnd)
+	{
+		MessageBox(NULL,
+			TEXT(&quot;调用CreateWindow失败!&quot;),
+			TEXT(&quot;Windows桌面指南&quot;),
+			NULL);
+		return 1;
+	}
+	// ShowWindow的参数说明:
+	// hWnd: 从CreateWindow返回的值
+	// nCmdShow: 来自WinMain的第四个参数
+	ShowWindow(hWnd,	//显示指定窗口,传句柄
+		nCmdShow);		//怎么显示,最大化最小化显示等
+	UpdateWindow(hWnd);	//更新指定窗口的客户区
+
+	// 主消息循环:
+	MSG msg;
+	while (GetMessage(&amp;msg, NULL, 0, 0))	//消息队列
+	{
+		TranslateMessage(&amp;msg);	//转换
+		DispatchMessage(&amp;msg);	//分发
+	}
+	return (int)msg.wParam;	//WM_QUIT
+}
+
+//********************窗口过程********************
+LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	PAINTSTRUCT ps;
+	HDC hdc;
+	switch (message)
+	{
+	case WM_PAINT:	//窗口必须重绘的时候
+		hdc = BeginPaint(hWnd, &amp;ps);//返回:设备描述表句柄
+		// TODO: 在此处添加使用 hdc 的任何绘图代码...
+		Rectangle(hdc, 5, 5, 480, 355);	//矩形
+		EndPaint(hWnd, &amp;ps);
+		break;
+	case WM_DESTROY:	//消息销毁结束的时候
+		PostQuitMessage(0);
+		break;
+	default:
+		return DefWindowProc(hWnd, message, wParam, lParam);
+		break;
+	}
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Win10下使用CodeBlocks自带的MinGW GCC命令行编译C/C++程序]]></title>
+        <id>https://zikercn.com/post/win10-codeblocks--mingw-gcc-C/</id>
+        <link href="https://zikercn.com/post/win10-codeblocks--mingw-gcc-C/">
+        </link>
+        <updated>2019-10-23T03:41:36.000Z</updated>
+        <content type="html"><![CDATA[<p>用GCC编译C程序,不建议单独安装MinGW,建议安装CodeBlocks里面已经包含MinGW,而且CodeBlocks很不错.<br>
+下载页面:http://www.codeblocks.org/downloads<br>
+Download the binary release http://www.codeblocks.org/downloads/26<br>
+codeblocks-17.12mingw-setup.exe<br>
+<a href="https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-17.12mingw-setup.exe">FossHUB</a> or <a href="http://sourceforge.net/projects/codeblocks/files/Binaries/17.12/Windows/codeblocks-17.12mingw-setup.exe">Sourceforge.net</a><br>
+下载安装到 D:\Program Files\CodeBlocks<br>
+官方下载的 CodeBlocks 全部都是英文版,下载CodeBlocks汉化包<br>
+https://www.lanzous.com/i6x2ljg</p>
+<ol>
+<li>汉化包下载完成后，是一个压缩包，将其解压，其中包含有一个 locale 文件夹里面有个 zh_CN 文件夹,复制到<code>D:\Program Files\CodeBlocks\share\CodeBlocks\locale</code>目录<br>
+更改CodeBlocks设置</li>
+<li>打开 CodeBlocks，选择 “Settings --&gt; Environmen”</li>
+<li>选择 View 选项，勾选 Internationalization 选项，同时选择其中的 Chinese(Simplified)。然后点击 OK 按钮。<br>
+设置完成后，直接重新启动 CodeBlocks，此时 CodeBlocks 会出现一个提示框，提示你是否保存更改，选择保存即可。<br>
+再次启动 CodeBlocks，你会看到全新的汉化的 CodeBlocks，虽然没有完全汉化，但起码不会影响日常的正常使用。</li>
+</ol>
+<p><strong>MinGW</strong>: D:\Program Files\CodeBlocks\MinGW<br>
+配置环境变量:Path D:\Program Files\CodeBlocks\MinGW\bin</p>
+<p>gcc可以一次性完成C语言源程序的编译，也可以分步骤完成；下面先介绍一次性编译过程。</p>
+<p>1.生成可执行程序<br>
+cd xxx　　　　　　　　　　　　# 先进入源程序所在的目录<br>
+gcc hello.cpp　　　　　　　　# 一次性编译，windows系统生成a.exe文件，Linux系统生成a.out文件<br>
+gcc hello.cpp -o hello.exe　　# -o表示输出<br>
+gcc hello.cpp -o ./tmp/hello.exe　　# -o后面也可以跟其他目录，注意tmp目录必须存在，否则gcc会抛出异常</p>
+<p>2.运行可执行文件<br>
+hello.exe　　　　　　# 运行hello.exe文件，如果是Linux系统，是./hello.out文件</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Win10下使用VS2019自带的MSVC CL命令行编译C/C++程序]]></title>
+        <id>https://zikercn.com/post/Win10-Visual-Studio-MSVC-CL-C-C++/</id>
+        <link href="https://zikercn.com/post/Win10-Visual-Studio-MSVC-CL-C-C++/">
+        </link>
+        <updated>2019-10-22T01:14:31.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>1.工具介绍</strong><br>
+Windows下VS套件自带的编译程序有以下这些：<br>
+cl.exe：编译程序<br>
+link.exe：链接程序<br>
+lib.exe：加载lib库的程序<br>
+nmake.exe：用Makefile进行构建、编译的工具<br>
+<strong>2.cl使用方法</strong><br>
+用法: cl [ 选项... ] 文件名... [ /link 链接选项... ]<br>
+1.设置Path环境变量：<code>bin</code>目录cl.exe所在路径路径<br>
+D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.23.28105\bin\Hostx86\x86;<br>
+D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build;<br>
+D:\Program Files\Microsoft Visual Studio\2019\Enterprise\Common7\IDE;<br>
+D:\Windows Kits\10\Include\10.0.18362.0\ucrt;<br>
+2.新建<code>include</code>环境变量，设置头文件路径：<br>
+D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.23.28105\include;<br>
+D:\Windows Kits\10\Include\10.0.18362.0\ucrt;<br>
+3.新建<code>lib</code>环境变量，设置头文件路径：<br>
+D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.23.28105\lib\x86;<br>
+D:\Windows Kits\10\Lib\10.0.18362.0\ucrt\x86;<br>
+C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm64.microsoft.net.native.compiler\2.2.7-rel-27913-00\tools\arm64\ilc\tools\link<br>
+完成三步骤，Windows命令行C++编译环境配置成功。<br>
+注:lib目录还需要<code>uuid.lib</code>,<code>kernel32.lib</code>两个文件,VS2019以前在类似<br>
+<code>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib</code><br>
+VS2019已经找不到这个目录,所以我们就到<code>C:\Program Files (x86)\Microsoft SDKs\</code>目录手动搜索<code>uuid.lib</code>文件名,找到后打开这个文件夹,路径添加到lib环境变量中.<br>
+<strong>3.Windows不重启就使环境变量修改生效</strong><br>
+在“我的电脑”-&gt;“属性”-&gt;“高级”-&gt;“环境变量”中增加或修改环境变量后，需重启系统才能使之生效。有没有什么方法可让它即时生效呢？下面介绍一种方法：</p>
+<p>以修改环境变量“PATH”为例，修改完成后，进入DOS命令提示符，输入：set PATH=C: ，关闭DOS窗口。再次打开DOS窗口，输入：echo %PATH% ，可以发现“我的电脑”-&gt;“属性”-&gt;“高级”-&gt;“环境变量”中设置的 PATH 值已经生效。</p>
+<p>不用担心DOS窗口中的修改会影响环境变量的值，DOS窗口中的环境变量只是Windows环境变量的一个副本而已。但是对副本的修改却会引发Windows环境变量的刷新，这正是我们想要的！</p>
+<p>5.测试编写hello.cpp代码如下：</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;iostream&gt;
+ 
+int main(){
+	printf(&quot;hello world&quot;);
+	return 0;
+}
+</code></pre>
+<p><strong>6.CMD执行命令</strong></p>
+<pre><code>cl.exe hello.cpp
+</code></pre>
+<p><strong>7.Makefile的编写和nmake使用方法</strong><br>
+编写Makefile：</p>
+<pre><code># Specify compiler
+CC=cl.exe
+  
+.PHONY : all
+all : hello-world.exe
+  
+hello-world.exe : hello-world.cpp
+	$(CC)  hello-world.cpp
+</code></pre>
+<p><strong>8.运行nmake:</strong></p>
+<pre><code>E:\C\Hello&gt;nmake
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[对VS2019进行32位汇编环境配置]]></title>
+        <id>https://zikercn.com/post/32-bit-assembly-environment-configuration-for-vs2019/</id>
+        <link href="https://zikercn.com/post/32-bit-assembly-environment-configuration-for-vs2019/">
+        </link>
+        <updated>2019-10-21T01:23:45.000Z</updated>
+        <content type="html"><![CDATA[<p>1.库文件（很重要）<br>
+用我这一份就行：https://www.lanzous.com/i6364hg<br>
+http://kipirvine.com/asm/examples/index.htm<br>
+2.VS依赖库<br>
+打开VS2019，选择桌面向导<br>
+<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909084838434-353952510.png" alt="" loading="lazy"><br>
+配置项目时，选择空项目。<br>
+<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085049633-145023122.png" alt="" loading="lazy"><br>
+项目右键,选择生成依赖项-生成自定义<br>
+<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085555422-619624429.png" alt="" loading="lazy"><br>
+选中masm<br>
+<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085646866-895171305.png" alt="" loading="lazy"><br>
+3.asm项目配置<br>
+新建一个C++的源文件，将后缀改为asm<br>
+<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085836499-433031139.png" alt="" loading="lazy"><br>
+选择上面的项目，再选择&quot;项目名&quot;+属性。<br>
+配置的具体看图，链接后面记得加上分号，链接地址就是之前我上传那个irvine文件的文件绝对路径。<br>
+<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090305324-1594431552.png" alt="" loading="lazy"><br>
+<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090319094-1585005821.png" alt="" loading="lazy"><br>
+<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090424955-210674537.png" alt="" loading="lazy"><br>
+在“链接器”——“输入”——“附加依赖项”中输入Irvine32的库名称“Irvine32.lib;”，同样是以分号结束（原本输入框是有数据的，直接在前面输入，以分号结束），回车确认，点击确定关闭窗口。<br>
+<img src="https://img-blog.csdn.net/20180808215513298?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2Zlbmd5YWt1bg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="" loading="lazy"><br>
+4.汇编程序测试</p>
+<figure data-type="image" tabindex="1"><img src="" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[游戏逆向路线图]]></title>
+        <id>https://zikercn.com/post/Reverse-game-roadmap/</id>
+        <link href="https://zikercn.com/post/Reverse-game-roadmap/">
+        </link>
+        <updated>2019-10-20T09:31:03.000Z</updated>
+        <summary type="html"><![CDATA[<p>逆向工程实战 揭秘汇编/反汇编（win32+游戏逆向实战）<br>
+https://www.bilibili.com/video/av48021550<br>
+前提条件-C C++语言基础</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>逆向工程实战 揭秘汇编/反汇编（win32+游戏逆向实战）<br>
+https://www.bilibili.com/video/av48021550<br>
+前提条件-C C++语言基础</p>
+<!-- more -->
+]]></content>
+    </entry>
+</feed>

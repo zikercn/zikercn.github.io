@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="张慧敏个人博客">
+<meta name="description" content="张慧敏的瞎折腾">
+<meta name="theme-color" content="#000">
+<title>Sublime Text 3 编程常用插件推荐 | 张慧敏的博客</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1615269542441">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="/media/css/gemini.css">
+
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link
+  href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/androidstudio.css"
+  rel="stylesheet">
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+  <meta name="description" content="Sublime Text 3 编程常用插件推荐" />
+  <meta name="keywords" content="" />
+</head>
+
+<body>
+  <div class="head-top-line"></div>
+  <div class="header-box">
+    
+<div class="gemini">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>张慧敏的博客</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">精于心，简于形</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/archives/" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/tags/" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/post/about/" target="_self">
+                  <i class="fa fa-user"></i> 关于
+                </a>
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友情链接
+                  
+                </a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+  </div>
+  <div class="main-continer">
+    
+    <div
+      class="section-layout gemini ">
+      <div class="section-layout-wrapper">
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="/images/avatar.png"/>
+    <p class="site-author-name">张慧敏</p>
+    
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">17</span>
+        <span class="site-item-stat-name">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">8</span>
+        <span class="site-item-stat-name">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">8</span>
+        <span class="site-item-stat-name">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item" style="border-top: 1px dotted #ccc; margin-top: 10px;">
+      </div>
+    
+  
+  
+
+
+</div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://zikercn.com/post/sublime-text-3-plugin/">
+      Sublime Text 3 编程常用插件推荐
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2019-10-11</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>1分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>87<span class="pc-show">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+            <div class="post-body next-md-body" id="post_body">
+              <p>使用Sublime Text里面自带的Package Control安装～<br>
+使用shift+command（control）+P，输入install，选择Install Package回车～<br>
+输入x86，选择x86 and x86_64 Assembly 安装～</p>
+<!-- more -->
+<p>80×86汇编.asm文件的语法高亮插件<br>
+<code>x86 and x86_64 Assembly</code><br>
+安装成功后重启软件就能使用了= =（只要文件名的后缀为.asm就可以自动高亮～）<br>
+<img src="https://img-blog.csdn.net/20160721221930647" alt="x86 and x86_64 Assembly" loading="lazy"></p>
+
+            </div>
+            <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      张慧敏
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://zikercn.com/post/sublime-text-3-plugin/" title="Sublime Text 3 编程常用插件推荐">https://zikercn.com/post/sublime-text-3-plugin/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="游戏逆向路线图" href="https://zikercn.com/post/Reverse-game-roadmap/">游戏逆向路线图</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="游戏逆向路线图" href="https://zikercn.com/post/Reverse-game-roadmap/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="安装ConvertToUTF8插件解决Sublime Text 3中文乱码" href="https://zikercn.com/post/converttoutf8--sublime-text-3/">安装ConvertToUTF8插件解决Sublime Text 3中文乱码</a>
+        <a class="nav-mobile-next" title="安装ConvertToUTF8插件解决Sublime Text 3中文乱码" href="https://zikercn.com/post/converttoutf8--sublime-text-3/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+            
+  
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-box">
+  <footer class="footer">
+    <!--<div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By <a href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
+    </div>-->
+    <div class="poweredby">
+      Powered by <a href="https://zikercn.com" target="_blank"> 张慧敏</a>
+    </div>
+  </footer>
+  
+  
+  <div class="gemini back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+  
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+  back2TopText = document.querySelector('#back_to_top_text'),
+  drawerBox = document.querySelector('#drawer_box'),
+  rightSideBar = document.querySelector('.sidebar'),
+  viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+   
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function(e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+  
+  window.addEventListener('scroll', function(e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+  
+  let hasCacu = false;
+  window.onresize = function() {
+    if (window.width > 991) {
+      calcuHeight();
+    } else {
+      hasCacu = false;
+    }
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+  
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function() {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, transitionDir,{ });
+          }
+        })
+        window.Velocity(viewport, openProp,{
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp ,{
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 链接跳转
+  let newWindow = 'false'
+  if (newWindow === 'true') {
+    let links = document.querySelectorAll('.post-body a')
+    links.forEach(item => {
+      if (!item.classList.contains('btn')) {
+        item.setAttribute("target","_blank");
+      }
+    })
+  }
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+
+</script>
+    <div class="light-box" id="light_box"></div>
+<script>
+  let imgs = document.querySelectorAll('.post-body img');
+  let lightBox = document.querySelector('#light_box');
+  lightBox.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
+  lightBox.addEventListener('mousewheel', (e) => {
+    e.preventDefault()
+  })
+  let width = window.innerWidth * 0.8;
+  lightBox.onclick = () => {
+    let img = lightBox.querySelector('img');
+    lightBox.style = '';
+    img && img.remove();
+  }
+  imgs.forEach(item => {
+    item.onclick = function (e) {
+      let lightImg = document.createElement('img');
+      lightImg.src = this.src;
+      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
+      lightImg.style = `width: ${width}px; border: 1px solid #fff; border-radius: 2px;`;
+      lightImg.onclick = function () {
+        lightBox.style = '';
+        this.remove();
+      }
+      lightBox.append(lightImg);
+    }
+  })
+</script>
+  </div>
+</body>
+<input hidden id="copy" />
+<script>
+  //拿来主义(真香)^_^，Clipboard 实现摘自掘金 https://juejin.im/post/5aefeb6e6fb9a07aa43c20af
+  window.Clipboard = (function (window, document, navigator) {
+    var textArea,
+      copy;
+
+    // 判断是不是ios端
+    function isOS() {
+      return navigator.userAgent.match(/ipad|iphone/i);
+    }
+    //创建文本元素
+    function createTextArea(text) {
+      textArea = document.createElement('textArea');
+      textArea.value = text;
+      textArea.style.width = 0;
+      textArea.style.height = 0;
+      textArea.clientHeight = 0;
+      textArea.clientWidth = 0;
+      document.body.appendChild(textArea);
+    }
+    //选择内容
+    function selectText() {
+      var range,
+        selection;
+
+      if (isOS()) {
+        range = document.createRange();
+        range.selectNodeContents(textArea);
+        selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
+      }
+    }
+
+    //复制到剪贴板
+    function copyToClipboard() {
+      try {
+        document.execCommand("Copy")
+      } catch (err) {
+        alert("复制错误！请手动复制！")
+      }
+      document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+      createTextArea(text);
+      selectText();
+      copyToClipboard();
+    };
+
+    return {
+      copy: copy
+    };
+  })(window, document, navigator);
+
+  function copyCode(e) {
+    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
+      let code = e.currentTarget.querySelector('code');
+      var text = code.innerText;
+      if (e.srcElement.textContent === '复制成功') {
+        console.log('复制操作频率过高');
+        return;
+      }
+      e.srcElement.textContent = '复制成功';
+      (function (elem) {
+        setTimeout(() => {
+          if (elem.textContent === '复制成功') {
+            elem.textContent = '复制代码'
+          }
+        }, 1000);
+      })(e.srcElement)
+      Clipboard.copy(text);
+    }
+  }
+
+  let pres = document.querySelectorAll('pre');
+  pres.forEach(pre => {
+    let code = pre.querySelector('code');
+    let copyElem = document.createElement('span');
+    copyElem.classList.add('copy-code');
+    copyElem.textContent = '复制代码';
+    pre.appendChild(copyElem);
+    pre.onclick = copyCode
+  })
+</script>
+<script src="/media/js/motion.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 500
+  });
+</script>
+
+<!-- <div class="search-mask" id="search_mask">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input type="text" placeholder="搜索">
+      </div>
+      <i class="fa fa-times-circle"></i>
+    </div>
+    <div class="result">
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/zai-vs-code-zhong-bian-yi-cshi-yong-mingw-w64/"" data-c="
+          &lt;p&gt;1.安装&lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt;程序。建议选择其他下载&lt;code&gt;System Installer 64bit&lt;/code&gt;,这个可以选择安装路径到其他盘符&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lbTdvF.png&#34; alt=&#34;System Installer 64bit.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;2.安装&lt;code&gt;VS Code&lt;/code&gt;的&lt;code&gt;C/C++&lt;/code&gt;扩展。您可以通过在&amp;quot;扩展(Extension)&amp;quot;视图(&lt;code&gt;Ctrl + Shift + X&lt;/code&gt;)中搜索&lt;code&gt;c++&lt;/code&gt;来安装C/C++扩展。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lbT28K.png&#34; alt=&#34;VS Code的C/C++扩展.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+如果需要中文界面可以下载&lt;code&gt;Chinese (Simplified)&lt;/code&gt;扩展&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lb7jW6.png&#34; alt=&#34;extension for Chinese (Simplified).png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+3.通过SourceForge网站将&lt;a href=&#34;https://sourceforge.net/projects/mingw-w64/files/&#34;&gt;Mingw-w64&lt;/a&gt;安装到其路径中没有空格的文件夹（换句话说,不是C/Program Files/的默认位置）。在本教程中，我们假定将其安装在下&lt;code&gt;C:\mingw-w64&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lbTRgO.png&#34; alt=&#34;mingw-w64-install.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+您也可以下载离线版本&lt;a href=&#34;https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-win32/seh/x86_64-8.1.0-release-win32-seh-rt_v6-rev0.7z&#34;&gt;x86_64-win32-seh&lt;/a&gt;直接解压到指定目录即可如:&lt;code&gt;C:\mingw64&lt;/code&gt;&lt;br&gt;
+4. 将您的Mingw-w64 bin文件夹的路径添加到Windows PATH环境变量。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lbxoyq.png&#34; alt=&#34;Mingw-w64 PATH环境变量.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+5. 检查您的MinGW安装&lt;br&gt;
+要检查您的Mingw-w64工具是否已正确安装并可用，请打开新的命令提示符并键入：&lt;br&gt;
+&lt;code&gt;g++ --version&lt;/code&gt; 检查GCC编译器版本&lt;br&gt;
+&lt;code&gt;gdb --version&lt;/code&gt; 检查GDB调试器版本&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lbzkkD.png&#34; alt=&#34;检查您的MinGW安装.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+6. 创建工作区&lt;br&gt;
+在本地创建一个文件夹当作&lt;code&gt;VSCode&lt;/code&gt;的工作区,在该文件夹中按&lt;code&gt;Shift+右键&lt;/code&gt;,选择&lt;code&gt;在此处打开 Powershell 窗口&lt;/code&gt;,并通过输入以下命令在该文件夹中打开VS Code：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir projects
+cd projects
+mkdir helloworld
+cd helloworld
+code .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lbqpad.png&#34; alt=&#34;该文件夹中打开VS Code.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+7. 添加源代码文件&lt;br&gt;
+在文件资源管理器标题栏中，选择“ 新建文件”按钮并命名该文件&lt;code&gt;helloworld.cpp&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lbqZqg.png&#34; alt=&#34;VSCode新建文件.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+现在粘贴此源代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;string&amp;gt;
+
+using namespace std;
+
+int main()
+{
+   vector&amp;lt;string&amp;gt; msg {&amp;quot;Hello&amp;quot;, &amp;quot;C++&amp;quot;, &amp;quot;World&amp;quot;, &amp;quot;from&amp;quot;, &amp;quot;VS Code&amp;quot;, &amp;quot;and the C++ extension!&amp;quot;};
+
+   for (const string&amp;amp; word : msg)
+   {
+      cout &amp;lt;&amp;lt; word &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+   }
+   cout &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在按&lt;code&gt;Ctrl + S&lt;/code&gt;保存文件。文件资源管理器视图（Ctrl + Shift + E）&lt;br&gt;
+您还可以通过选中&lt;code&gt;文件&lt;/code&gt;主菜单中的&lt;code&gt;自动保存&lt;/code&gt;，启用&lt;code&gt;自动保存&lt;/code&gt;以自动保存文件更改。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lbqzlV.png&#34; alt=&#34;文件自动保存.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+8. 尝试自动补全感知&lt;br&gt;
+在新&lt;code&gt;helloworld.cpp&lt;/code&gt;文件中，将鼠标悬停在&lt;code&gt;vector&lt;/code&gt;或上&lt;code&gt;string&lt;/code&gt;以查看类型信息。声明&lt;code&gt;msg&lt;/code&gt;变量后，&lt;code&gt;msg.&lt;/code&gt;像在调用成员函数时一样开始键入。您应该立即看到一个显示所有成员函数的完成列表，以及一个显示该&lt;code&gt;msg&lt;/code&gt;对象的类型信息的窗口：&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lbLXHe.png&#34; alt=&#34;自动补全感知.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+您可以按&lt;code&gt;Tab&lt;/code&gt;键插入选定的成员。然后，当您添加左括号时，您将看到有关该函数所需的任何参数的信息。&lt;br&gt;
+9. 编译helloworld.cpp&lt;br&gt;
+接下来，您将创建一个&lt;code&gt;tasks.json&lt;/code&gt;文件来告诉VS Code如何构建（编译）程序。该任务将调用g++编译器以基于源代码创建可执行文件。&lt;br&gt;
+从主菜单中，选择&lt;code&gt;终端(Terminal) &amp;gt; 配置默认生成任务(Configure Default Build Task)&lt;/code&gt;。在下拉列表中，将显示任务下拉列表，其中列出了C ++编译器的各种预定义构建任务。选择&lt;code&gt;g++.exe build active file&lt;/code&gt;，该文件将构建编辑器中当前显示（活动）的文件。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lbXMid.png&#34; alt=&#34;配置默认生成任务.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lbjS6P.png&#34; alt=&#34;g++.exe构建活动文件.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+这将tasks.json在.vscode文件夹中创建一个文件，然后在编辑器中将其打开。&lt;br&gt;
+您的新tasks.json文件应类似于以下JSON：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+// 有关 tasks.json 格式的文档，请参见
+    // https://go.microsoft.com/fwlink/?LinkId=733558
+    &amp;quot;version&amp;quot;: &amp;quot;2.0.0&amp;quot;,
+    &amp;quot;tasks&amp;quot;: [
+        {
+            &amp;quot;type&amp;quot;: &amp;quot;shell&amp;quot;,
+            &amp;quot;label&amp;quot;: &amp;quot;g++.exe build active file&amp;quot;,
+            &amp;quot;command&amp;quot;: &amp;quot;C:\\mingw64\\bin\\g++.exe&amp;quot;,
+            &amp;quot;args&amp;quot;: [
+                &amp;quot;-g&amp;quot;,
+                &amp;quot;${file}&amp;quot;,
+                &amp;quot;-o&amp;quot;,
+                &amp;quot;${fileDirname}\\${fileBasenameNoExtension}.exe&amp;quot;
+            ],
+            &amp;quot;options&amp;quot;: {
+                &amp;quot;cwd&amp;quot;: &amp;quot;C:\\mingw64\\bin&amp;quot;
+            },
+            &amp;quot;problemMatcher&amp;quot;: [
+                &amp;quot;$gcc&amp;quot;
+            ],
+            &amp;quot;group&amp;quot;: {
+                &amp;quot;kind&amp;quot;: &amp;quot;build&amp;quot;,
+                &amp;quot;isDefault&amp;quot;: true
+            }
+        }
+    ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;该&lt;code&gt;command&lt;/code&gt;设置指定要运行的程序；在这种情况下是&lt;code&gt;g++&lt;/code&gt;。该&lt;code&gt;args&lt;/code&gt;数组指定将传递给g++的命令行参数。必须按照编译器期望的顺序指定这些参数。该任务告诉g ++获取活动文件（&lt;code&gt;${file}&lt;/code&gt;），对其进行编译，然后在当前目录（&lt;code&gt;${fileDirname}&lt;/code&gt;）中创建一个与活动文件同名但&lt;code&gt;.exe&lt;/code&gt;扩展名为（&lt;code&gt;${fileBasenameNoExtension}.exe&lt;/code&gt;）的可执行文件，&lt;code&gt;helloworld.exe&lt;/code&gt;以我们的示例为例。&lt;br&gt;
+该&lt;code&gt;label&lt;/code&gt;值就是您将在任务列表中看到的值；您可以随意命名。&lt;br&gt;
+对象中的&lt;code&gt;&amp;quot;isDefault&amp;quot;: true&lt;/code&gt;值&lt;code&gt;group&lt;/code&gt;指定当您按&lt;code&gt;Ctrl + Shift + B&lt;/code&gt;时将运行此任务。此属性仅出于方便起见；如果将其设置为&lt;code&gt;false&lt;/code&gt;，您仍然可以从“&lt;code&gt;终端&lt;/code&gt;”菜单中使用&lt;code&gt;运行生成任务&lt;/code&gt;来运行它。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;运行构建&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;1.回到&lt;code&gt;helloworld.cpp&lt;/code&gt;。您的任务将生成活动文件，并且您要生成&lt;code&gt;helloworld.cpp&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;2.要运行中定义的构建任务&lt;code&gt;tasks.json&lt;/code&gt;，请按&lt;code&gt;Ctrl + Shift + B&lt;/code&gt;或从&lt;code&gt;终端&lt;/code&gt;主菜单中选择&lt;code&gt;运行生成任务&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;3.任务开始时，您应该看到“集成终端”面板出现在源代码编辑器下方。任务完成后，终端将显示编译器的输出，指示构建成功还是失败。对于成功的g ++构建，输出如下所示：&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lqSAbV.png&#34; alt=&#34;集成终端指示构建成功还是失败.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;4.使用+按钮创建一个新终端，您将拥有一个新终端（运行PowerShell），并将该&lt;code&gt;helloworld&lt;/code&gt;文件夹作为工作目录。运行&lt;code&gt;dir&lt;/code&gt;，您现在应该看到可执行文件&lt;code&gt;helloworld.exe&lt;/code&gt;。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lqnz5j.png&#34; alt=&#34;终端运行.helloworld.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;5.您可以&lt;code&gt;helloworld&lt;/code&gt;在终端中输入来运行&lt;code&gt;.\helloworld.exe&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;修改task.json&lt;br&gt;
+您可以&lt;code&gt;tasks.json&lt;/code&gt;使用&lt;code&gt;&amp;quot;${workspaceFolder}\\*.cpp&amp;quot;&lt;/code&gt;代替的参数来修改以构建多个C ++文件&lt;code&gt;${file}&lt;/code&gt;。这将生成&lt;code&gt;.cpp&lt;/code&gt;当前文件夹中的所有文件。您也可以通过替换&lt;code&gt;&amp;quot;${fileDirname}\\${fileBasenameNoExtension}.exe&amp;quot;&lt;/code&gt;为硬编码的文件名（例如&lt;code&gt;&amp;quot;${workspaceFolder}\\myProgram.exe&amp;quot;&lt;/code&gt;）来修改输出文件名。&lt;/li&gt;
+&lt;li&gt;调试helloworld.cpp&lt;br&gt;
+接下来，您将创建一个&lt;code&gt;launch.json&lt;/code&gt;文件来配置VS Code，以在您按&lt;code&gt;F5&lt;/code&gt;调试程序时启动&lt;code&gt;GDB调试器&lt;/code&gt;。从主菜单中，选择&lt;code&gt;调试&lt;/code&gt;&amp;gt;&lt;code&gt;添加配置...&lt;/code&gt;，然后选择&lt;code&gt;C++(GDB/LLDB)&lt;/code&gt;。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lqu4yV.png&#34; alt=&#34;调试 添加配置.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lqKSeO.png&#34; alt=&#34;C++(GDB/LLDB).png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后，您将看到各种预定义调试配置的下拉列表。选择&lt;code&gt;g++.exe build and debug active file&lt;/code&gt;。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lqKQYj.png&#34; alt=&#34;g++.exe构建并调试活动文件.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+VS Code创建一个&lt;code&gt;launch.json&lt;/code&gt;文件，在编辑器中将其打开，然后生成并运行“ helloworld”。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    &amp;quot;version&amp;quot;: &amp;quot;0.2.0&amp;quot;,
+    &amp;quot;configurations&amp;quot;: [
+        {
+            &amp;quot;name&amp;quot;: &amp;quot;g++.exe build and debug active file&amp;quot;,
+            &amp;quot;type&amp;quot;: &amp;quot;cppdbg&amp;quot;,
+            &amp;quot;request&amp;quot;: &amp;quot;launch&amp;quot;,
+            &amp;quot;program&amp;quot;: &amp;quot;${fileDirname}\\${fileBasenameNoExtension}.exe&amp;quot;,
+            &amp;quot;args&amp;quot;: [],
+            &amp;quot;stopAtEntry&amp;quot;: false,
+            &amp;quot;cwd&amp;quot;: &amp;quot;${workspaceFolder}&amp;quot;,
+            &amp;quot;environment&amp;quot;: [],
+            &amp;quot;externalConsole&amp;quot;: false,
+            &amp;quot;MIMode&amp;quot;: &amp;quot;gdb&amp;quot;,
+            &amp;quot;miDebuggerPath&amp;quot;: &amp;quot;C:\\mingw64\\bin\\gdb.exe&amp;quot;,
+            &amp;quot;setupCommands&amp;quot;: [
+                {
+                    &amp;quot;description&amp;quot;: &amp;quot;为 gdb 启用整齐打印&amp;quot;,
+                    &amp;quot;text&amp;quot;: &amp;quot;-enable-pretty-printing&amp;quot;,
+                    &amp;quot;ignoreFailures&amp;quot;: true
+                }
+            ],
+            &amp;quot;preLaunchTask&amp;quot;: &amp;quot;g++.exe build active file&amp;quot;
+        }
+    ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;该&lt;code&gt;program&lt;/code&gt;设置指定要调试的程序。在这里，它被设置为活动文件文件夹&lt;code&gt;${fileDirname}&lt;/code&gt;和&lt;code&gt;.exe&lt;/code&gt;扩展名的活动文件名&lt;code&gt;${fileBasenameNoExtension}.exe&lt;/code&gt;，如果&lt;code&gt;helloworld.cpp&lt;/code&gt;是，则为活动文件&lt;code&gt;helloworld.exe&lt;/code&gt;。&lt;br&gt;
+默认情况下，C ++扩展名不会在源代码中添加任何断点，并且其&lt;code&gt;stopAtEntry&lt;/code&gt;值设置为&lt;code&gt;false&lt;/code&gt;。将&lt;code&gt;stopAtEntry&lt;/code&gt;值更改&lt;code&gt;true&lt;/code&gt;为会导致调试器&lt;code&gt;main&lt;/code&gt;在启动调试时在该方法上停止。&lt;br&gt;
+13. 开始调试会话&lt;br&gt;
+回到&lt;code&gt;helloworld.cpp&lt;/code&gt;它是活动文件。&lt;br&gt;
+按&lt;code&gt;F5&lt;/code&gt;或从主菜单中选择&lt;code&gt;调试&lt;/code&gt;&amp;gt;&lt;code&gt;启动调试&lt;/code&gt;。在开始浏览源代码之前，让我们花一点时间注意用户界面中的一些更改：&lt;br&gt;
+集成终端出现在源代码编辑器的底部。在&lt;code&gt;调试输出&lt;/code&gt;选项卡中，您将看到指示调试器已启动并正在运行的输出。&lt;br&gt;
+编辑器突出显示方法中的第一条语句&lt;code&gt;main&lt;/code&gt;。这是C ++扩展自动为您设置的断点：&lt;br&gt;
+左侧的“调试”视图显示调试信息。您将在本教程的后面看到一个示例。&lt;/p&gt;
+&lt;p&gt;在代码编辑器的顶部，将显示一个调试控制面板。您可以通过抓住左侧的点在屏幕上移动它。&lt;/p&gt;
+&lt;p&gt;14.C/C++配置&lt;br&gt;
+如果要对C / C ++扩展进行更多控制，可以创建一个&lt;code&gt;c_cpp_properties.json&lt;/code&gt;文件，该文件将允许您更改设置，例如编译器的路径，包含路径，C ++标准（默认为C ++ 17）等。&lt;/p&gt;
+&lt;p&gt;您可以从命令面板（Ctrl + Shift + P）编辑配置（UI）通过运行命令&lt;code&gt;C/C++: 编辑配置(UI) C/C++: Edit configurations(UI)&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lq1e3j.png&#34; alt=&#34;C/C++: 编辑配置(UI).png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+这将打开&lt;code&gt;C/ C++配置&lt;/code&gt;页面。当您在此处进行更改时，VS Code会将其写入到文件夹中称为&lt;code&gt;c_cpp_properties.json&lt;/code&gt;的&lt;code&gt;.vscode&lt;/code&gt;文件中。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/14/lq3ks1.png&#34; alt=&#34;C/C++配置页面.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+Visual Studio Code将这些设置放在中.vscode\c_cpp_properties.json。如果直接打开该文件，则它应如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;configurations&amp;quot;: [
+        {
+            &amp;quot;name&amp;quot;: &amp;quot;Win32&amp;quot;,
+            &amp;quot;includePath&amp;quot;: [
+                &amp;quot;${workspaceFolder}/**&amp;quot;
+            ],
+            &amp;quot;defines&amp;quot;: [
+                &amp;quot;_DEBUG&amp;quot;,
+                &amp;quot;UNICODE&amp;quot;,
+                &amp;quot;_UNICODE&amp;quot;
+            ],
+            &amp;quot;compilerPath&amp;quot;: &amp;quot;C:\\mingw64\\bin\\gcc.exe&amp;quot;,
+            &amp;quot;cStandard&amp;quot;: &amp;quot;c11&amp;quot;,
+            &amp;quot;cppStandard&amp;quot;: &amp;quot;c++17&amp;quot;,
+            &amp;quot;intelliSenseMode&amp;quot;: &amp;quot;clang-x64&amp;quot;
+        }
+    ],
+    &amp;quot;version&amp;quot;: 4
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;仅当程序包含不在工作空间或标准库路径中的头文件时，才需要添加到&lt;code&gt;包含路径数组&lt;/code&gt;设置中。&lt;br&gt;
+15.编译路径&lt;br&gt;
+该&lt;code&gt;compilerPath&lt;/code&gt;设置是您配置中的重要设置。该扩展使用它来推断C ++标准库头文件的路径。当扩展知道在哪里可以找到那些文件时，它可以提供有用的功能，例如智能补全和&lt;code&gt;转到定义&lt;/code&gt;导航。&lt;br&gt;
+C/C++扩展尝试&lt;code&gt;compilerPath&lt;/code&gt;根据其在系统上找到的内容来使用默认的编译器位置进行填充。该扩展在几个常见的编译器位置中查找。&lt;br&gt;
+该&lt;code&gt;compilerPath&lt;/code&gt;搜索顺序是：&lt;br&gt;
+首先检查Microsoft Visual C ++编译器&lt;br&gt;
+然后在Windows Subsystem for Linux（WSL）上寻找g ++&lt;br&gt;
+然后用g ++编写Mingw-w64。&lt;br&gt;
+如果安装了Visual Studio或WSL，则可能需要进行更改compilerPath以匹配项目的首选编译器。例如，如果使用Win32线程和SEH异常处理选项在C:\mingw64下安装Mingw-w64版本8.1.0，则路径如下所示：&lt;code&gt;C:\\mingw64\\bin\\g++.exe&lt;/code&gt;&lt;/p&gt;
+">在VS Code中编译C++使用Mingw-w64</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/SDL-Library-Simple-DirectMedia-Layer/"" data-c="
+          &lt;p&gt;Simple DirectMedia Layer是一个跨平台开发库，旨在通过OpenGL和Direct3D提供对音频，键盘，鼠标，操纵杆和图形硬件的低级访问。视频播放软件，仿真器和受欢迎的游戏（包括Valve屡获殊荣的目录和许多Humble Bundle游戏）都使用它。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;SDL官网: &lt;a href=&#34;https://www.libsdl.org/&#34;&gt;https://www.libsdl.org/&lt;/a&gt;&lt;br&gt;
+下载开发库:&lt;br&gt;
+Windows：&lt;br&gt;
+&lt;a href=&#34;https://www.libsdl.org/release/SDL2-devel-2.0.10-VC.zip&#34;&gt;SDL2-devel-2.0.10-VC.zip&lt;/a&gt;（Visual C ++ 32/64位）&lt;br&gt;
+&lt;a href=&#34;https://www.libsdl.org/release/SDL2-devel-2.0.10-mingw.tar.gz&#34;&gt;SDL2-devel-2.0.10-mingw.tar.gz&lt;/a&gt;（&lt;a href=&#34;http://mingw-w64.sourceforge.net/&#34;&gt;MinGW&lt;/a&gt; 32/64位）&lt;/p&gt;
+&lt;h1 id=&#34;windows-visual-studio-2019-中配置sdl&#34;&gt;Windows Visual Studio 2019 中配置SDL&lt;/h1&gt;
+&lt;p&gt;1.下载好&lt;code&gt;SDL2-devel-2.0.10-VC&lt;/code&gt;,解压到固定目录下(如:E:\CLibrary\SDL2\SDL2-VC)&lt;br&gt;
+2.打开Visual Studio，新建一个控制台空项目,新建一个.cpp源文件&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/12/louI1O.png&#34; alt=&#34;Visual Studio控制台空项目.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+3.配置SDL环境:在解决方案管理器中右键项目名称,选择属性&lt;br&gt;
+4.在&lt;code&gt;C/C++ -&amp;gt;常规-&amp;gt;附加包含目录&lt;/code&gt;中添加SDL2文件夹下的&lt;code&gt;include文件夹&lt;/code&gt;,确认,应用&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/12/loeASg.png&#34; alt=&#34;CC++ -常规-附加包含目录.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+5.在&lt;code&gt;链接器-&amp;gt;常规-&amp;gt;附加库目录&lt;/code&gt;中添加SDL2文件夹下的&lt;code&gt;lib\x86文件夹&lt;/code&gt;（因为此时活动平台为32位，所以选择x86。如果需要使用64位，则选择”lib\x64”文件夹）&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/12/loe59S.png&#34; alt=&#34;链接器-常规-附加库目录.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+6.在&lt;code&gt;链接器-&amp;gt;输入-&amp;gt;附加依赖项&lt;/code&gt;中添加&lt;code&gt;SDL2.lib和SDL2main.lib&lt;/code&gt;,中间用英文分号或回车间隔&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/12/lomZ9O.png&#34; alt=&#34;链接器-输入-附加依赖项.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+7.将&lt;code&gt;lib\x86文件夹&lt;/code&gt;下&lt;code&gt;SDL2.dll&lt;/code&gt;复制到工程跟目录与.cpp文件同一目录中&lt;br&gt;
+同样要注意x86和x64要分别对应，如果是配置x64平台则复制粘贴”lib\x64”下的SDL2.dll。此处选择x86：&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/12/lomDU0.png&#34; alt=&#34;SDL2.dll复制到工程跟目录.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+8.测试SDL2配置环境:&lt;br&gt;
+&lt;code&gt;//注意:SDL环境需要main函数有输入的参数（即使用不到）&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/12/logOyT.png&#34; alt=&#34;测试SDL2配置环境.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;quot;SDL.h&amp;quot;
+//注意:SDL环境需要main函数有输入的参数（即使用不到）
+int main(int argc, char* argv[])
+{
+    SDL_Init(SDL_INIT_VIDEO); 
+    SDL_Window* window = SDL_CreateWindow(&amp;quot;SDL2&amp;quot;, 100, 100, 640, 480, SDL_WINDOW_OPENGL);
+    if (window == NULL)
+    {
+        printf(&amp;quot;Could not create window: %s\n&amp;quot;, SDL_GetError());
+        return 1;
+    }
+    SDL_Delay(5000);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;windows-mingw-codeblocks-中配置sdl&#34;&gt;Windows MinGW CodeBlocks 中配置SDL&lt;/h1&gt;
+&lt;p&gt;1.下载好&lt;code&gt;SDL2-devel-2.0.10-mingw&lt;/code&gt;,解压到固定目录下(如:E:\CLibrary\SDL2\SDL2-mingw)&lt;br&gt;
+2.打开CodeBlocks，新建一个控制台空项目,自带一个main.cpp源文件&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/12/lobNAx.png&#34; alt=&#34;CodeBlocks控制台空项目.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+3.配置SDL环境:在当前项目右键选择&lt;code&gt;构建选项&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/12/loqtMQ.png&#34; alt=&#34;当前项目右键选择.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+4.在&lt;code&gt;项目build选项&lt;/code&gt;中找到&lt;code&gt;搜索目录&lt;/code&gt;,在&lt;code&gt;编译器&lt;/code&gt;选项里点&lt;code&gt;添加&lt;/code&gt;,添加SDL2include目录&lt;br&gt;
+&lt;code&gt;E:\CLibrary\SDL2\SDL2-mingw\i686-w64-mingw32\include\SDL2&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/12/loO9tx.png&#34; alt=&#34;添加SDL2include目录.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+5.在&lt;code&gt;项目build选项&lt;/code&gt;中找到&lt;code&gt;搜索目录&lt;/code&gt;,在&lt;code&gt;链接器&lt;/code&gt;选项里点&lt;code&gt;添加&lt;/code&gt;,添加SDL2lib目录&lt;br&gt;
+&lt;code&gt;E:\CLibrary\SDL2\SDL2-mingw\i686-w64-mingw32\lib&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/12/loXuqJ.png&#34; alt=&#34;添加SDL2lib目录.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+6.切换到&lt;code&gt;链接器设置&lt;/code&gt;选项页,在&lt;code&gt;其他链接器选项&lt;/code&gt;中添加GCC编译参数&lt;br&gt;
+&lt;code&gt;-lmingw32 -lSDL2main -lSDL2&lt;/code&gt;&lt;br&gt;
+顺序不能错,点击确定,这样SDL2在CodeBlocks中就配置好了&lt;br&gt;
+7.将&lt;code&gt;i686-w64-mingw32\bin文件夹&lt;/code&gt;下&lt;code&gt;SDL2.dll&lt;/code&gt;复制到工程跟目录与.cpp文件同一目录中&lt;br&gt;
+&lt;code&gt;E:\CLibrary\SDL2\SDL2-mingw\i686-w64-mingw32\bin&lt;/code&gt;&lt;br&gt;
+8.测试SDL2配置环境:&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/12/lTPloF.png&#34; alt=&#34;测试SDL2配置环境.png&#34; loading=&#34;lazy&#34;&gt;)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;SDL.h&amp;gt;
+
+//注意:SDL环境需要main函数有输入的参数（即使用不到）
+int main(int argc,char* argv[])
+{
+    SDL_Init(SDL_INIT_VIDEO);
+    SDL_Window* window = SDL_CreateWindow(&amp;quot;SDL 窗口&amp;quot;,100,100,640,400,SDL_WINDOW_SHOWN);
+    if(window == NULL)
+    {
+        printf(&amp;quot;Could not create window: %s\n&amp;quot;,SDL_GetError());
+        return 1;
+    }
+    SDL_Delay(5000);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;构建并运行,弹窗窗口,表示测试成功&lt;/p&gt;
+">C语言第三方库 SDL 多媒体库 使用教程</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/zai-macos-zhong-qi-dong-ssh-fu-wu/"" data-c="
+          &lt;h1 id=&#34;使用图形界面开启-ssh&#34;&gt;使用图形界面开启 SSH&lt;/h1&gt;
+&lt;p&gt;1.点击桌面左上角的小苹果,然后选择&amp;quot;系统偏好设置...&amp;quot;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lRW1pD.jpg&#34; alt=&#34;系统偏好设置.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;2.在系统偏好设置界面选择 &amp;quot;共享&amp;quot;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lRfGCT.jpg&#34; alt=&#34;在系统偏好设置界面选择 &amp;quot;共享.jpg&amp;quot;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+3.在共享界面勾选&amp;quot;远程登录&amp;quot;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lR4wh6.jpg&#34; alt=&#34;在共享界面勾选&amp;quot;远程登录.jpg&amp;quot;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;code&gt;若要远程登录这台电脑，请键入“ssh zhm@192.168.234.138”。&lt;/code&gt;&lt;br&gt;
+4.在Windows中用&amp;quot;Xshell&amp;quot;连接&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lRIcFI.jpg&#34; alt=&#34;在Windows中用&amp;quot;Xshell&amp;quot;连接.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;使用终端命令行方式开启-ssh&#34;&gt;使用终端命令行方式开启 SSH&lt;/h1&gt;
+&lt;p&gt;1.查看 SSH服务 是否已经运行&lt;br&gt;
+&lt;code&gt;sudo launchctl list | grep sshd&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lRTtxK.jpg&#34; alt=&#34;查看 SSH服务 是否已经运行.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+PS:如果 SSH服务 已运行,会显示:&lt;br&gt;
+&lt;code&gt;-	0	com.openssh.sshd&lt;/code&gt;&lt;br&gt;
+2.没有开始 SSH服务 状态&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lR72f1.jpg&#34; alt=&#34;没有开始 SSH服务 状态.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+3.输入命令开启SSH服务&lt;br&gt;
+&lt;code&gt;sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lRqVwF.jpg&#34; alt=&#34;开启SSH服务命令.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+4.输入命令停止SSH服务&lt;br&gt;
+&lt;code&gt;sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lRb2M6.jpg&#34; alt=&#34;停止SSH服务命令.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+5.在Linux中用SSH命令连接&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lROTJJ.jpg&#34; alt=&#34;在Linux中用SSH命令连接.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+">在MacOS中启动SSH服务</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/html-hei-bai-ye-mian/"" data-c="
+          &lt;p&gt;有时候网站在某种特定的情况下，需要使整个网站变成黑白的颜色。&lt;br&gt;
+&lt;code&gt;&amp;lt;html lang=&amp;quot;zh-CN&amp;quot; style=&amp;quot;filter: grayscale(100%);&amp;quot;&amp;gt;&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lRxSFU.jpg&#34; alt=&#34;HTML黑白灰度页面的实现.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;filter是滤镜的意思，filter:grayscale的意思就是说给页面加上一个灰度的滤镜，所以html里面的所有内容都会变成黑白的了。&lt;/p&gt;
+">HTML黑白灰度页面的实现</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/visual-studio-downloads/"" data-c="
+          &lt;p&gt;https://visualstudio.microsoft.com/zh-hans/downloads/&lt;/p&gt;
+">Visual Studio Downloads</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/windows-bian-cheng-mo-ban-wen-jian/"" data-c="
+          &lt;pre&gt;&lt;code&gt;#include &amp;lt;Windows.h&amp;gt;
+#include &amp;quot;resource.h&amp;quot;
+// 出现在应用程序标题栏中的字符串.
+static TCHAR szTitle[] = TEXT(&amp;quot;资源测试&amp;quot;);
+static TCHAR szWindowClass[] = TEXT(&amp;quot;WindowsDesktop&amp;quot;);//全局窗口类前置声明
+HINSTANCE hInst;//全局实例句柄前置声明
+LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);//窗口过程函数前置声明
+//********************程序入口********************
+int CALLBACK WinMain(
+	_In_ HINSTANCE hInstance,
+	_In_opt_ HINSTANCE hPrevInstance,
+	_In_ LPSTR     lpCmdLine,
+	_In_ int       nCmdShow)
+{
+	WNDCLASSEX wcex;//窗口类
+
+	wcex.cbSize = sizeof(WNDCLASSEX);
+	wcex.style = CS_HREDRAW | CS_VREDRAW;//水平垂直变化时重绘窗口
+	wcex.lpfnWndProc = WndProc;//窗口过程
+	wcex.cbClsExtra = 0;
+	wcex.cbWndExtra = 0;
+	wcex.hInstance = hInstance;//实例句柄,入口函数传入
+	wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1));//图标
+	wcex.hCursor = LoadCursor(hInstance, MAKEINTRESOURCE(IDC_CURSOR1));//光标
+	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);//背景色
+	wcex.lpszMenuName = NULL;
+	wcex.lpszClassName = szWindowClass;	//窗口类的名字
+	wcex.hIconSm = LoadIcon(wcex.hInstance, IDI_APPLICATION);
+	if (!RegisterClassEx(&amp;amp;wcex))
+	{
+		MessageBox(NULL,
+			TEXT(&amp;quot;调用RegisterClassEx失败!&amp;quot;),	//窗口类注册失败弹窗提示内容
+			TEXT(&amp;quot;Windows桌面指南&amp;quot;),	//注册失败弹窗标题
+			NULL);
+
+		return 1;
+	}
+
+//********************创建窗口********************
+	HWND hWnd = CreateWindow(
+		szWindowClass,			//窗口类的名字,说明基于哪个窗口类
+		szTitle,				//窗口标题,在顶部定义szTitle
+		WS_OVERLAPPEDWINDOW,	//窗口样式
+		CW_USEDEFAULT, CW_USEDEFAULT, //窗口距离屏幕左上角距离x,y
+		500, 400,				//窗口长度x,高度y
+		NULL,					//父窗口句柄
+		NULL,					//窗口菜单句柄
+		hInstance,				//程序实例句柄
+		NULL					//
+	);
+	if (!hWnd)
+	{
+		MessageBox(NULL,
+			TEXT(&amp;quot;调用CreateWindow失败!&amp;quot;),
+			TEXT(&amp;quot;Windows桌面指南&amp;quot;),
+			NULL);
+		return 1;
+	}
+	// ShowWindow的参数说明:
+	// hWnd: 从CreateWindow返回的值
+	// nCmdShow: 来自WinMain的第四个参数
+	ShowWindow(hWnd,	//显示指定窗口,传句柄
+		nCmdShow);		//怎么显示,最大化最小化显示等
+	UpdateWindow(hWnd);	//更新指定窗口的客户区
+
+	// 主消息循环:
+	MSG msg;
+	while (GetMessage(&amp;amp;msg, NULL, 0, 0))	//消息队列
+	{
+		TranslateMessage(&amp;amp;msg);	//转换
+		DispatchMessage(&amp;amp;msg);	//分发
+	}
+	return (int)msg.wParam;	//WM_QUIT
+}
+
+//********************窗口过程********************
+LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	PAINTSTRUCT ps;
+	HDC hdc;
+	switch (message)
+	{
+	case WM_PAINT:	//窗口必须重绘的时候
+		hdc = BeginPaint(hWnd, &amp;amp;ps);//返回:设备描述表句柄
+		// TODO: 在此处添加使用 hdc 的任何绘图代码...
+		Rectangle(hdc, 5, 5, 480, 355);	//矩形
+		EndPaint(hWnd, &amp;amp;ps);
+		break;
+	case WM_DESTROY:	//消息销毁结束的时候
+		PostQuitMessage(0);
+		break;
+	default:
+		return DefWindowProc(hWnd, message, wParam, lParam);
+		break;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+">Windows编程模板文件</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/win10-codeblocks--mingw-gcc-C/"" data-c="
+          &lt;p&gt;用GCC编译C程序,不建议单独安装MinGW,建议安装CodeBlocks里面已经包含MinGW,而且CodeBlocks很不错.&lt;br&gt;
+下载页面:http://www.codeblocks.org/downloads&lt;br&gt;
+Download the binary release http://www.codeblocks.org/downloads/26&lt;br&gt;
+codeblocks-17.12mingw-setup.exe&lt;br&gt;
+&lt;a href=&#34;https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-17.12mingw-setup.exe&#34;&gt;FossHUB&lt;/a&gt; or &lt;a href=&#34;http://sourceforge.net/projects/codeblocks/files/Binaries/17.12/Windows/codeblocks-17.12mingw-setup.exe&#34;&gt;Sourceforge.net&lt;/a&gt;&lt;br&gt;
+下载安装到 D:\Program Files\CodeBlocks&lt;br&gt;
+官方下载的 CodeBlocks 全部都是英文版,下载CodeBlocks汉化包&lt;br&gt;
+https://www.lanzous.com/i6x2ljg&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;汉化包下载完成后，是一个压缩包，将其解压，其中包含有一个 locale 文件夹里面有个 zh_CN 文件夹,复制到&lt;code&gt;D:\Program Files\CodeBlocks\share\CodeBlocks\locale&lt;/code&gt;目录&lt;br&gt;
+更改CodeBlocks设置&lt;/li&gt;
+&lt;li&gt;打开 CodeBlocks，选择 “Settings --&amp;gt; Environmen”&lt;/li&gt;
+&lt;li&gt;选择 View 选项，勾选 Internationalization 选项，同时选择其中的 Chinese(Simplified)。然后点击 OK 按钮。&lt;br&gt;
+设置完成后，直接重新启动 CodeBlocks，此时 CodeBlocks 会出现一个提示框，提示你是否保存更改，选择保存即可。&lt;br&gt;
+再次启动 CodeBlocks，你会看到全新的汉化的 CodeBlocks，虽然没有完全汉化，但起码不会影响日常的正常使用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;MinGW&lt;/strong&gt;: D:\Program Files\CodeBlocks\MinGW&lt;br&gt;
+配置环境变量:Path D:\Program Files\CodeBlocks\MinGW\bin&lt;/p&gt;
+&lt;p&gt;gcc可以一次性完成C语言源程序的编译，也可以分步骤完成；下面先介绍一次性编译过程。&lt;/p&gt;
+&lt;p&gt;1.生成可执行程序&lt;br&gt;
+cd xxx　　　　　　　　　　　　# 先进入源程序所在的目录&lt;br&gt;
+gcc hello.cpp　　　　　　　　# 一次性编译，windows系统生成a.exe文件，Linux系统生成a.out文件&lt;br&gt;
+gcc hello.cpp -o hello.exe　　# -o表示输出&lt;br&gt;
+gcc hello.cpp -o ./tmp/hello.exe　　# -o后面也可以跟其他目录，注意tmp目录必须存在，否则gcc会抛出异常&lt;/p&gt;
+&lt;p&gt;2.运行可执行文件&lt;br&gt;
+hello.exe　　　　　　# 运行hello.exe文件，如果是Linux系统，是./hello.out文件&lt;/p&gt;
+">Win10下使用CodeBlocks自带的MinGW GCC命令行编译C/C++程序</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/Win10-Visual-Studio-MSVC-CL-C-C++/"" data-c="
+          &lt;p&gt;&lt;strong&gt;1.工具介绍&lt;/strong&gt;&lt;br&gt;
+Windows下VS套件自带的编译程序有以下这些：&lt;br&gt;
+cl.exe：编译程序&lt;br&gt;
+link.exe：链接程序&lt;br&gt;
+lib.exe：加载lib库的程序&lt;br&gt;
+nmake.exe：用Makefile进行构建、编译的工具&lt;br&gt;
+&lt;strong&gt;2.cl使用方法&lt;/strong&gt;&lt;br&gt;
+用法: cl [ 选项... ] 文件名... [ /link 链接选项... ]&lt;br&gt;
+1.设置Path环境变量：&lt;code&gt;bin&lt;/code&gt;目录cl.exe所在路径路径&lt;br&gt;
+D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.23.28105\bin\Hostx86\x86;&lt;br&gt;
+D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build;&lt;br&gt;
+D:\Program Files\Microsoft Visual Studio\2019\Enterprise\Common7\IDE;&lt;br&gt;
+D:\Windows Kits\10\Include\10.0.18362.0\ucrt;&lt;br&gt;
+2.新建&lt;code&gt;include&lt;/code&gt;环境变量，设置头文件路径：&lt;br&gt;
+D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.23.28105\include;&lt;br&gt;
+D:\Windows Kits\10\Include\10.0.18362.0\ucrt;&lt;br&gt;
+3.新建&lt;code&gt;lib&lt;/code&gt;环境变量，设置头文件路径：&lt;br&gt;
+D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.23.28105\lib\x86;&lt;br&gt;
+D:\Windows Kits\10\Lib\10.0.18362.0\ucrt\x86;&lt;br&gt;
+C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm64.microsoft.net.native.compiler\2.2.7-rel-27913-00\tools\arm64\ilc\tools\link&lt;br&gt;
+完成三步骤，Windows命令行C++编译环境配置成功。&lt;br&gt;
+注:lib目录还需要&lt;code&gt;uuid.lib&lt;/code&gt;,&lt;code&gt;kernel32.lib&lt;/code&gt;两个文件,VS2019以前在类似&lt;br&gt;
+&lt;code&gt;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib&lt;/code&gt;&lt;br&gt;
+VS2019已经找不到这个目录,所以我们就到&lt;code&gt;C:\Program Files (x86)\Microsoft SDKs\&lt;/code&gt;目录手动搜索&lt;code&gt;uuid.lib&lt;/code&gt;文件名,找到后打开这个文件夹,路径添加到lib环境变量中.&lt;br&gt;
+&lt;strong&gt;3.Windows不重启就使环境变量修改生效&lt;/strong&gt;&lt;br&gt;
+在“我的电脑”-&amp;gt;“属性”-&amp;gt;“高级”-&amp;gt;“环境变量”中增加或修改环境变量后，需重启系统才能使之生效。有没有什么方法可让它即时生效呢？下面介绍一种方法：&lt;/p&gt;
+&lt;p&gt;以修改环境变量“PATH”为例，修改完成后，进入DOS命令提示符，输入：set PATH=C: ，关闭DOS窗口。再次打开DOS窗口，输入：echo %PATH% ，可以发现“我的电脑”-&amp;gt;“属性”-&amp;gt;“高级”-&amp;gt;“环境变量”中设置的 PATH 值已经生效。&lt;/p&gt;
+&lt;p&gt;不用担心DOS窗口中的修改会影响环境变量的值，DOS窗口中的环境变量只是Windows环境变量的一个副本而已。但是对副本的修改却会引发Windows环境变量的刷新，这正是我们想要的！&lt;/p&gt;
+&lt;p&gt;5.测试编写hello.cpp代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;iostream&amp;gt;
+ 
+int main(){
+	printf(&amp;quot;hello world&amp;quot;);
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;6.CMD执行命令&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cl.exe hello.cpp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;7.Makefile的编写和nmake使用方法&lt;/strong&gt;&lt;br&gt;
+编写Makefile：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Specify compiler
+CC=cl.exe
+  
+.PHONY : all
+all : hello-world.exe
+  
+hello-world.exe : hello-world.cpp
+	$(CC)  hello-world.cpp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;8.运行nmake:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;E:\C\Hello&amp;gt;nmake
+&lt;/code&gt;&lt;/pre&gt;
+">Win10下使用VS2019自带的MSVC CL命令行编译C/C++程序</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/32-bit-assembly-environment-configuration-for-vs2019/"" data-c="
+          &lt;p&gt;1.库文件（很重要）&lt;br&gt;
+用我这一份就行：https://www.lanzous.com/i6364hg&lt;br&gt;
+http://kipirvine.com/asm/examples/index.htm&lt;br&gt;
+2.VS依赖库&lt;br&gt;
+打开VS2019，选择桌面向导&lt;br&gt;
+&lt;img src=&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909084838434-353952510.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+配置项目时，选择空项目。&lt;br&gt;
+&lt;img src=&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085049633-145023122.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+项目右键,选择生成依赖项-生成自定义&lt;br&gt;
+&lt;img src=&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085555422-619624429.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+选中masm&lt;br&gt;
+&lt;img src=&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085646866-895171305.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+3.asm项目配置&lt;br&gt;
+新建一个C++的源文件，将后缀改为asm&lt;br&gt;
+&lt;img src=&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085836499-433031139.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+选择上面的项目，再选择&amp;quot;项目名&amp;quot;+属性。&lt;br&gt;
+配置的具体看图，链接后面记得加上分号，链接地址就是之前我上传那个irvine文件的文件绝对路径。&lt;br&gt;
+&lt;img src=&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090305324-1594431552.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090319094-1585005821.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090424955-210674537.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+在“链接器”——“输入”——“附加依赖项”中输入Irvine32的库名称“Irvine32.lib;”，同样是以分号结束（原本输入框是有数据的，直接在前面输入，以分号结束），回车确认，点击确定关闭窗口。&lt;br&gt;
+&lt;img src=&#34;https://img-blog.csdn.net/20180808215513298?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2Zlbmd5YWt1bg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+4.汇编程序测试&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">对VS2019进行32位汇编环境配置</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/Reverse-game-roadmap/"" data-c="
+          &lt;p&gt;逆向工程实战 揭秘汇编/反汇编（win32+游戏逆向实战）&lt;br&gt;
+https://www.bilibili.com/video/av48021550&lt;br&gt;
+前提条件-C C++语言基础&lt;/p&gt;
+&lt;!-- more --&gt;
+">游戏逆向路线图</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/sublime-text-3-plugin/"" data-c="
+          &lt;p&gt;使用Sublime Text里面自带的Package Control安装～&lt;br&gt;
+使用shift+command（control）+P，输入install，选择Install Package回车～&lt;br&gt;
+输入x86，选择x86 and x86_64 Assembly 安装～&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;80×86汇编.asm文件的语法高亮插件&lt;br&gt;
+&lt;code&gt;x86 and x86_64 Assembly&lt;/code&gt;&lt;br&gt;
+安装成功后重启软件就能使用了= =（只要文件名的后缀为.asm就可以自动高亮～）&lt;br&gt;
+&lt;img src=&#34;https://img-blog.csdn.net/20160721221930647&#34; alt=&#34;x86 and x86_64 Assembly&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+">Sublime Text 3 编程常用插件推荐</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/converttoutf8--sublime-text-3/"" data-c="
+          &lt;p&gt;1.首先为&lt;code&gt;Sublime Text 3&lt;/code&gt;安装&lt;code&gt;pakcage control&lt;/code&gt;功能,用于安装插件：&lt;br&gt;
+&lt;code&gt;Tools--&amp;gt; install Package Control...&lt;/code&gt;&lt;br&gt;
+安装好后会在 Preferences 这个菜单下出现了菜单项 Package Control&lt;br&gt;
+Ctrl+Shift+P或&lt;code&gt;Preferences--&amp;gt;Package Control&lt;/code&gt;打开Package Control输入或选择:&amp;quot;Package Control: &lt;code&gt;Install Package&lt;/code&gt;&amp;quot;读包完后输入插件名称开始安装插件：&lt;br&gt;
+在输入框中输入&lt;code&gt;Convert&lt;/code&gt;，自动匹配后，选择&lt;code&gt;ConvertToUTF8&lt;/code&gt;插件，回车，等待安装完毕&lt;br&gt;
+关闭&lt;code&gt;Sublime Text 3&lt;/code&gt;将文件重新用&lt;code&gt;Sublime Text 3&lt;/code&gt;打开即可&lt;/p&gt;
+">安装ConvertToUTF8插件解决Sublime Text 3中文乱码</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/asm32-nmake-masm32-env-config/"" data-c="
+          &lt;p&gt;下载 &lt;strong&gt;MASM32 SDK&lt;/strong&gt; &lt;a href=&#34;http://www.masm32.com/download.htm&#34;&gt;官网下载&lt;/a&gt;&lt;br&gt;
+安装 用管理员身份运行安装 目录：&lt;strong&gt;C:\masm32&lt;/strong&gt;&lt;br&gt;
+配置 右击&amp;quot;计算机&amp;quot;---属性---高级系统设置---环境变量---在用户变量新建并添加如下内容&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;pre&gt;&lt;code&gt;变量名      变量值
+include     C:\masm32\include
+lib         C:\masm32\lib
+PATH        C:\masm32\bin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载批处理bat,自动设置&lt;br&gt;
+&lt;a href=&#34;https://www.lanzous.com/i6u747e&#34;&gt;Var.bat&lt;/a&gt;&lt;br&gt;
+下载 &lt;strong&gt;NMAKE&lt;/strong&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.lanzous.com/i6u73hi&#34;&gt;nmake.exe&lt;/a&gt;&lt;br&gt;
+也可以到 &lt;strong&gt;Visual Studio 2019&lt;/strong&gt; 本地安装目录中找到&lt;br&gt;
+&lt;code&gt;D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.23.28105\bin\Hostx86\x86&lt;/code&gt;&lt;br&gt;
+将&lt;code&gt;nmake.exe&lt;/code&gt;复制到&lt;code&gt;C:\masm32\bin&lt;/code&gt;目录即可&lt;br&gt;
+Makefile&lt;br&gt;
+下载&lt;a href=&#34;https://www.lanzous.com/i6u75ha&#34;&gt;Makefile&lt;/a&gt;文件模板&lt;br&gt;
+在含有&lt;code&gt;Makefile&lt;/code&gt;的编译目录CMD &lt;code&gt;&amp;gt;nmake&lt;/code&gt; 即可完成编译&lt;br&gt;
+Makefile文件一般格式:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;EXE = Test.exe		#指定输出文件
+OBJS = Test.obj		#需要的目标文件
+RES = Test.res		#需要的资源文件
+
+LINK_FLAG = /subsystem:windows	#连接选项
+ML_FLAG = /c /coff		#编译选项
+
+$(EXE): $(OBJS) $(RES)
+	Link $(LINK_FLAG) $(OBJS) $(RES)
+
+.asm.obj:
+	ml $(ML_FLAG) $&amp;lt;
+.rc.res:
+	rc $&amp;lt;
+
+clean:
+	del *.obj
+	del *.res
+
+&lt;/code&gt;&lt;/pre&gt;
+">32位汇编Nmake与Masm32编译环境配置</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/hexo-jing-tai-bo-ke-ben-di-bu-shu/"" data-c="
+          &lt;p&gt;Hexo官网：&lt;a href=&#34;https://hexo.io/zh-cn/&#34;&gt;https://hexo.io/zh-cn/&lt;/a&gt;&lt;br&gt;
+Hexo依赖于Node.js：&lt;a href=&#34;https://nodejs.org/&#34;&gt;https://nodejs.org/&lt;/a&gt;下载并安装好&lt;br&gt;
+云部署需要Git：&lt;a href=&#34;https://git-scm.com/&#34;&gt;https://git-scm.com/&lt;/a&gt;下载并安装好&lt;br&gt;
+&lt;a href=&#34;https://github.com/zhuzhuyule/HexoEditor&#34;&gt;HexoEditor&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装hexo到本地部署&#34;&gt;安装Hexo到本地部署&lt;/h3&gt;
+&lt;p&gt;在你想放博客的文件夹右键打开&lt;code&gt;Git Bash&lt;/code&gt;,粘贴下面的文本，安装&lt;br&gt;
+&lt;code&gt;$ npm install hexo-cli -g&lt;/code&gt;&lt;br&gt;
+PS:如果下载速度慢可以先设置一个国内&lt;code&gt;cnpm&lt;/code&gt;镜像，执行：&lt;br&gt;
+&lt;code&gt;npm install -g cnpm --registry=http://registry.npm.taobao.org&lt;/code&gt;&lt;br&gt;
+然后安装hexo，相应的&lt;code&gt;npm&lt;/code&gt;也要换成&lt;code&gt;cnpm&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/eCqEWD.jpg&#34; alt=&#34;eCqEWD.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+安装 Hexo 完成后，请执行下列&lt;a href=&#34;https://hexo.io/zh-cn/docs/commands&#34;&gt;命令&lt;/a&gt;，Hexo 将会在指定文件夹中新建所需要的文件。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo init &amp;lt;folder&amp;gt;
+$ cd &amp;lt;folder&amp;gt;
+$ npm install
+$ hexo server
+INFO  Start processing
+INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/ePKwHs.md.jpg&#34; alt=&#34;ePKwHs.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+新建完成后，指定文件夹的目录如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.
+├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;config.yml&lt;/strong&gt;&lt;br&gt;
+网站的 &lt;a href=&#34;https://hexo.io/zh-cn/docs/configuration&#34;&gt;配置&lt;/a&gt; 信息，您可以在此配置大部分的参数。&lt;br&gt;
+&lt;strong&gt;package.json&lt;/strong&gt;&lt;br&gt;
+应用程序的信息。EJS, Stylus 和 Markdown renderer 已默认安装，您可以自由移除。&lt;br&gt;
+&lt;strong&gt;scaffolds&lt;/strong&gt;&lt;br&gt;
+模版 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。&lt;br&gt;
+&lt;strong&gt;source&lt;/strong&gt;&lt;br&gt;
+资源文件夹是存放用户资源的地方。除 posts 文件夹之外，开头命名为  (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。&lt;br&gt;
+&lt;strong&gt;themes&lt;/strong&gt;&lt;br&gt;
+主题 文件夹。Hexo 会根据主题来生成静态页面。&lt;/p&gt;
+&lt;h3 id=&#34;云部署准备-git配置&#34;&gt;云部署准备-Git配置&lt;/h3&gt;
+&lt;p&gt;打开&lt;code&gt;Git Bash&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;$ git config --global user.name &amp;quot;zikercn&amp;quot;&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;$ git config --global user.email &amp;quot;zikercn@gmail.com&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;云部署准备-github仓库创建&#34;&gt;云部署准备-Github仓库创建&lt;/h3&gt;
+&lt;p&gt;在Github上创建Pages仓库&lt;br&gt;
+点击右上角的&lt;strong&gt;＋&lt;/strong&gt; 选择&lt;a href=&#34;https://github.com/new&#34;&gt; New repository&lt;/a&gt;，&lt;br&gt;
+仓库名取固定格式&lt;code&gt;你的用户名.github.io&lt;/code&gt;,其他不变，点&lt;strong&gt;Create repository&lt;/strong&gt;创建&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/eCDLcQ.jpg&#34; alt=&#34;eCDLcQ.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+复制SSH地址：&lt;code&gt;git@github.com:zikercn/zikercn.github.io.git&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/ePMTds.jpg&#34; alt=&#34;ePMTds.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;云部署准备-ssh秘钥配置&#34;&gt;云部署准备-SSH秘钥配置&lt;/h3&gt;
+&lt;h4 id=&#34;本地生成ssh-key&#34;&gt;本地生成&lt;strong&gt;SSH key&lt;/strong&gt;:&lt;/h4&gt;
+&lt;p&gt;1.打开&lt;code&gt;Git Bash&lt;/code&gt;,粘贴下面的文本，替换您的GitHub电子邮件地址。&lt;br&gt;
+&lt;code&gt;$ ssh-keygen -t rsa -b 4096 -C &amp;quot;zikercn@gmail.com&amp;quot;&lt;/code&gt;&lt;br&gt;
+连续回车即可，这将使用提供的电子邮件作为标签创建一个新的ssh密钥。&lt;br&gt;
+秘钥保存位置在：&lt;code&gt;/Users/ZHM/.ssh/id_rsa&lt;/code&gt;文件夹内&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/eC2vxf.jpg&#34; alt=&#34;eC2vxf.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd ~/.ssh
+$ ls
+id_rsa  id_rsa.pub
+id_rsa 为私钥  id_rsa.pub 为公钥
+$ cat id_rsa.pub 查看公钥内容并复制
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/eCfvxx.jpg&#34; alt=&#34;eCfvxx.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;把生成的公钥添加到github账户&#34;&gt;把生成的公钥添加到Github账户：&lt;/h4&gt;
+&lt;p&gt;点击右上角的头像，选择&lt;a href=&#34;https://github.com/settings/profile&#34;&gt;Settings&lt;/a&gt;，在左侧选择&lt;a href=&#34;https://github.com/settings/keys&#34;&gt;SSH and GPG keys&lt;/a&gt;，这里就是管理SSH秘钥的地方，一台机器对应一个秘钥keys。&lt;br&gt;
+点击&lt;a href=&#34;https://github.com/settings/ssh/new&#34;&gt;New SSH key&lt;/a&gt;添加公钥&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/eChMdg.jpg&#34; alt=&#34;eChMdg.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/eChfTe.jpg&#34; alt=&#34;eChfTe.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+测试&lt;br&gt;
+&lt;code&gt;ssh git@github.com&lt;/code&gt;&lt;br&gt;
+第一次提示连接确认输入&lt;code&gt;yes&lt;/code&gt;回车，当显示下面的语句就表示连接成功了&lt;br&gt;
+&lt;code&gt;Hi zikercn! You&#39;ve successfully authenticated&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;把生成的公钥添加到coding账户&#34;&gt;把生成的公钥添加到Coding账户：&lt;/h4&gt;
+&lt;p&gt;点击右上角的头像，选择&lt;a href=&#34;https://coding.net/user/account/setting/basic&#34;&gt;个人设置&lt;/a&gt;，在左侧选择&lt;a href=&#34;https://coding.net/user/account/setting/keys&#34;&gt;SSH公钥&lt;/a&gt;，&lt;br&gt;
+点击&lt;code&gt;新增公钥&lt;/code&gt;添加公钥&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/eCo4DP.jpg&#34; alt=&#34;eCo4DP.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置_configyml&#34;&gt;配置&lt;code&gt;_config.yml&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;您可以在&lt;code&gt;_config.yml&lt;/code&gt;中修改大部分的&lt;a href=&#34;https://hexo.io/zh-cn/docs/configuration&#34;&gt;配置&lt;/a&gt; 。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/eCDLcQ.jpg&#34; alt=&#34;eCDLcQ.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+复制SSH地址：&lt;code&gt;git@github.com:zikercn/zikercn.github.io.git&lt;/code&gt;&lt;br&gt;
+打开本地Hexo博客目录，用编辑器打开&lt;code&gt;_config.yml&lt;/code&gt;到最下面编辑&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/ePhMEF.jpg&#34; alt=&#34;ePhMEF.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+打开本地Hexo博客目录，右键打开&lt;code&gt;Git Bash&lt;/code&gt;,用下面的命名生成静态文件&lt;br&gt;
+&lt;code&gt;$ hexo generate&lt;/code&gt;&lt;br&gt;
+修改主题，把下载好的主题解压到&lt;strong&gt;themes&lt;/strong&gt;目录，修改&lt;code&gt;_config.yml&lt;/code&gt;，theme：名称与主题文件夹名称相同&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/ePgDaj.jpg&#34; alt=&#34;ePgDaj.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+修改好主题后重新生成静态页面，本地预览看看，没有问题就可以云部署了&lt;br&gt;
+&lt;code&gt;$ hexo generate&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;$ hexo server&lt;/code&gt;&lt;br&gt;
+其他&lt;code&gt;permalink: /posts/:title/&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;部署到github&#34;&gt;部署到Github&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;$ hexo deploy&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;ERROR Deployer not found: git&lt;/code&gt;&lt;br&gt;
+如果现实上面的提示就需要下载deployer,如果在&lt;br&gt;
+&lt;code&gt;$ npm install hexo-deployer-git --save&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;hexo日常管理相关命令&#34;&gt;Hexo日常管理相关命令：&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo new [layout] &amp;lt;title&amp;gt;
+$ hexo new 文章名
+$ hexo new page 页面名
+$ hexo clean
+$ hexo generate
+$ hexo deploy
+&lt;/code&gt;&lt;/pre&gt;
+">Hexo静态博客本地部署+Github云部署</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/shi-yong-travis-ci-zi-dong-hua-bu-shu-hexo-jing-tai-bo-ke-dao-github/"" data-c="
+          &lt;p&gt;本地搭建好hexo静态博客后 &lt;a href=&#34;&#34;&gt;不会参考另一篇&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;在github上创建token&#34;&gt;在Github上创建token&lt;/h4&gt;
+&lt;p&gt;点击右上角你的头像，选择&lt;a href=&#34;https://github.com/settings/profile&#34;&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/a&gt;，在左侧栏选择&lt;a href=&#34;https://github.com/settings/apps&#34;&gt;&lt;strong&gt;Developer settings&lt;/strong&gt;&lt;/a&gt;选择&lt;a href=&#34;https://github.com/settings/tokens&#34;&gt;&lt;strong&gt;Personal access tokens&lt;/strong&gt;&lt;/a&gt;，点击&lt;a href=&#34;https://github.com/settings/tokens/new&#34;&gt;Generate new token&lt;/a&gt;创建一个新的token，名称随便填，只勾选第一项&lt;strong&gt;repo&lt;/strong&gt;即可，点击下方&lt;strong&gt;Generate token&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/eCDjns.jpg&#34; alt=&#34;eCDjns.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+把生成的一串token复制保存起来一会要用。&lt;br&gt;
+&lt;code&gt;a08ee50a6ae24debedb3944b8c565111068a6697&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/eCDOXj.jpg&#34; alt=&#34;eCDOXj.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;在github上创建pages仓库&#34;&gt;在Github上创建Pages仓库&lt;/h4&gt;
+&lt;p&gt;点击右上角的&lt;strong&gt;＋&lt;/strong&gt; 选择&lt;a href=&#34;https://github.com/new&#34;&gt; New repository&lt;/a&gt;，&lt;br&gt;
+仓库名取固定格式&lt;code&gt;你的用户名.github.io&lt;/code&gt;,其他不变，点&lt;strong&gt;Create repository&lt;/strong&gt;创建&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/22/eCDLcQ.jpg&#34; alt=&#34;eCDLcQ.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置travis-ci&#34;&gt;配置Travis CI&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://avatars3.githubusercontent.com/oa/1508?s=100&amp;amp;u=bf603d782b6026ffb9d2d665d34c3a4d7192e260&amp;amp;v=4&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;a href=&#34;https://www.travis-ci.org/&#34;&gt;Travis CI&lt;/a&gt; https://www.travis-ci.org/&lt;br&gt;
+Travis CI 提供的是持续集成服务（Continuous Integration，简称 CI）。它绑定 Github 上面的项目，只要有新的代码，就会自动抓取。然后，提供一个运行环境，执行测试，完成构建，还能部署到服务器。&lt;br&gt;
+持续集成指的是只要代码有变更，就自动运行构建和测试，反馈运行结果。确保符合预期以后，再将新代码&amp;quot;集成&amp;quot;到主干。&lt;br&gt;
+持续集成的好处在于，每次代码的小幅变更，就能看到运行结果，从而不断累积小的变更，而不是在开发周期结束时，一下子合并一大块代码。&lt;br&gt;
+Travis CI 只支持 Github，不支持其他代码托管服务。&lt;br&gt;
+&lt;img src=&#34;http://www.ruanyifeng.com/blogimg/asset/2017/bg2017121901.png&#34; alt=&#34;Travis CI&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+1、首先打开&lt;a href=&#34;https://www.travis-ci.org/&#34;&gt;Travis CI&lt;/a&gt;官网，点击右上角的&lt;strong&gt;Sign in with GitHub&lt;/strong&gt;，使用&lt;strong&gt;Github&lt;/strong&gt;账号登录&lt;strong&gt;Travis CI&lt;/strong&gt;。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/21/eCuRV1.jpg&#34; alt=&#34;eCuRV1.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+Travis 会列出 Github 上面你的所有仓库，以及你所属于的组织。此时，选择你需要 Travis 帮你构建的仓库，打开仓库旁边的开关。一旦激活了一个仓库，Travis 会监听这个仓库的所有变化。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/21/eCugbR.jpg&#34; alt=&#34;eCugbR.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;新建travisyml&#34;&gt;新建.travis.yml&lt;/h3&gt;
+&lt;p&gt;Travis 要求项目的根目录下面，必须有一个.travis.yml文件。这是配置文件，指定了 Travis 的行为。该文件必须保存在 Github 仓库里面，一旦代码仓库有新的 Commit，Travis 就会去找这个文件，执行里面的命令。&lt;br&gt;
+这个文件采用 YAML 格式。下面是一个最简单的 Python 项目的.travis.yml文件。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;language: python
+script: true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上面代码中，设置了两个字段。language字段指定了默认运行环境，这里设定使用 Python 环境。script字段指定要运行的脚本，script: true表示不执行任何脚本，状态直接设为成功。&lt;br&gt;
+Travis 默认提供的运行环境，请参考&lt;a href=&#34;https://docs.travis-ci.com/user/languages&#34;&gt;官方文档&lt;/a&gt; 。目前一共支持31种语言，以后还会不断增加。&lt;/p&gt;
+">使用Travis CI自动化部署hexo静态博客到Github</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/vmware-workstation-pro-15-xu-ni-ji-an-zhuang-macos/"" data-c="
+          &lt;p&gt;&lt;strong&gt;VMware Workstation Pro 15.1.0 官方版&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;官方下载地址&lt;/strong&gt; &lt;a href=&#34;https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.1.0-13591040.exe&#34;&gt;VMware-workstation-full-15.1.0-13591040&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;序列号15.x&lt;/strong&gt;：FC7D0-D1YDL-M8DXZ-CYPZE-P2AY6&lt;br&gt;
+&lt;strong&gt;VMware Workstation Pro 15 解锁工具&lt;/strong&gt;&lt;br&gt;
+虚拟机解锁工具 MacOS Unlocker for VMware v3.0.2&lt;br&gt;
+百度网盘：&lt;a href=&#34;https://pan.baidu.com/s/1Drj2GUdtxV1cZitSoH9D7Q&#34;&gt;下载&lt;/a&gt; (提取码: bdhc)&lt;br&gt;
+蓝奏云：&lt;a href=&#34;https://www.lanzous.com/i23440d&#34;&gt;下载&lt;/a&gt;&lt;br&gt;
+更新日志 &lt;a href=&#34;https://github.com/DrDonk/unlocker&#34;&gt;https://github.com/DrDonk/unlocker&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;macOS Mojave 10.14.5【18F132】虚拟机用原版镜像（物理机安装勿下！）&lt;/strong&gt;&lt;br&gt;
+本地下载：&lt;a href=&#34;http://www.misonsky.cn/storge/?/%E9%BB%91%E8%8B%B9%E6%9E%9C%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%A8/Install%20macOS%20Mojave%2010.14.5%E3%80%9018F132%E3%80%91%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%A8%E5%8E%9F%E7%89%88%E9%95%9C%E5%83%8F/Install%20macOS%20Mojave%2010.14.5%E3%80%9018F132%E3%80%91%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%A8%E5%8E%9F%E7%89%88%E9%95%9C%E5%83%8F.cdr&#34;&gt;下载&lt;/a&gt;（建议使用FDM软件下载）&lt;br&gt;
+百度网盘：&lt;a href=&#34;https://pan.baidu.com/s/1oyvyqUud9oK5S3VNbcgtOQ&#34;&gt;下载&lt;/a&gt;（提取码：f8s7）&lt;/p&gt;
+&lt;h1 id=&#34;安装步骤&#34;&gt;&lt;strong&gt;安装步骤&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;1、安装好VMware后，关闭VMware软件，停止其服务&lt;br&gt;
+Win10系统：右键单击左下角&lt;strong&gt;开始&lt;/strong&gt;菜单，选择&lt;strong&gt;计算机管理&lt;/strong&gt;在&lt;strong&gt;服务&lt;/strong&gt;里停止&lt;strong&gt;VMware&lt;/strong&gt;开头的五个服务进程。&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/21/epYLSx.png&#34; alt=&#34;epYLSx.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+2、下载 MacOS Unlocker for VMware v3.0.2 压缩包，解压缩后，找到里面的 &lt;strong&gt;win-install.cmd&lt;/strong&gt;，然后右键以管理员身份运行它。&lt;br&gt;
+如在命令行界面卡住了，就需要需要手动下载VMware最新补丁文件到当前目录&lt;br&gt;
+&lt;strong&gt;VMware补丁下载最新版&lt;/strong&gt;：&lt;a href=&#34;http://softwareupdate.vmware.com/cds/vmw-desktop/fusion/11.1.0/13668589/packages/&#34;&gt;com.vmware.fusion.tools.darwin.zip.tar&lt;/a&gt;&lt;br&gt;
+11.1.0/13668589/packages/com.vmware.fusion.tools.darwin.zip.tar&lt;br&gt;
+然后再右键&lt;strong&gt;win-install.cmd&lt;/strong&gt;以管理员身份运行它，等它运行完毕后会自动关闭窗口。&lt;br&gt;
+3、接下来打开 VMware &lt;strong&gt;创建新的虚拟机&lt;/strong&gt;，选择&lt;strong&gt;典型&lt;/strong&gt;下一步，在选择：&lt;strong&gt;安装程序光盘进行文件(iso)&lt;/strong&gt; 选择下载好的cdr镜像，在下一步就可以选择 &lt;strong&gt;Apple Mac OS X(M)&lt;/strong&gt; 系统了，如下图所示：&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/21/eptPfI.jpg&#34; alt=&#34;eptPfI.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+4、需要注意的是，当我们创建好 Mac OS X 虚拟机后，我们先找到刚刚创建的虚拟机所在的目录，比如在 D:\Program Files\VMware\Virtual Machines\macOS Mojave 10.14，如果你的路径不一样，请找到你自己设置的路径，然后在这路径下找到后缀名为 .vmx 的文件，比如是 macOS Mojave 10.14.vmx，接着以记事本的方式将其打开，在里面先找到 &lt;code&gt;smc.present = &amp;quot;TRUE&amp;quot;&lt;/code&gt;，然后在它下面添加一行：&lt;br&gt;
+&lt;code&gt;smc.version = &amp;quot;0&amp;quot;&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/21/eptHHg.jpg&#34; alt=&#34;eptHHg.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+完事后保存。接下来就可以享受 VMware 安装 Mac OS X 系统的过程了。&lt;br&gt;
+5、进入系统后，首先推出安装磁盘，在VMware上方&lt;strong&gt;虚拟机&lt;/strong&gt;选择&lt;strong&gt;安装VMware Toos&lt;/strong&gt;,安装完VMware Toos后重启系统即可实现全屏盒文件共享功能,安装过程中被阻止的按提示操作允许，到&lt;strong&gt;偏好设置-安装与隐私&lt;/strong&gt;中允许。&lt;/p&gt;
+">VMware Workstation Pro 15 虚拟机安装 MacOS</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/shi-yong-megacmd-guan-li-mega-wen-jian-yu-tong-bu/"" data-c="
+          &lt;p&gt;&lt;a href=&#34;https://mega.nz/cmd&#34;&gt;MEGAcmd&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/20/ZzNQbQ.jpg&#34; alt=&#34;MEGAcmd-Win&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h1 id=&#34;win10使用megacmd&#34;&gt;Win10使用MEGAcmd&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lfQSgJ.png&#34; alt=&#34;Win10使用MEGAcmd.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;code&gt;MEGA CMD&amp;gt; login zikercn@gmail.com 密码&lt;/code&gt;&lt;br&gt;
+下次打开MEGAcmd会自动登录，直接ls就可以看远程目录&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/20/ZzNMDg.jpg&#34; alt=&#34;MEGAcmd-Win2&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;code&gt;zikercn@gmail.com:/$ sync Win本地文件夹 MEGA远程文件夹&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;zikercn@gmail.com:/$ sync E:/MEGA/Gridea MEGAcmd/Gridea&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/20/ZzNKKS.jpg&#34; alt=&#34;MEGAcmd-Win-sync&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;macos使用megacmd&#34;&gt;MacOS使用MEGAcmd&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.ax1x.com/2019/07/20/ZzOnDx.png&#34; alt=&#34;ZzOnDx.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/20/ZzOmK1.png&#34; alt=&#34;ZzOmK1.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2020/01/09/lfQwbq.png&#34; alt=&#34;MacOS使用MEGAcmd.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;code&gt;MEGA CMD&amp;gt; login zikercn@gmail.com 密码&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;zikercn@gmail.com:/$ sync Mac本地文件夹 MEGA远程文件夹&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;zikercn@gmail.com:/$ sync /Users/zhm/MEGA/Gridea MEGAcmd/Gridea&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://s2.ax1x.com/2019/07/20/ZzOMVK.png&#34; alt=&#34;ZzOMVK.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+">使用MEGAcmd管理MEGA文件与同步</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/about/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;欢迎来到我的小站呀，很高兴遇见你！🤝&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;关于本站&#34;&gt;🏠 关于本站&lt;/h2&gt;
+&lt;h2 id=&#34;博主是谁&#34;&gt;👨‍💻 博主是谁&lt;/h2&gt;
+&lt;h2 id=&#34;兴趣爱好&#34;&gt;⛹ 兴趣爱好&lt;/h2&gt;
+&lt;h2 id=&#34;联系我呀&#34;&gt;📬 联系我呀&lt;/h2&gt;
+">关于</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="https://zikercn.com/post/hello-gridea/"" data-c="
+          &lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;
+✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/getgridea/gridea&#34;&gt;Github&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://gridea.dev/&#34;&gt;Gridea 主页&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://fehey.com/&#34;&gt;示例网站&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特性&#34;&gt;特性👇&lt;/h2&gt;
+&lt;p&gt;📝  你可以使用最酷的 &lt;strong&gt;Markdown&lt;/strong&gt; 语法，进行快速创作&lt;/p&gt;
+&lt;p&gt;🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片&lt;/p&gt;
+&lt;p&gt;🏷️  你可以对文章进行标签分组&lt;/p&gt;
+&lt;p&gt;📋  你可以自定义菜单，甚至可以创建外部链接菜单&lt;/p&gt;
+&lt;p&gt;💻  你可以在 &lt;strong&gt;Windows&lt;/strong&gt;，&lt;strong&gt;MacOS&lt;/strong&gt; 或 &lt;strong&gt;Linux&lt;/strong&gt; 设备上使用此客户端&lt;/p&gt;
+&lt;p&gt;🌎  你可以使用 &lt;strong&gt;𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌&lt;/strong&gt; 或 &lt;strong&gt;Coding Pages&lt;/strong&gt; 向世界展示，未来将支持更多平台&lt;/p&gt;
+&lt;p&gt;💬  你可以进行简单的配置，接入 &lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt; 或 &lt;a href=&#34;https://github.com/SukkaW/DisqusJS&#34;&gt;DisqusJS&lt;/a&gt; 评论系统&lt;/p&gt;
+&lt;p&gt;🇬🇧  你可以使用&lt;strong&gt;中文简体&lt;/strong&gt;或&lt;strong&gt;英语&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力&lt;/p&gt;
+&lt;p&gt;🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步&lt;/p&gt;
+&lt;p&gt;🌱 当然 &lt;strong&gt;Gridea&lt;/strong&gt; 还很年轻，有很多不足，但请相信，它会不停向前 🏃&lt;/p&gt;
+&lt;p&gt;未来，它一定会成为你离不开的伙伴&lt;/p&gt;
+&lt;p&gt;尽情发挥你的才华吧！&lt;/p&gt;
+&lt;p&gt;😘 Enjoy~&lt;/p&gt;
+">Hello Gridea</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<script>
+  // var escape = "[{&#34;content&#34;:&#34;&lt;p&gt;1.安装&lt;a href=\&#34;https://code.visualstudio.com\&#34;&gt;Visual Studio Code&lt;/a&gt;程序。建议选择其他下载&lt;code&gt;System Installer 64bit&lt;/code&gt;,这个可以选择安装路径到其他盘符&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbTdvF.png\&#34; alt=\&#34;System Installer 64bit.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;!-- more --&gt;\n&lt;p&gt;2.安装&lt;code&gt;VS Code&lt;/code&gt;的&lt;code&gt;C/C++&lt;/code&gt;扩展。您可以通过在&amp;quot;扩展(Extension)&amp;quot;视图(&lt;code&gt;Ctrl + Shift + X&lt;/code&gt;)中搜索&lt;code&gt;c++&lt;/code&gt;来安装C/C++扩展。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbT28K.png\&#34; alt=\&#34;VS Code的C/C++扩展.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n如果需要中文界面可以下载&lt;code&gt;Chinese (Simplified)&lt;/code&gt;扩展&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lb7jW6.png\&#34; alt=\&#34;extension for Chinese (Simplified).png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n3.通过SourceForge网站将&lt;a href=\&#34;https://sourceforge.net/projects/mingw-w64/files/\&#34;&gt;Mingw-w64&lt;/a&gt;安装到其路径中没有空格的文件夹（换句话说,不是C/Program Files/的默认位置）。在本教程中，我们假定将其安装在下&lt;code&gt;C:\\mingw-w64&lt;/code&gt;.&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbTRgO.png\&#34; alt=\&#34;mingw-w64-install.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n您也可以下载离线版本&lt;a href=\&#34;https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-win32/seh/x86_64-8.1.0-release-win32-seh-rt_v6-rev0.7z\&#34;&gt;x86_64-win32-seh&lt;/a&gt;直接解压到指定目录即可如:&lt;code&gt;C:\\mingw64&lt;/code&gt;&lt;br&gt;\n4. 将您的Mingw-w64 bin文件夹的路径添加到Windows PATH环境变量。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbxoyq.png\&#34; alt=\&#34;Mingw-w64 PATH环境变量.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n5. 检查您的MinGW安装&lt;br&gt;\n要检查您的Mingw-w64工具是否已正确安装并可用，请打开新的命令提示符并键入：&lt;br&gt;\n&lt;code&gt;g++ --version&lt;/code&gt; 检查GCC编译器版本&lt;br&gt;\n&lt;code&gt;gdb --version&lt;/code&gt; 检查GDB调试器版本&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbzkkD.png\&#34; alt=\&#34;检查您的MinGW安装.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n6. 创建工作区&lt;br&gt;\n在本地创建一个文件夹当作&lt;code&gt;VSCode&lt;/code&gt;的工作区,在该文件夹中按&lt;code&gt;Shift+右键&lt;/code&gt;,选择&lt;code&gt;在此处打开 Powershell 窗口&lt;/code&gt;,并通过输入以下命令在该文件夹中打开VS Code：&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;mkdir projects\ncd projects\nmkdir helloworld\ncd helloworld\ncode .\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbqpad.png\&#34; alt=\&#34;该文件夹中打开VS Code.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n7. 添加源代码文件&lt;br&gt;\n在文件资源管理器标题栏中，选择“ 新建文件”按钮并命名该文件&lt;code&gt;helloworld.cpp&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbqZqg.png\&#34; alt=\&#34;VSCode新建文件.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n现在粘贴此源代码：&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;\n#include &amp;lt;vector&amp;gt;\n#include &amp;lt;string&amp;gt;\n\nusing namespace std;\n\nint main()\n{\n   vector&amp;lt;string&amp;gt; msg {&amp;quot;Hello&amp;quot;, &amp;quot;C++&amp;quot;, &amp;quot;World&amp;quot;, &amp;quot;from&amp;quot;, &amp;quot;VS Code&amp;quot;, &amp;quot;and the C++ extension!&amp;quot;};\n\n   for (const string&amp;amp; word : msg)\n   {\n      cout &amp;lt;&amp;lt; word &amp;lt;&amp;lt; &amp;quot; &amp;quot;;\n   }\n   cout &amp;lt;&amp;lt; endl;\n}\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;现在按&lt;code&gt;Ctrl + S&lt;/code&gt;保存文件。文件资源管理器视图（Ctrl + Shift + E）&lt;br&gt;\n您还可以通过选中&lt;code&gt;文件&lt;/code&gt;主菜单中的&lt;code&gt;自动保存&lt;/code&gt;，启用&lt;code&gt;自动保存&lt;/code&gt;以自动保存文件更改。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbqzlV.png\&#34; alt=\&#34;文件自动保存.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n8. 尝试自动补全感知&lt;br&gt;\n在新&lt;code&gt;helloworld.cpp&lt;/code&gt;文件中，将鼠标悬停在&lt;code&gt;vector&lt;/code&gt;或上&lt;code&gt;string&lt;/code&gt;以查看类型信息。声明&lt;code&gt;msg&lt;/code&gt;变量后，&lt;code&gt;msg.&lt;/code&gt;像在调用成员函数时一样开始键入。您应该立即看到一个显示所有成员函数的完成列表，以及一个显示该&lt;code&gt;msg&lt;/code&gt;对象的类型信息的窗口：&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbLXHe.png\&#34; alt=\&#34;自动补全感知.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n您可以按&lt;code&gt;Tab&lt;/code&gt;键插入选定的成员。然后，当您添加左括号时，您将看到有关该函数所需的任何参数的信息。&lt;br&gt;\n9. 编译helloworld.cpp&lt;br&gt;\n接下来，您将创建一个&lt;code&gt;tasks.json&lt;/code&gt;文件来告诉VS Code如何构建（编译）程序。该任务将调用g++编译器以基于源代码创建可执行文件。&lt;br&gt;\n从主菜单中，选择&lt;code&gt;终端(Terminal) &amp;gt; 配置默认生成任务(Configure Default Build Task)&lt;/code&gt;。在下拉列表中，将显示任务下拉列表，其中列出了C ++编译器的各种预定义构建任务。选择&lt;code&gt;g++.exe build active file&lt;/code&gt;，该文件将构建编辑器中当前显示（活动）的文件。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbXMid.png\&#34; alt=\&#34;配置默认生成任务.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbjS6P.png\&#34; alt=\&#34;g++.exe构建活动文件.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n这将tasks.json在.vscode文件夹中创建一个文件，然后在编辑器中将其打开。&lt;br&gt;\n您的新tasks.json文件应类似于以下JSON：&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;{\n// 有关 tasks.json 格式的文档，请参见\n    // https://go.microsoft.com/fwlink/?LinkId=733558\n    &amp;quot;version&amp;quot;: &amp;quot;2.0.0&amp;quot;,\n    &amp;quot;tasks&amp;quot;: [\n        {\n            &amp;quot;type&amp;quot;: &amp;quot;shell&amp;quot;,\n            &amp;quot;label&amp;quot;: &amp;quot;g++.exe build active file&amp;quot;,\n            &amp;quot;command&amp;quot;: &amp;quot;C:\\\\mingw64\\\\bin\\\\g++.exe&amp;quot;,\n            &amp;quot;args&amp;quot;: [\n                &amp;quot;-g&amp;quot;,\n                &amp;quot;${file}&amp;quot;,\n                &amp;quot;-o&amp;quot;,\n                &amp;quot;${fileDirname}\\\\${fileBasenameNoExtension}.exe&amp;quot;\n            ],\n            &amp;quot;options&amp;quot;: {\n                &amp;quot;cwd&amp;quot;: &amp;quot;C:\\\\mingw64\\\\bin&amp;quot;\n            },\n            &amp;quot;problemMatcher&amp;quot;: [\n                &amp;quot;$gcc&amp;quot;\n            ],\n            &amp;quot;group&amp;quot;: {\n                &amp;quot;kind&amp;quot;: &amp;quot;build&amp;quot;,\n                &amp;quot;isDefault&amp;quot;: true\n            }\n        }\n    ]\n}\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;该&lt;code&gt;command&lt;/code&gt;设置指定要运行的程序；在这种情况下是&lt;code&gt;g++&lt;/code&gt;。该&lt;code&gt;args&lt;/code&gt;数组指定将传递给g++的命令行参数。必须按照编译器期望的顺序指定这些参数。该任务告诉g ++获取活动文件（&lt;code&gt;${file}&lt;/code&gt;），对其进行编译，然后在当前目录（&lt;code&gt;${fileDirname}&lt;/code&gt;）中创建一个与活动文件同名但&lt;code&gt;.exe&lt;/code&gt;扩展名为（&lt;code&gt;${fileBasenameNoExtension}.exe&lt;/code&gt;）的可执行文件，&lt;code&gt;helloworld.exe&lt;/code&gt;以我们的示例为例。&lt;br&gt;\n该&lt;code&gt;label&lt;/code&gt;值就是您将在任务列表中看到的值；您可以随意命名。&lt;br&gt;\n对象中的&lt;code&gt;&amp;quot;isDefault&amp;quot;: true&lt;/code&gt;值&lt;code&gt;group&lt;/code&gt;指定当您按&lt;code&gt;Ctrl + Shift + B&lt;/code&gt;时将运行此任务。此属性仅出于方便起见；如果将其设置为&lt;code&gt;false&lt;/code&gt;，您仍然可以从“&lt;code&gt;终端&lt;/code&gt;”菜单中使用&lt;code&gt;运行生成任务&lt;/code&gt;来运行它。&lt;/p&gt;\n&lt;ol&gt;\n&lt;li&gt;运行构建&lt;/li&gt;\n&lt;/ol&gt;\n&lt;ul&gt;\n&lt;li&gt;1.回到&lt;code&gt;helloworld.cpp&lt;/code&gt;。您的任务将生成活动文件，并且您要生成&lt;code&gt;helloworld.cpp&lt;/code&gt;。&lt;/li&gt;\n&lt;li&gt;2.要运行中定义的构建任务&lt;code&gt;tasks.json&lt;/code&gt;，请按&lt;code&gt;Ctrl + Shift + B&lt;/code&gt;或从&lt;code&gt;终端&lt;/code&gt;主菜单中选择&lt;code&gt;运行生成任务&lt;/code&gt;。&lt;/li&gt;\n&lt;li&gt;3.任务开始时，您应该看到“集成终端”面板出现在源代码编辑器下方。任务完成后，终端将显示编译器的输出，指示构建成功还是失败。对于成功的g ++构建，输出如下所示：&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lqSAbV.png\&#34; alt=\&#34;集成终端指示构建成功还是失败.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;li&gt;4.使用+按钮创建一个新终端，您将拥有一个新终端（运行PowerShell），并将该&lt;code&gt;helloworld&lt;/code&gt;文件夹作为工作目录。运行&lt;code&gt;dir&lt;/code&gt;，您现在应该看到可执行文件&lt;code&gt;helloworld.exe&lt;/code&gt;。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lqnz5j.png\&#34; alt=\&#34;终端运行.helloworld.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;li&gt;5.您可以&lt;code&gt;helloworld&lt;/code&gt;在终端中输入来运行&lt;code&gt;.\\helloworld.exe&lt;/code&gt;。&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ol&gt;\n&lt;li&gt;修改task.json&lt;br&gt;\n您可以&lt;code&gt;tasks.json&lt;/code&gt;使用&lt;code&gt;&amp;quot;${workspaceFolder}\\\\*.cpp&amp;quot;&lt;/code&gt;代替的参数来修改以构建多个C ++文件&lt;code&gt;${file}&lt;/code&gt;。这将生成&lt;code&gt;.cpp&lt;/code&gt;当前文件夹中的所有文件。您也可以通过替换&lt;code&gt;&amp;quot;${fileDirname}\\\\${fileBasenameNoExtension}.exe&amp;quot;&lt;/code&gt;为硬编码的文件名（例如&lt;code&gt;&amp;quot;${workspaceFolder}\\\\myProgram.exe&amp;quot;&lt;/code&gt;）来修改输出文件名。&lt;/li&gt;\n&lt;li&gt;调试helloworld.cpp&lt;br&gt;\n接下来，您将创建一个&lt;code&gt;launch.json&lt;/code&gt;文件来配置VS Code，以在您按&lt;code&gt;F5&lt;/code&gt;调试程序时启动&lt;code&gt;GDB调试器&lt;/code&gt;。从主菜单中，选择&lt;code&gt;调试&lt;/code&gt;&amp;gt;&lt;code&gt;添加配置...&lt;/code&gt;，然后选择&lt;code&gt;C++(GDB/LLDB)&lt;/code&gt;。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lqu4yV.png\&#34; alt=\&#34;调试 添加配置.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lqKSeO.png\&#34; alt=\&#34;C++(GDB/LLDB).png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n然后，您将看到各种预定义调试配置的下拉列表。选择&lt;code&gt;g++.exe build and debug active file&lt;/code&gt;。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lqKQYj.png\&#34; alt=\&#34;g++.exe构建并调试活动文件.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\nVS Code创建一个&lt;code&gt;launch.json&lt;/code&gt;文件，在编辑器中将其打开，然后生成并运行“ helloworld”。&lt;/li&gt;\n&lt;/ol&gt;\n&lt;pre&gt;&lt;code&gt;{\n    // 使用 IntelliSense 了解相关属性。 \n    // 悬停以查看现有属性的描述。\n    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387\n    &amp;quot;version&amp;quot;: &amp;quot;0.2.0&amp;quot;,\n    &amp;quot;configurations&amp;quot;: [\n        {\n            &amp;quot;name&amp;quot;: &amp;quot;g++.exe build and debug active file&amp;quot;,\n            &amp;quot;type&amp;quot;: &amp;quot;cppdbg&amp;quot;,\n            &amp;quot;request&amp;quot;: &amp;quot;launch&amp;quot;,\n            &amp;quot;program&amp;quot;: &amp;quot;${fileDirname}\\\\${fileBasenameNoExtension}.exe&amp;quot;,\n            &amp;quot;args&amp;quot;: [],\n            &amp;quot;stopAtEntry&amp;quot;: false,\n            &amp;quot;cwd&amp;quot;: &amp;quot;${workspaceFolder}&amp;quot;,\n            &amp;quot;environment&amp;quot;: [],\n            &amp;quot;externalConsole&amp;quot;: false,\n            &amp;quot;MIMode&amp;quot;: &amp;quot;gdb&amp;quot;,\n            &amp;quot;miDebuggerPath&amp;quot;: &amp;quot;C:\\\\mingw64\\\\bin\\\\gdb.exe&amp;quot;,\n            &amp;quot;setupCommands&amp;quot;: [\n                {\n                    &amp;quot;description&amp;quot;: &amp;quot;为 gdb 启用整齐打印&amp;quot;,\n                    &amp;quot;text&amp;quot;: &amp;quot;-enable-pretty-printing&amp;quot;,\n                    &amp;quot;ignoreFailures&amp;quot;: true\n                }\n            ],\n            &amp;quot;preLaunchTask&amp;quot;: &amp;quot;g++.exe build active file&amp;quot;\n        }\n    ]\n}\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;该&lt;code&gt;program&lt;/code&gt;设置指定要调试的程序。在这里，它被设置为活动文件文件夹&lt;code&gt;${fileDirname}&lt;/code&gt;和&lt;code&gt;.exe&lt;/code&gt;扩展名的活动文件名&lt;code&gt;${fileBasenameNoExtension}.exe&lt;/code&gt;，如果&lt;code&gt;helloworld.cpp&lt;/code&gt;是，则为活动文件&lt;code&gt;helloworld.exe&lt;/code&gt;。&lt;br&gt;\n默认情况下，C ++扩展名不会在源代码中添加任何断点，并且其&lt;code&gt;stopAtEntry&lt;/code&gt;值设置为&lt;code&gt;false&lt;/code&gt;。将&lt;code&gt;stopAtEntry&lt;/code&gt;值更改&lt;code&gt;true&lt;/code&gt;为会导致调试器&lt;code&gt;main&lt;/code&gt;在启动调试时在该方法上停止。&lt;br&gt;\n13. 开始调试会话&lt;br&gt;\n回到&lt;code&gt;helloworld.cpp&lt;/code&gt;它是活动文件。&lt;br&gt;\n按&lt;code&gt;F5&lt;/code&gt;或从主菜单中选择&lt;code&gt;调试&lt;/code&gt;&amp;gt;&lt;code&gt;启动调试&lt;/code&gt;。在开始浏览源代码之前，让我们花一点时间注意用户界面中的一些更改：&lt;br&gt;\n集成终端出现在源代码编辑器的底部。在&lt;code&gt;调试输出&lt;/code&gt;选项卡中，您将看到指示调试器已启动并正在运行的输出。&lt;br&gt;\n编辑器突出显示方法中的第一条语句&lt;code&gt;main&lt;/code&gt;。这是C ++扩展自动为您设置的断点：&lt;br&gt;\n左侧的“调试”视图显示调试信息。您将在本教程的后面看到一个示例。&lt;/p&gt;\n&lt;p&gt;在代码编辑器的顶部，将显示一个调试控制面板。您可以通过抓住左侧的点在屏幕上移动它。&lt;/p&gt;\n&lt;p&gt;14.C/C++配置&lt;br&gt;\n如果要对C / C ++扩展进行更多控制，可以创建一个&lt;code&gt;c_cpp_properties.json&lt;/code&gt;文件，该文件将允许您更改设置，例如编译器的路径，包含路径，C ++标准（默认为C ++ 17）等。&lt;/p&gt;\n&lt;p&gt;您可以从命令面板（Ctrl + Shift + P）编辑配置（UI）通过运行命令&lt;code&gt;C/C++: 编辑配置(UI) C/C++: Edit configurations(UI)&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lq1e3j.png\&#34; alt=\&#34;C/C++: 编辑配置(UI).png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n这将打开&lt;code&gt;C/ C++配置&lt;/code&gt;页面。当您在此处进行更改时，VS Code会将其写入到文件夹中称为&lt;code&gt;c_cpp_properties.json&lt;/code&gt;的&lt;code&gt;.vscode&lt;/code&gt;文件中。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lq3ks1.png\&#34; alt=\&#34;C/C++配置页面.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\nVisual Studio Code将这些设置放在中.vscode\\c_cpp_properties.json。如果直接打开该文件，则它应如下所示：&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;{\n    &amp;quot;configurations&amp;quot;: [\n        {\n            &amp;quot;name&amp;quot;: &amp;quot;Win32&amp;quot;,\n            &amp;quot;includePath&amp;quot;: [\n                &amp;quot;${workspaceFolder}/**&amp;quot;\n            ],\n            &amp;quot;defines&amp;quot;: [\n                &amp;quot;_DEBUG&amp;quot;,\n                &amp;quot;UNICODE&amp;quot;,\n                &amp;quot;_UNICODE&amp;quot;\n            ],\n            &amp;quot;compilerPath&amp;quot;: &amp;quot;C:\\\\mingw64\\\\bin\\\\gcc.exe&amp;quot;,\n            &amp;quot;cStandard&amp;quot;: &amp;quot;c11&amp;quot;,\n            &amp;quot;cppStandard&amp;quot;: &amp;quot;c++17&amp;quot;,\n            &amp;quot;intelliSenseMode&amp;quot;: &amp;quot;clang-x64&amp;quot;\n        }\n    ],\n    &amp;quot;version&amp;quot;: 4\n}\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;仅当程序包含不在工作空间或标准库路径中的头文件时，才需要添加到&lt;code&gt;包含路径数组&lt;/code&gt;设置中。&lt;br&gt;\n15.编译路径&lt;br&gt;\n该&lt;code&gt;compilerPath&lt;/code&gt;设置是您配置中的重要设置。该扩展使用它来推断C ++标准库头文件的路径。当扩展知道在哪里可以找到那些文件时，它可以提供有用的功能，例如智能补全和&lt;code&gt;转到定义&lt;/code&gt;导航。&lt;br&gt;\nC/C++扩展尝试&lt;code&gt;compilerPath&lt;/code&gt;根据其在系统上找到的内容来使用默认的编译器位置进行填充。该扩展在几个常见的编译器位置中查找。&lt;br&gt;\n该&lt;code&gt;compilerPath&lt;/code&gt;搜索顺序是：&lt;br&gt;\n首先检查Microsoft Visual C ++编译器&lt;br&gt;\n然后在Windows Subsystem for Linux（WSL）上寻找g ++&lt;br&gt;\n然后用g ++编写Mingw-w64。&lt;br&gt;\n如果安装了Visual Studio或WSL，则可能需要进行更改compilerPath以匹配项目的首选编译器。例如，如果使用Win32线程和SEH异常处理选项在C:\\mingw64下安装Mingw-w64版本8.1.0，则路径如下所示：&lt;code&gt;C:\\\\mingw64\\\\bin\\\\g++.exe&lt;/code&gt;&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;zai-vs-code-zhong-bian-yi-cshi-yong-mingw-w64&#34;,&#34;abstract&#34;:&#34;&lt;p&gt;1.安装&lt;a href=\&#34;https://code.visualstudio.com\&#34;&gt;Visual Studio Code&lt;/a&gt;程序。建议选择其他下载&lt;code&gt;System Installer 64bit&lt;/code&gt;,这个可以选择安装路径到其他盘符&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/14/lbTdvF.png\&#34; alt=\&#34;System Installer 64bit.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;在VS Code中编译C++使用Mingw-w64&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2020-01-14 13:00:09&#34;,&#34;dateFormat&#34;:&#34;2020-01-14&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/zai-vs-code-zhong-bian-yi-cshi-yong-mingw-w64/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;10 min read&#34;,&#34;time&#34;:599000,&#34;words&#34;:2466,&#34;minutes&#34;:10},&#34;description&#34;:&#34;1.安装Visual Studio Code程序。建议选择其他下载System Installer 64bit,这个可以选择安装路径到其他盘符\n\n\n2.安装VS Code的C/C++扩展。您可以通过在&amp;quot;扩展(Extension)&amp;...&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;Simple DirectMedia Layer是一个跨平台开发库，旨在通过OpenGL和Direct3D提供对音频，键盘，鼠标，操纵杆和图形硬件的低级访问。视频播放软件，仿真器和受欢迎的游戏（包括Valve屡获殊荣的目录和许多Humble Bundle游戏）都使用它。&lt;/p&gt;\n&lt;!-- more --&gt;\n&lt;p&gt;SDL官网: &lt;a href=\&#34;https://www.libsdl.org/\&#34;&gt;https://www.libsdl.org/&lt;/a&gt;&lt;br&gt;\n下载开发库:&lt;br&gt;\nWindows：&lt;br&gt;\n&lt;a href=\&#34;https://www.libsdl.org/release/SDL2-devel-2.0.10-VC.zip\&#34;&gt;SDL2-devel-2.0.10-VC.zip&lt;/a&gt;（Visual C ++ 32/64位）&lt;br&gt;\n&lt;a href=\&#34;https://www.libsdl.org/release/SDL2-devel-2.0.10-mingw.tar.gz\&#34;&gt;SDL2-devel-2.0.10-mingw.tar.gz&lt;/a&gt;（&lt;a href=\&#34;http://mingw-w64.sourceforge.net/\&#34;&gt;MinGW&lt;/a&gt; 32/64位）&lt;/p&gt;\n&lt;h1 id=\&#34;windows-visual-studio-2019-中配置sdl\&#34;&gt;Windows Visual Studio 2019 中配置SDL&lt;/h1&gt;\n&lt;p&gt;1.下载好&lt;code&gt;SDL2-devel-2.0.10-VC&lt;/code&gt;,解压到固定目录下(如:E:\\CLibrary\\SDL2\\SDL2-VC)&lt;br&gt;\n2.打开Visual Studio，新建一个控制台空项目,新建一个.cpp源文件&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/12/louI1O.png\&#34; alt=\&#34;Visual Studio控制台空项目.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n3.配置SDL环境:在解决方案管理器中右键项目名称,选择属性&lt;br&gt;\n4.在&lt;code&gt;C/C++ -&amp;gt;常规-&amp;gt;附加包含目录&lt;/code&gt;中添加SDL2文件夹下的&lt;code&gt;include文件夹&lt;/code&gt;,确认,应用&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/12/loeASg.png\&#34; alt=\&#34;CC++ -常规-附加包含目录.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n5.在&lt;code&gt;链接器-&amp;gt;常规-&amp;gt;附加库目录&lt;/code&gt;中添加SDL2文件夹下的&lt;code&gt;lib\\x86文件夹&lt;/code&gt;（因为此时活动平台为32位，所以选择x86。如果需要使用64位，则选择”lib\\x64”文件夹）&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/12/loe59S.png\&#34; alt=\&#34;链接器-常规-附加库目录.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n6.在&lt;code&gt;链接器-&amp;gt;输入-&amp;gt;附加依赖项&lt;/code&gt;中添加&lt;code&gt;SDL2.lib和SDL2main.lib&lt;/code&gt;,中间用英文分号或回车间隔&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/12/lomZ9O.png\&#34; alt=\&#34;链接器-输入-附加依赖项.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n7.将&lt;code&gt;lib\\x86文件夹&lt;/code&gt;下&lt;code&gt;SDL2.dll&lt;/code&gt;复制到工程跟目录与.cpp文件同一目录中&lt;br&gt;\n同样要注意x86和x64要分别对应，如果是配置x64平台则复制粘贴”lib\\x64”下的SDL2.dll。此处选择x86：&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/12/lomDU0.png\&#34; alt=\&#34;SDL2.dll复制到工程跟目录.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n8.测试SDL2配置环境:&lt;br&gt;\n&lt;code&gt;//注意:SDL环境需要main函数有输入的参数（即使用不到）&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/12/logOyT.png\&#34; alt=\&#34;测试SDL2配置环境.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;\n#include &amp;quot;SDL.h&amp;quot;\n//注意:SDL环境需要main函数有输入的参数（即使用不到）\nint main(int argc, char* argv[])\n{\n    SDL_Init(SDL_INIT_VIDEO); \n    SDL_Window* window = SDL_CreateWindow(&amp;quot;SDL2&amp;quot;, 100, 100, 640, 480, SDL_WINDOW_OPENGL);\n    if (window == NULL)\n    {\n        printf(&amp;quot;Could not create window: %s\\n&amp;quot;, SDL_GetError());\n        return 1;\n    }\n    SDL_Delay(5000);\n    SDL_DestroyWindow(window);\n    SDL_Quit();\n    return 0;\n}\n&lt;/code&gt;&lt;/pre&gt;\n&lt;h1 id=\&#34;windows-mingw-codeblocks-中配置sdl\&#34;&gt;Windows MinGW CodeBlocks 中配置SDL&lt;/h1&gt;\n&lt;p&gt;1.下载好&lt;code&gt;SDL2-devel-2.0.10-mingw&lt;/code&gt;,解压到固定目录下(如:E:\\CLibrary\\SDL2\\SDL2-mingw)&lt;br&gt;\n2.打开CodeBlocks，新建一个控制台空项目,自带一个main.cpp源文件&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/12/lobNAx.png\&#34; alt=\&#34;CodeBlocks控制台空项目.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n3.配置SDL环境:在当前项目右键选择&lt;code&gt;构建选项&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/12/loqtMQ.png\&#34; alt=\&#34;当前项目右键选择.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n4.在&lt;code&gt;项目build选项&lt;/code&gt;中找到&lt;code&gt;搜索目录&lt;/code&gt;,在&lt;code&gt;编译器&lt;/code&gt;选项里点&lt;code&gt;添加&lt;/code&gt;,添加SDL2include目录&lt;br&gt;\n&lt;code&gt;E:\\CLibrary\\SDL2\\SDL2-mingw\\i686-w64-mingw32\\include\\SDL2&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/12/loO9tx.png\&#34; alt=\&#34;添加SDL2include目录.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n5.在&lt;code&gt;项目build选项&lt;/code&gt;中找到&lt;code&gt;搜索目录&lt;/code&gt;,在&lt;code&gt;链接器&lt;/code&gt;选项里点&lt;code&gt;添加&lt;/code&gt;,添加SDL2lib目录&lt;br&gt;\n&lt;code&gt;E:\\CLibrary\\SDL2\\SDL2-mingw\\i686-w64-mingw32\\lib&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/12/loXuqJ.png\&#34; alt=\&#34;添加SDL2lib目录.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n6.切换到&lt;code&gt;链接器设置&lt;/code&gt;选项页,在&lt;code&gt;其他链接器选项&lt;/code&gt;中添加GCC编译参数&lt;br&gt;\n&lt;code&gt;-lmingw32 -lSDL2main -lSDL2&lt;/code&gt;&lt;br&gt;\n顺序不能错,点击确定,这样SDL2在CodeBlocks中就配置好了&lt;br&gt;\n7.将&lt;code&gt;i686-w64-mingw32\\bin文件夹&lt;/code&gt;下&lt;code&gt;SDL2.dll&lt;/code&gt;复制到工程跟目录与.cpp文件同一目录中&lt;br&gt;\n&lt;code&gt;E:\\CLibrary\\SDL2\\SDL2-mingw\\i686-w64-mingw32\\bin&lt;/code&gt;&lt;br&gt;\n8.测试SDL2配置环境:&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/12/lTPloF.png\&#34; alt=\&#34;测试SDL2配置环境.png\&#34; loading=\&#34;lazy\&#34;&gt;)&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;\n#include &amp;lt;SDL.h&amp;gt;\n\n//注意:SDL环境需要main函数有输入的参数（即使用不到）\nint main(int argc,char* argv[])\n{\n    SDL_Init(SDL_INIT_VIDEO);\n    SDL_Window* window = SDL_CreateWindow(&amp;quot;SDL 窗口&amp;quot;,100,100,640,400,SDL_WINDOW_SHOWN);\n    if(window == NULL)\n    {\n        printf(&amp;quot;Could not create window: %s\\n&amp;quot;,SDL_GetError());\n        return 1;\n    }\n    SDL_Delay(5000);\n    SDL_DestroyWindow(window);\n    SDL_Quit();\n    return 0;\n}\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;构建并运行,弹窗窗口,表示测试成功&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;SDL-Library-Simple-DirectMedia-Layer&#34;,&#34;abstract&#34;:&#34;&lt;p&gt;Simple DirectMedia Layer是一个跨平台开发库，旨在通过OpenGL和Direct3D提供对音频，键盘，鼠标，操纵杆和图形硬件的低级访问。视频播放软件，仿真器和受欢迎的游戏（包括Valve屡获殊荣的目录和许多Humble Bundle游戏）都使用它。&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;C语言第三方库 SDL 多媒体库 使用教程&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2020-01-12 10:29:23&#34;,&#34;dateFormat&#34;:&#34;2020-01-12&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/SDL-Library-Simple-DirectMedia-Layer/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;4 min read&#34;,&#34;time&#34;:208000,&#34;words&#34;:809,&#34;minutes&#34;:4},&#34;description&#34;:&#34;Simple DirectMedia Layer是一个跨平台开发库，旨在通过OpenGL和Direct3D提供对音频，键盘，鼠标，操纵杆和图形硬件的低级访问。视频播放软件，仿真器和受欢迎的游戏（包括Valve屡获殊荣的目录和许多Humble...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;&lt;a href=\&#34;#windows-visual-studio-2019-%E4%B8%AD%E9%85%8D%E7%BD%AEsdl\&#34;&gt;Windows Visual Studio 2019 中配置SDL&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#windows-mingw-codeblocks-%E4%B8%AD%E9%85%8D%E7%BD%AEsdl\&#34;&gt;Windows MinGW CodeBlocks 中配置SDL&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&#34;},{&#34;content&#34;:&#34;&lt;h1 id=\&#34;使用图形界面开启-ssh\&#34;&gt;使用图形界面开启 SSH&lt;/h1&gt;\n&lt;p&gt;1.点击桌面左上角的小苹果,然后选择&amp;quot;系统偏好设置...&amp;quot;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lRW1pD.jpg\&#34; alt=\&#34;系统偏好设置.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;!-- more --&gt;\n&lt;p&gt;2.在系统偏好设置界面选择 &amp;quot;共享&amp;quot;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lRfGCT.jpg\&#34; alt=\&#34;在系统偏好设置界面选择 &amp;quot;共享.jpg&amp;quot;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n3.在共享界面勾选&amp;quot;远程登录&amp;quot;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lR4wh6.jpg\&#34; alt=\&#34;在共享界面勾选&amp;quot;远程登录.jpg&amp;quot;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n&lt;code&gt;若要远程登录这台电脑，请键入“ssh zhm@192.168.234.138”。&lt;/code&gt;&lt;br&gt;\n4.在Windows中用&amp;quot;Xshell&amp;quot;连接&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lRIcFI.jpg\&#34; alt=\&#34;在Windows中用&amp;quot;Xshell&amp;quot;连接.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;h1 id=\&#34;使用终端命令行方式开启-ssh\&#34;&gt;使用终端命令行方式开启 SSH&lt;/h1&gt;\n&lt;p&gt;1.查看 SSH服务 是否已经运行&lt;br&gt;\n&lt;code&gt;sudo launchctl list | grep sshd&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lRTtxK.jpg\&#34; alt=\&#34;查看 SSH服务 是否已经运行.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\nPS:如果 SSH服务 已运行,会显示:&lt;br&gt;\n&lt;code&gt;-\t0\tcom.openssh.sshd&lt;/code&gt;&lt;br&gt;\n2.没有开始 SSH服务 状态&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lR72f1.jpg\&#34; alt=\&#34;没有开始 SSH服务 状态.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n3.输入命令开启SSH服务&lt;br&gt;\n&lt;code&gt;sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lRqVwF.jpg\&#34; alt=\&#34;开启SSH服务命令.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n4.输入命令停止SSH服务&lt;br&gt;\n&lt;code&gt;sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lRb2M6.jpg\&#34; alt=\&#34;停止SSH服务命令.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n5.在Linux中用SSH命令连接&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lROTJJ.jpg\&#34; alt=\&#34;在Linux中用SSH命令连接.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;zai-macos-zhong-qi-dong-ssh-fu-wu&#34;,&#34;abstract&#34;:&#34;&lt;h1 id=\&#34;使用图形界面开启-ssh\&#34;&gt;使用图形界面开启 SSH&lt;/h1&gt;\n&lt;p&gt;1.点击桌面左上角的小苹果,然后选择&amp;quot;系统偏好设置...&amp;quot;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lRW1pD.jpg\&#34; alt=\&#34;系统偏好设置.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;在MacOS中启动SSH服务&#34;,&#34;tags&#34;:[{&#34;name&#34;:&#34;MacOS&#34;,&#34;slug&#34;:&#34;2hxiOOamT&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/2hxiOOamT/&#34;},{&#34;name&#34;:&#34;SSH&#34;,&#34;slug&#34;:&#34;VEWm2xaIaS&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/VEWm2xaIaS/&#34;},{&#34;name&#34;:&#34;虚拟机&#34;,&#34;slug&#34;:&#34;LaBJ10rdoQ&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/LaBJ10rdoQ/&#34;}],&#34;date&#34;:&#34;2020-01-08 22:32:06&#34;,&#34;dateFormat&#34;:&#34;2020-01-08&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/zai-macos-zhong-qi-dong-ssh-fu-wu/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:49000,&#34;words&#34;:194,&#34;minutes&#34;:1},&#34;description&#34;:&#34;使用图形界面开启 SSH\n1.点击桌面左上角的小苹果,然后选择&amp;quot;系统偏好设置...&amp;quot;\n\n\n2.在系统偏好设置界面选择 &amp;quot;共享&amp;quot;\n\n3.在共享界面勾选&amp;quot;远程登录&amp;quot;\n\n若要远程登录这台...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E5%BC%80%E5%90%AF-ssh\&#34;&gt;使用图形界面开启 SSH&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E4%BD%BF%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%96%B9%E5%BC%8F%E5%BC%80%E5%90%AF-ssh\&#34;&gt;使用终端命令行方式开启 SSH&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&#34;},{&#34;content&#34;:&#34;&lt;p&gt;有时候网站在某种特定的情况下，需要使整个网站变成黑白的颜色。&lt;br&gt;\n&lt;code&gt;&amp;lt;html lang=&amp;quot;zh-CN&amp;quot; style=&amp;quot;filter: grayscale(100%);&amp;quot;&amp;gt;&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lRxSFU.jpg\&#34; alt=\&#34;HTML黑白灰度页面的实现.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;!-- more --&gt;\n&lt;p&gt;filter是滤镜的意思，filter:grayscale的意思就是说给页面加上一个灰度的滤镜，所以html里面的所有内容都会变成黑白的了。&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;html-hei-bai-ye-mian&#34;,&#34;abstract&#34;:&#34;&lt;p&gt;有时候网站在某种特定的情况下，需要使整个网站变成黑白的颜色。&lt;br&gt;\n&lt;code&gt;&amp;lt;html lang=&amp;quot;zh-CN&amp;quot; style=&amp;quot;filter: grayscale(100%);&amp;quot;&amp;gt;&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lRxSFU.jpg\&#34; alt=\&#34;HTML黑白灰度页面的实现.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;HTML黑白灰度页面的实现&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-12-13 18:57:05&#34;,&#34;dateFormat&#34;:&#34;2019-12-13&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/html-hei-bai-ye-mian/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:20000,&#34;words&#34;:87,&#34;minutes&#34;:1},&#34;description&#34;:&#34;有时候网站在某种特定的情况下，需要使整个网站变成黑白的颜色。\n&amp;lt;html lang=&amp;quot;zh-CN&amp;quot; style=&amp;quot;filter: grayscale(100%);&amp;quot;&amp;gt;\n\n\nfilter是滤...&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;https://visualstudio.microsoft.com/zh-hans/downloads/&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;visual-studio-downloads&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;Visual Studio Downloads&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-11-11 10:50:22&#34;,&#34;dateFormat&#34;:&#34;2019-11-11&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/visual-studio-downloads/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:2000,&#34;words&#34;:7,&#34;minutes&#34;:1},&#34;description&#34;:&#34;https://visualstudio.microsoft.com/zh-hans/downloads/\n&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;pre&gt;&lt;code&gt;#include &amp;lt;Windows.h&amp;gt;\n#include &amp;quot;resource.h&amp;quot;\n// 出现在应用程序标题栏中的字符串.\nstatic TCHAR szTitle[] = TEXT(&amp;quot;资源测试&amp;quot;);\nstatic TCHAR szWindowClass[] = TEXT(&amp;quot;WindowsDesktop&amp;quot;);//全局窗口类前置声明\nHINSTANCE hInst;//全局实例句柄前置声明\nLRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);//窗口过程函数前置声明\n//********************程序入口********************\nint CALLBACK WinMain(\n\t_In_ HINSTANCE hInstance,\n\t_In_opt_ HINSTANCE hPrevInstance,\n\t_In_ LPSTR     lpCmdLine,\n\t_In_ int       nCmdShow)\n{\n\tWNDCLASSEX wcex;//窗口类\n\n\twcex.cbSize = sizeof(WNDCLASSEX);\n\twcex.style = CS_HREDRAW | CS_VREDRAW;//水平垂直变化时重绘窗口\n\twcex.lpfnWndProc = WndProc;//窗口过程\n\twcex.cbClsExtra = 0;\n\twcex.cbWndExtra = 0;\n\twcex.hInstance = hInstance;//实例句柄,入口函数传入\n\twcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1));//图标\n\twcex.hCursor = LoadCursor(hInstance, MAKEINTRESOURCE(IDC_CURSOR1));//光标\n\twcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);//背景色\n\twcex.lpszMenuName = NULL;\n\twcex.lpszClassName = szWindowClass;\t//窗口类的名字\n\twcex.hIconSm = LoadIcon(wcex.hInstance, IDI_APPLICATION);\n\tif (!RegisterClassEx(&amp;amp;wcex))\n\t{\n\t\tMessageBox(NULL,\n\t\t\tTEXT(&amp;quot;调用RegisterClassEx失败!&amp;quot;),\t//窗口类注册失败弹窗提示内容\n\t\t\tTEXT(&amp;quot;Windows桌面指南&amp;quot;),\t//注册失败弹窗标题\n\t\t\tNULL);\n\n\t\treturn 1;\n\t}\n\n//********************创建窗口********************\n\tHWND hWnd = CreateWindow(\n\t\tszWindowClass,\t\t\t//窗口类的名字,说明基于哪个窗口类\n\t\tszTitle,\t\t\t\t//窗口标题,在顶部定义szTitle\n\t\tWS_OVERLAPPEDWINDOW,\t//窗口样式\n\t\tCW_USEDEFAULT, CW_USEDEFAULT, //窗口距离屏幕左上角距离x,y\n\t\t500, 400,\t\t\t\t//窗口长度x,高度y\n\t\tNULL,\t\t\t\t\t//父窗口句柄\n\t\tNULL,\t\t\t\t\t//窗口菜单句柄\n\t\thInstance,\t\t\t\t//程序实例句柄\n\t\tNULL\t\t\t\t\t//\n\t);\n\tif (!hWnd)\n\t{\n\t\tMessageBox(NULL,\n\t\t\tTEXT(&amp;quot;调用CreateWindow失败!&amp;quot;),\n\t\t\tTEXT(&amp;quot;Windows桌面指南&amp;quot;),\n\t\t\tNULL);\n\t\treturn 1;\n\t}\n\t// ShowWindow的参数说明:\n\t// hWnd: 从CreateWindow返回的值\n\t// nCmdShow: 来自WinMain的第四个参数\n\tShowWindow(hWnd,\t//显示指定窗口,传句柄\n\t\tnCmdShow);\t\t//怎么显示,最大化最小化显示等\n\tUpdateWindow(hWnd);\t//更新指定窗口的客户区\n\n\t// 主消息循环:\n\tMSG msg;\n\twhile (GetMessage(&amp;amp;msg, NULL, 0, 0))\t//消息队列\n\t{\n\t\tTranslateMessage(&amp;amp;msg);\t//转换\n\t\tDispatchMessage(&amp;amp;msg);\t//分发\n\t}\n\treturn (int)msg.wParam;\t//WM_QUIT\n}\n\n//********************窗口过程********************\nLRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)\n{\n\tPAINTSTRUCT ps;\n\tHDC hdc;\n\tswitch (message)\n\t{\n\tcase WM_PAINT:\t//窗口必须重绘的时候\n\t\thdc = BeginPaint(hWnd, &amp;amp;ps);//返回:设备描述表句柄\n\t\t// TODO: 在此处添加使用 hdc 的任何绘图代码...\n\t\tRectangle(hdc, 5, 5, 480, 355);\t//矩形\n\t\tEndPaint(hWnd, &amp;amp;ps);\n\t\tbreak;\n\tcase WM_DESTROY:\t//消息销毁结束的时候\n\t\tPostQuitMessage(0);\n\t\tbreak;\n\tdefault:\n\t\treturn DefWindowProc(hWnd, message, wParam, lParam);\n\t\tbreak;\n\t}\n}\n&lt;/code&gt;&lt;/pre&gt;\n&#34;,&#34;fileName&#34;:&#34;windows-bian-cheng-mo-ban-wen-jian&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;Windows编程模板文件&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-10-24 22:37:03&#34;,&#34;dateFormat&#34;:&#34;2019-10-24&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/windows-bian-cheng-mo-ban-wen-jian/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;3 min read&#34;,&#34;time&#34;:147000,&#34;words&#34;:535,&#34;minutes&#34;:3},&#34;description&#34;:&#34;#include &amp;lt;Windows.h&amp;gt;\n#include &amp;quot;resource.h&amp;quot;\n// 出现在应用程序标题栏中的字符串.\nstatic TCHAR szTitle[] = TEXT(&amp;quot;资源测试&amp;...&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;用GCC编译C程序,不建议单独安装MinGW,建议安装CodeBlocks里面已经包含MinGW,而且CodeBlocks很不错.&lt;br&gt;\n下载页面:http://www.codeblocks.org/downloads&lt;br&gt;\nDownload the binary release http://www.codeblocks.org/downloads/26&lt;br&gt;\ncodeblocks-17.12mingw-setup.exe&lt;br&gt;\n&lt;a href=\&#34;https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-17.12mingw-setup.exe\&#34;&gt;FossHUB&lt;/a&gt; or &lt;a href=\&#34;http://sourceforge.net/projects/codeblocks/files/Binaries/17.12/Windows/codeblocks-17.12mingw-setup.exe\&#34;&gt;Sourceforge.net&lt;/a&gt;&lt;br&gt;\n下载安装到 D:\\Program Files\\CodeBlocks&lt;br&gt;\n官方下载的 CodeBlocks 全部都是英文版,下载CodeBlocks汉化包&lt;br&gt;\nhttps://www.lanzous.com/i6x2ljg&lt;/p&gt;\n&lt;ol&gt;\n&lt;li&gt;汉化包下载完成后，是一个压缩包，将其解压，其中包含有一个 locale 文件夹里面有个 zh_CN 文件夹,复制到&lt;code&gt;D:\\Program Files\\CodeBlocks\\share\\CodeBlocks\\locale&lt;/code&gt;目录&lt;br&gt;\n更改CodeBlocks设置&lt;/li&gt;\n&lt;li&gt;打开 CodeBlocks，选择 “Settings --&amp;gt; Environmen”&lt;/li&gt;\n&lt;li&gt;选择 View 选项，勾选 Internationalization 选项，同时选择其中的 Chinese(Simplified)。然后点击 OK 按钮。&lt;br&gt;\n设置完成后，直接重新启动 CodeBlocks，此时 CodeBlocks 会出现一个提示框，提示你是否保存更改，选择保存即可。&lt;br&gt;\n再次启动 CodeBlocks，你会看到全新的汉化的 CodeBlocks，虽然没有完全汉化，但起码不会影响日常的正常使用。&lt;/li&gt;\n&lt;/ol&gt;\n&lt;p&gt;&lt;strong&gt;MinGW&lt;/strong&gt;: D:\\Program Files\\CodeBlocks\\MinGW&lt;br&gt;\n配置环境变量:Path D:\\Program Files\\CodeBlocks\\MinGW\\bin&lt;/p&gt;\n&lt;p&gt;gcc可以一次性完成C语言源程序的编译，也可以分步骤完成；下面先介绍一次性编译过程。&lt;/p&gt;\n&lt;p&gt;1.生成可执行程序&lt;br&gt;\ncd xxx　　　　　　　　　　　　# 先进入源程序所在的目录&lt;br&gt;\ngcc hello.cpp　　　　　　　　# 一次性编译，windows系统生成a.exe文件，Linux系统生成a.out文件&lt;br&gt;\ngcc hello.cpp -o hello.exe　　# -o表示输出&lt;br&gt;\ngcc hello.cpp -o ./tmp/hello.exe　　# -o后面也可以跟其他目录，注意tmp目录必须存在，否则gcc会抛出异常&lt;/p&gt;\n&lt;p&gt;2.运行可执行文件&lt;br&gt;\nhello.exe　　　　　　# 运行hello.exe文件，如果是Linux系统，是./hello.out文件&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;win10-codeblocks--mingw-gcc-C&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;Win10下使用CodeBlocks自带的MinGW GCC命令行编译C/C++程序&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-10-23 11:41:36&#34;,&#34;dateFormat&#34;:&#34;2019-10-23&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/win10-codeblocks--mingw-gcc-C/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;2 min read&#34;,&#34;time&#34;:105000,&#34;words&#34;:429,&#34;minutes&#34;:2},&#34;description&#34;:&#34;用GCC编译C程序,不建议单独安装MinGW,建议安装CodeBlocks里面已经包含MinGW,而且CodeBlocks很不错.\n下载页面:http://www.codeblocks.org/downloads\nDownload the ...&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;&lt;strong&gt;1.工具介绍&lt;/strong&gt;&lt;br&gt;\nWindows下VS套件自带的编译程序有以下这些：&lt;br&gt;\ncl.exe：编译程序&lt;br&gt;\nlink.exe：链接程序&lt;br&gt;\nlib.exe：加载lib库的程序&lt;br&gt;\nnmake.exe：用Makefile进行构建、编译的工具&lt;br&gt;\n&lt;strong&gt;2.cl使用方法&lt;/strong&gt;&lt;br&gt;\n用法: cl [ 选项... ] 文件名... [ /link 链接选项... ]&lt;br&gt;\n1.设置Path环境变量：&lt;code&gt;bin&lt;/code&gt;目录cl.exe所在路径路径&lt;br&gt;\nD:\\Program Files\\Microsoft Visual Studio\\2019\\Enterprise\\VC\\Tools\\MSVC\\14.23.28105\\bin\\Hostx86\\x86;&lt;br&gt;\nD:\\Program Files\\Microsoft Visual Studio\\2019\\Enterprise\\VC\\Auxiliary\\Build;&lt;br&gt;\nD:\\Program Files\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\IDE;&lt;br&gt;\nD:\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt;&lt;br&gt;\n2.新建&lt;code&gt;include&lt;/code&gt;环境变量，设置头文件路径：&lt;br&gt;\nD:\\Program Files\\Microsoft Visual Studio\\2019\\Enterprise\\VC\\Tools\\MSVC\\14.23.28105\\include;&lt;br&gt;\nD:\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt;&lt;br&gt;\n3.新建&lt;code&gt;lib&lt;/code&gt;环境变量，设置头文件路径：&lt;br&gt;\nD:\\Program Files\\Microsoft Visual Studio\\2019\\Enterprise\\VC\\Tools\\MSVC\\14.23.28105\\lib\\x86;&lt;br&gt;\nD:\\Windows Kits\\10\\Lib\\10.0.18362.0\\ucrt\\x86;&lt;br&gt;\nC:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm64.microsoft.net.native.compiler\\2.2.7-rel-27913-00\\tools\\arm64\\ilc\\tools\\link&lt;br&gt;\n完成三步骤，Windows命令行C++编译环境配置成功。&lt;br&gt;\n注:lib目录还需要&lt;code&gt;uuid.lib&lt;/code&gt;,&lt;code&gt;kernel32.lib&lt;/code&gt;两个文件,VS2019以前在类似&lt;br&gt;\n&lt;code&gt;C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v7.1A\\Lib&lt;/code&gt;&lt;br&gt;\nVS2019已经找不到这个目录,所以我们就到&lt;code&gt;C:\\Program Files (x86)\\Microsoft SDKs\\&lt;/code&gt;目录手动搜索&lt;code&gt;uuid.lib&lt;/code&gt;文件名,找到后打开这个文件夹,路径添加到lib环境变量中.&lt;br&gt;\n&lt;strong&gt;3.Windows不重启就使环境变量修改生效&lt;/strong&gt;&lt;br&gt;\n在“我的电脑”-&amp;gt;“属性”-&amp;gt;“高级”-&amp;gt;“环境变量”中增加或修改环境变量后，需重启系统才能使之生效。有没有什么方法可让它即时生效呢？下面介绍一种方法：&lt;/p&gt;\n&lt;p&gt;以修改环境变量“PATH”为例，修改完成后，进入DOS命令提示符，输入：set PATH=C: ，关闭DOS窗口。再次打开DOS窗口，输入：echo %PATH% ，可以发现“我的电脑”-&amp;gt;“属性”-&amp;gt;“高级”-&amp;gt;“环境变量”中设置的 PATH 值已经生效。&lt;/p&gt;\n&lt;p&gt;不用担心DOS窗口中的修改会影响环境变量的值，DOS窗口中的环境变量只是Windows环境变量的一个副本而已。但是对副本的修改却会引发Windows环境变量的刷新，这正是我们想要的！&lt;/p&gt;\n&lt;p&gt;5.测试编写hello.cpp代码如下：&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;\n#include &amp;lt;iostream&amp;gt;\n \nint main(){\n\tprintf(&amp;quot;hello world&amp;quot;);\n\treturn 0;\n}\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;&lt;strong&gt;6.CMD执行命令&lt;/strong&gt;&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;cl.exe hello.cpp\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;&lt;strong&gt;7.Makefile的编写和nmake使用方法&lt;/strong&gt;&lt;br&gt;\n编写Makefile：&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;# Specify compiler\nCC=cl.exe\n  \n.PHONY : all\nall : hello-world.exe\n  \nhello-world.exe : hello-world.cpp\n\t$(CC)  hello-world.cpp\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;&lt;strong&gt;8.运行nmake:&lt;/strong&gt;&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;E:\\C\\Hello&amp;gt;nmake\n&lt;/code&gt;&lt;/pre&gt;\n&#34;,&#34;fileName&#34;:&#34;Win10-Visual-Studio-MSVC-CL-C-C++&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;Win10下使用VS2019自带的MSVC CL命令行编译C/C++程序&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-10-22 09:14:31&#34;,&#34;dateFormat&#34;:&#34;2019-10-22&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/Win10-Visual-Studio-MSVC-CL-C-C++/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;3 min read&#34;,&#34;time&#34;:174000,&#34;words&#34;:649,&#34;minutes&#34;:3},&#34;description&#34;:&#34;1.工具介绍\nWindows下VS套件自带的编译程序有以下这些：\ncl.exe：编译程序\nlink.exe：链接程序\nlib.exe：加载lib库的程序\nnmake.exe：用Makefile进行构建、编译的工具\n2.cl使用方法\n用法: ...&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;1.库文件（很重要）&lt;br&gt;\n用我这一份就行：https://www.lanzous.com/i6364hg&lt;br&gt;\nhttp://kipirvine.com/asm/examples/index.htm&lt;br&gt;\n2.VS依赖库&lt;br&gt;\n打开VS2019，选择桌面向导&lt;br&gt;\n&lt;img src=\&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909084838434-353952510.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n配置项目时，选择空项目。&lt;br&gt;\n&lt;img src=\&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085049633-145023122.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n项目右键,选择生成依赖项-生成自定义&lt;br&gt;\n&lt;img src=\&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085555422-619624429.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n选中masm&lt;br&gt;\n&lt;img src=\&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085646866-895171305.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n3.asm项目配置&lt;br&gt;\n新建一个C++的源文件，将后缀改为asm&lt;br&gt;\n&lt;img src=\&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085836499-433031139.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n选择上面的项目，再选择&amp;quot;项目名&amp;quot;+属性。&lt;br&gt;\n配置的具体看图，链接后面记得加上分号，链接地址就是之前我上传那个irvine文件的文件绝对路径。&lt;br&gt;\n&lt;img src=\&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090305324-1594431552.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n&lt;img src=\&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090319094-1585005821.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n&lt;img src=\&#34;https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090424955-210674537.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n在“链接器”——“输入”——“附加依赖项”中输入Irvine32的库名称“Irvine32.lib;”，同样是以分号结束（原本输入框是有数据的，直接在前面输入，以分号结束），回车确认，点击确定关闭窗口。&lt;br&gt;\n&lt;img src=\&#34;https://img-blog.csdn.net/20180808215513298?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2Zlbmd5YWt1bg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n4.汇编程序测试&lt;/p&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;1\&#34;&gt;&lt;img src=\&#34;\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&#34;,&#34;fileName&#34;:&#34;32-bit-assembly-environment-configuration-for-vs2019&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;对VS2019进行32位汇编环境配置&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-10-21 09:23:45&#34;,&#34;dateFormat&#34;:&#34;2019-10-21&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/32-bit-assembly-environment-configuration-for-vs2019/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:48000,&#34;words&#34;:217,&#34;minutes&#34;:1},&#34;description&#34;:&#34;1.库文件（很重要）\n用我这一份就行：https://www.lanzous.com/i6364hg\nhttp://kipirvine.com/asm/examples/index.htm\n2.VS依赖库\n打开VS2019，选择桌面向导\n\n...&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;逆向工程实战 揭秘汇编/反汇编（win32+游戏逆向实战）&lt;br&gt;\nhttps://www.bilibili.com/video/av48021550&lt;br&gt;\n前提条件-C C++语言基础&lt;/p&gt;\n&lt;!-- more --&gt;\n&#34;,&#34;fileName&#34;:&#34;Reverse-game-roadmap&#34;,&#34;abstract&#34;:&#34;&lt;p&gt;逆向工程实战 揭秘汇编/反汇编（win32+游戏逆向实战）&lt;br&gt;\nhttps://www.bilibili.com/video/av48021550&lt;br&gt;\n前提条件-C C++语言基础&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;游戏逆向路线图&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-10-20 17:31:03&#34;,&#34;dateFormat&#34;:&#34;2019-10-20&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/Reverse-game-roadmap/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:8000,&#34;words&#34;:36,&#34;minutes&#34;:1},&#34;description&#34;:&#34;逆向工程实战 揭秘汇编/反汇编（win32+游戏逆向实战）\nhttps://www.bilibili.com/video/av48021550\n前提条件-C C++语言基础\n\n&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;使用Sublime Text里面自带的Package Control安装～&lt;br&gt;\n使用shift+command（control）+P，输入install，选择Install Package回车～&lt;br&gt;\n输入x86，选择x86 and x86_64 Assembly 安装～&lt;/p&gt;\n&lt;!-- more --&gt;\n&lt;p&gt;80×86汇编.asm文件的语法高亮插件&lt;br&gt;\n&lt;code&gt;x86 and x86_64 Assembly&lt;/code&gt;&lt;br&gt;\n安装成功后重启软件就能使用了= =（只要文件名的后缀为.asm就可以自动高亮～）&lt;br&gt;\n&lt;img src=\&#34;https://img-blog.csdn.net/20160721221930647\&#34; alt=\&#34;x86 and x86_64 Assembly\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;sublime-text-3-plugin&#34;,&#34;abstract&#34;:&#34;&lt;p&gt;使用Sublime Text里面自带的Package Control安装～&lt;br&gt;\n使用shift+command（control）+P，输入install，选择Install Package回车～&lt;br&gt;\n输入x86，选择x86 and x86_64 Assembly 安装～&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;Sublime Text 3 编程常用插件推荐&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-10-11 16:09:39&#34;,&#34;dateFormat&#34;:&#34;2019-10-11&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/sublime-text-3-plugin/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:21000,&#34;words&#34;:87,&#34;minutes&#34;:1},&#34;description&#34;:&#34;使用Sublime Text里面自带的Package Control安装～\n使用shift+command（control）+P，输入install，选择Install Package回车～\n输入x86，选择x86 and x86_64 A...&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;1.首先为&lt;code&gt;Sublime Text 3&lt;/code&gt;安装&lt;code&gt;pakcage control&lt;/code&gt;功能,用于安装插件：&lt;br&gt;\n&lt;code&gt;Tools--&amp;gt; install Package Control...&lt;/code&gt;&lt;br&gt;\n安装好后会在 Preferences 这个菜单下出现了菜单项 Package Control&lt;br&gt;\nCtrl+Shift+P或&lt;code&gt;Preferences--&amp;gt;Package Control&lt;/code&gt;打开Package Control输入或选择:&amp;quot;Package Control: &lt;code&gt;Install Package&lt;/code&gt;&amp;quot;读包完后输入插件名称开始安装插件：&lt;br&gt;\n在输入框中输入&lt;code&gt;Convert&lt;/code&gt;，自动匹配后，选择&lt;code&gt;ConvertToUTF8&lt;/code&gt;插件，回车，等待安装完毕&lt;br&gt;\n关闭&lt;code&gt;Sublime Text 3&lt;/code&gt;将文件重新用&lt;code&gt;Sublime Text 3&lt;/code&gt;打开即可&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;converttoutf8--sublime-text-3&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;安装ConvertToUTF8插件解决Sublime Text 3中文乱码&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-10-11 11:51:55&#34;,&#34;dateFormat&#34;:&#34;2019-10-11&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/converttoutf8--sublime-text-3/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:30000,&#34;words&#34;:123,&#34;minutes&#34;:1},&#34;description&#34;:&#34;1.首先为Sublime Text 3安装pakcage control功能,用于安装插件：\nTools--&amp;gt; install Package Control...\n安装好后会在 Preferences 这个菜单下出现了菜单项 Pac...&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;下载 &lt;strong&gt;MASM32 SDK&lt;/strong&gt; &lt;a href=\&#34;http://www.masm32.com/download.htm\&#34;&gt;官网下载&lt;/a&gt;&lt;br&gt;\n安装 用管理员身份运行安装 目录：&lt;strong&gt;C:\\masm32&lt;/strong&gt;&lt;br&gt;\n配置 右击&amp;quot;计算机&amp;quot;---属性---高级系统设置---环境变量---在用户变量新建并添加如下内容&lt;/p&gt;\n&lt;!-- more --&gt;\n&lt;pre&gt;&lt;code&gt;变量名      变量值\ninclude     C:\\masm32\\include\nlib         C:\\masm32\\lib\nPATH        C:\\masm32\\bin\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;下载批处理bat,自动设置&lt;br&gt;\n&lt;a href=\&#34;https://www.lanzous.com/i6u747e\&#34;&gt;Var.bat&lt;/a&gt;&lt;br&gt;\n下载 &lt;strong&gt;NMAKE&lt;/strong&gt;&lt;br&gt;\n&lt;a href=\&#34;https://www.lanzous.com/i6u73hi\&#34;&gt;nmake.exe&lt;/a&gt;&lt;br&gt;\n也可以到 &lt;strong&gt;Visual Studio 2019&lt;/strong&gt; 本地安装目录中找到&lt;br&gt;\n&lt;code&gt;D:\\Program Files\\Microsoft Visual Studio\\2019\\Enterprise\\VC\\Tools\\MSVC\\14.23.28105\\bin\\Hostx86\\x86&lt;/code&gt;&lt;br&gt;\n将&lt;code&gt;nmake.exe&lt;/code&gt;复制到&lt;code&gt;C:\\masm32\\bin&lt;/code&gt;目录即可&lt;br&gt;\nMakefile&lt;br&gt;\n下载&lt;a href=\&#34;https://www.lanzous.com/i6u75ha\&#34;&gt;Makefile&lt;/a&gt;文件模板&lt;br&gt;\n在含有&lt;code&gt;Makefile&lt;/code&gt;的编译目录CMD &lt;code&gt;&amp;gt;nmake&lt;/code&gt; 即可完成编译&lt;br&gt;\nMakefile文件一般格式:&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;EXE = Test.exe\t\t#指定输出文件\nOBJS = Test.obj\t\t#需要的目标文件\nRES = Test.res\t\t#需要的资源文件\n\nLINK_FLAG = /subsystem:windows\t#连接选项\nML_FLAG = /c /coff\t\t#编译选项\n\n$(EXE): $(OBJS) $(RES)\n\tLink $(LINK_FLAG) $(OBJS) $(RES)\n\n.asm.obj:\n\tml $(ML_FLAG) $&amp;lt;\n.rc.res:\n\trc $&amp;lt;\n\nclean:\n\tdel *.obj\n\tdel *.res\n\n&lt;/code&gt;&lt;/pre&gt;\n&#34;,&#34;fileName&#34;:&#34;asm32-nmake-masm32-env-config&#34;,&#34;abstract&#34;:&#34;&lt;p&gt;下载 &lt;strong&gt;MASM32 SDK&lt;/strong&gt; &lt;a href=\&#34;http://www.masm32.com/download.htm\&#34;&gt;官网下载&lt;/a&gt;&lt;br&gt;\n安装 用管理员身份运行安装 目录：&lt;strong&gt;C:\\masm32&lt;/strong&gt;&lt;br&gt;\n配置 右击&amp;quot;计算机&amp;quot;---属性---高级系统设置---环境变量---在用户变量新建并添加如下内容&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;32位汇编Nmake与Masm32编译环境配置&#34;,&#34;tags&#34;:[{&#34;name&#34;:&#34;汇编&#34;,&#34;slug&#34;:&#34;arv9wDcqFk&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/arv9wDcqFk/&#34;},{&#34;name&#34;:&#34;32位汇编&#34;,&#34;slug&#34;:&#34;ONgypNh3x_&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/ONgypNh3x_/&#34;}],&#34;date&#34;:&#34;2019-10-11 10:54:34&#34;,&#34;dateFormat&#34;:&#34;2019-10-11&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/asm32-nmake-masm32-env-config/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;2 min read&#34;,&#34;time&#34;:62000,&#34;words&#34;:235,&#34;minutes&#34;:2},&#34;description&#34;:&#34;下载 MASM32 SDK 官网下载\n安装 用管理员身份运行安装 目录：C:\\masm32\n配置 右击&amp;quot;计算机&amp;quot;---属性---高级系统设置---环境变量---在用户变量新建并添加如下内容\n\n变量名      变量值\ni...&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;Hexo官网：&lt;a href=\&#34;https://hexo.io/zh-cn/\&#34;&gt;https://hexo.io/zh-cn/&lt;/a&gt;&lt;br&gt;\nHexo依赖于Node.js：&lt;a href=\&#34;https://nodejs.org/\&#34;&gt;https://nodejs.org/&lt;/a&gt;下载并安装好&lt;br&gt;\n云部署需要Git：&lt;a href=\&#34;https://git-scm.com/\&#34;&gt;https://git-scm.com/&lt;/a&gt;下载并安装好&lt;br&gt;\n&lt;a href=\&#34;https://github.com/zhuzhuyule/HexoEditor\&#34;&gt;HexoEditor&lt;/a&gt;&lt;/p&gt;\n&lt;h3 id=\&#34;安装hexo到本地部署\&#34;&gt;安装Hexo到本地部署&lt;/h3&gt;\n&lt;p&gt;在你想放博客的文件夹右键打开&lt;code&gt;Git Bash&lt;/code&gt;,粘贴下面的文本，安装&lt;br&gt;\n&lt;code&gt;$ npm install hexo-cli -g&lt;/code&gt;&lt;br&gt;\nPS:如果下载速度慢可以先设置一个国内&lt;code&gt;cnpm&lt;/code&gt;镜像，执行：&lt;br&gt;\n&lt;code&gt;npm install -g cnpm --registry=http://registry.npm.taobao.org&lt;/code&gt;&lt;br&gt;\n然后安装hexo，相应的&lt;code&gt;npm&lt;/code&gt;也要换成&lt;code&gt;cnpm&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/eCqEWD.jpg\&#34; alt=\&#34;eCqEWD.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n安装 Hexo 完成后，请执行下列&lt;a href=\&#34;https://hexo.io/zh-cn/docs/commands\&#34;&gt;命令&lt;/a&gt;，Hexo 将会在指定文件夹中新建所需要的文件。&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;$ hexo init &amp;lt;folder&amp;gt;\n$ cd &amp;lt;folder&amp;gt;\n$ npm install\n$ hexo server\nINFO  Start processing\nINFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/ePKwHs.md.jpg\&#34; alt=\&#34;ePKwHs.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n新建完成后，指定文件夹的目录如下：&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;.\n├── _config.yml\n├── package.json\n├── scaffolds\n├── source\n|   ├── _drafts\n|   └── _posts\n└── themes\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;&lt;strong&gt;config.yml&lt;/strong&gt;&lt;br&gt;\n网站的 &lt;a href=\&#34;https://hexo.io/zh-cn/docs/configuration\&#34;&gt;配置&lt;/a&gt; 信息，您可以在此配置大部分的参数。&lt;br&gt;\n&lt;strong&gt;package.json&lt;/strong&gt;&lt;br&gt;\n应用程序的信息。EJS, Stylus 和 Markdown renderer 已默认安装，您可以自由移除。&lt;br&gt;\n&lt;strong&gt;scaffolds&lt;/strong&gt;&lt;br&gt;\n模版 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。&lt;br&gt;\n&lt;strong&gt;source&lt;/strong&gt;&lt;br&gt;\n资源文件夹是存放用户资源的地方。除 posts 文件夹之外，开头命名为  (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。&lt;br&gt;\n&lt;strong&gt;themes&lt;/strong&gt;&lt;br&gt;\n主题 文件夹。Hexo 会根据主题来生成静态页面。&lt;/p&gt;\n&lt;h3 id=\&#34;云部署准备-git配置\&#34;&gt;云部署准备-Git配置&lt;/h3&gt;\n&lt;p&gt;打开&lt;code&gt;Git Bash&lt;/code&gt;&lt;br&gt;\n&lt;code&gt;$ git config --global user.name &amp;quot;zikercn&amp;quot;&lt;/code&gt;&lt;br&gt;\n&lt;code&gt;$ git config --global user.email &amp;quot;zikercn@gmail.com&amp;quot;&lt;/code&gt;&lt;/p&gt;\n&lt;h3 id=\&#34;云部署准备-github仓库创建\&#34;&gt;云部署准备-Github仓库创建&lt;/h3&gt;\n&lt;p&gt;在Github上创建Pages仓库&lt;br&gt;\n点击右上角的&lt;strong&gt;＋&lt;/strong&gt; 选择&lt;a href=\&#34;https://github.com/new\&#34;&gt; New repository&lt;/a&gt;，&lt;br&gt;\n仓库名取固定格式&lt;code&gt;你的用户名.github.io&lt;/code&gt;,其他不变，点&lt;strong&gt;Create repository&lt;/strong&gt;创建&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/eCDLcQ.jpg\&#34; alt=\&#34;eCDLcQ.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n复制SSH地址：&lt;code&gt;git@github.com:zikercn/zikercn.github.io.git&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/ePMTds.jpg\&#34; alt=\&#34;ePMTds.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;h3 id=\&#34;云部署准备-ssh秘钥配置\&#34;&gt;云部署准备-SSH秘钥配置&lt;/h3&gt;\n&lt;h4 id=\&#34;本地生成ssh-key\&#34;&gt;本地生成&lt;strong&gt;SSH key&lt;/strong&gt;:&lt;/h4&gt;\n&lt;p&gt;1.打开&lt;code&gt;Git Bash&lt;/code&gt;,粘贴下面的文本，替换您的GitHub电子邮件地址。&lt;br&gt;\n&lt;code&gt;$ ssh-keygen -t rsa -b 4096 -C &amp;quot;zikercn@gmail.com&amp;quot;&lt;/code&gt;&lt;br&gt;\n连续回车即可，这将使用提供的电子邮件作为标签创建一个新的ssh密钥。&lt;br&gt;\n秘钥保存位置在：&lt;code&gt;/Users/ZHM/.ssh/id_rsa&lt;/code&gt;文件夹内&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/eC2vxf.jpg\&#34; alt=\&#34;eC2vxf.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;$ cd ~/.ssh\n$ ls\nid_rsa  id_rsa.pub\nid_rsa 为私钥  id_rsa.pub 为公钥\n$ cat id_rsa.pub 查看公钥内容并复制\n&lt;/code&gt;&lt;/pre&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;1\&#34;&gt;&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/eCfvxx.jpg\&#34; alt=\&#34;eCfvxx.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;h4 id=\&#34;把生成的公钥添加到github账户\&#34;&gt;把生成的公钥添加到Github账户：&lt;/h4&gt;\n&lt;p&gt;点击右上角的头像，选择&lt;a href=\&#34;https://github.com/settings/profile\&#34;&gt;Settings&lt;/a&gt;，在左侧选择&lt;a href=\&#34;https://github.com/settings/keys\&#34;&gt;SSH and GPG keys&lt;/a&gt;，这里就是管理SSH秘钥的地方，一台机器对应一个秘钥keys。&lt;br&gt;\n点击&lt;a href=\&#34;https://github.com/settings/ssh/new\&#34;&gt;New SSH key&lt;/a&gt;添加公钥&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/eChMdg.jpg\&#34; alt=\&#34;eChMdg.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/eChfTe.jpg\&#34; alt=\&#34;eChfTe.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n测试&lt;br&gt;\n&lt;code&gt;ssh git@github.com&lt;/code&gt;&lt;br&gt;\n第一次提示连接确认输入&lt;code&gt;yes&lt;/code&gt;回车，当显示下面的语句就表示连接成功了&lt;br&gt;\n&lt;code&gt;Hi zikercn! You&#39;ve successfully authenticated&lt;/code&gt;&lt;/p&gt;\n&lt;h4 id=\&#34;把生成的公钥添加到coding账户\&#34;&gt;把生成的公钥添加到Coding账户：&lt;/h4&gt;\n&lt;p&gt;点击右上角的头像，选择&lt;a href=\&#34;https://coding.net/user/account/setting/basic\&#34;&gt;个人设置&lt;/a&gt;，在左侧选择&lt;a href=\&#34;https://coding.net/user/account/setting/keys\&#34;&gt;SSH公钥&lt;/a&gt;，&lt;br&gt;\n点击&lt;code&gt;新增公钥&lt;/code&gt;添加公钥&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/eCo4DP.jpg\&#34; alt=\&#34;eCo4DP.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;h3 id=\&#34;配置_configyml\&#34;&gt;配置&lt;code&gt;_config.yml&lt;/code&gt;&lt;/h3&gt;\n&lt;p&gt;您可以在&lt;code&gt;_config.yml&lt;/code&gt;中修改大部分的&lt;a href=\&#34;https://hexo.io/zh-cn/docs/configuration\&#34;&gt;配置&lt;/a&gt; 。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/eCDLcQ.jpg\&#34; alt=\&#34;eCDLcQ.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n复制SSH地址：&lt;code&gt;git@github.com:zikercn/zikercn.github.io.git&lt;/code&gt;&lt;br&gt;\n打开本地Hexo博客目录，用编辑器打开&lt;code&gt;_config.yml&lt;/code&gt;到最下面编辑&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/ePhMEF.jpg\&#34; alt=\&#34;ePhMEF.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n打开本地Hexo博客目录，右键打开&lt;code&gt;Git Bash&lt;/code&gt;,用下面的命名生成静态文件&lt;br&gt;\n&lt;code&gt;$ hexo generate&lt;/code&gt;&lt;br&gt;\n修改主题，把下载好的主题解压到&lt;strong&gt;themes&lt;/strong&gt;目录，修改&lt;code&gt;_config.yml&lt;/code&gt;，theme：名称与主题文件夹名称相同&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/ePgDaj.jpg\&#34; alt=\&#34;ePgDaj.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n修改好主题后重新生成静态页面，本地预览看看，没有问题就可以云部署了&lt;br&gt;\n&lt;code&gt;$ hexo generate&lt;/code&gt;&lt;br&gt;\n&lt;code&gt;$ hexo server&lt;/code&gt;&lt;br&gt;\n其他&lt;code&gt;permalink: /posts/:title/&lt;/code&gt;&lt;/p&gt;\n&lt;h3 id=\&#34;部署到github\&#34;&gt;部署到Github&lt;/h3&gt;\n&lt;p&gt;&lt;code&gt;$ hexo deploy&lt;/code&gt;&lt;br&gt;\n&lt;code&gt;ERROR Deployer not found: git&lt;/code&gt;&lt;br&gt;\n如果现实上面的提示就需要下载deployer,如果在&lt;br&gt;\n&lt;code&gt;$ npm install hexo-deployer-git --save&lt;/code&gt;&lt;/p&gt;\n&lt;h3 id=\&#34;hexo日常管理相关命令\&#34;&gt;Hexo日常管理相关命令：&lt;/h3&gt;\n&lt;pre&gt;&lt;code&gt;$ hexo new [layout] &amp;lt;title&amp;gt;\n$ hexo new 文章名\n$ hexo new page 页面名\n$ hexo clean\n$ hexo generate\n$ hexo deploy\n&lt;/code&gt;&lt;/pre&gt;\n&#34;,&#34;fileName&#34;:&#34;hexo-jing-tai-bo-ke-ben-di-bu-shu&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;Hexo静态博客本地部署+Github云部署&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-07-22 09:13:21&#34;,&#34;dateFormat&#34;:&#34;2019-07-22&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/hexo-jing-tai-bo-ke-ben-di-bu-shu/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;4 min read&#34;,&#34;time&#34;:238000,&#34;words&#34;:963,&#34;minutes&#34;:4},&#34;description&#34;:&#34;Hexo官网：https://hexo.io/zh-cn/\nHexo依赖于Node.js：https://nodejs.org/下载并安装好\n云部署需要Git：https://git-scm.com/下载并安装好\nHexoEditor\n安装...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;\n&lt;ul&gt;\n&lt;li&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%AE%89%E8%A3%85hexo%E5%88%B0%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2\&#34;&gt;安装Hexo到本地部署&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E4%BA%91%E9%83%A8%E7%BD%B2%E5%87%86%E5%A4%87-git%E9%85%8D%E7%BD%AE\&#34;&gt;云部署准备-Git配置&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E4%BA%91%E9%83%A8%E7%BD%B2%E5%87%86%E5%A4%87-github%E4%BB%93%E5%BA%93%E5%88%9B%E5%BB%BA\&#34;&gt;云部署准备-Github仓库创建&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E4%BA%91%E9%83%A8%E7%BD%B2%E5%87%86%E5%A4%87-ssh%E7%A7%98%E9%92%A5%E9%85%8D%E7%BD%AE\&#34;&gt;云部署准备-SSH秘钥配置&lt;/a&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E6%9C%AC%E5%9C%B0%E7%94%9F%E6%88%90ssh-key\&#34;&gt;本地生成&lt;strong&gt;SSH key&lt;/strong&gt;:&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E6%8A%8A%E7%94%9F%E6%88%90%E7%9A%84%E5%85%AC%E9%92%A5%E6%B7%BB%E5%8A%A0%E5%88%B0github%E8%B4%A6%E6%88%B7\&#34;&gt;把生成的公钥添加到Github账户：&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E6%8A%8A%E7%94%9F%E6%88%90%E7%9A%84%E5%85%AC%E9%92%A5%E6%B7%BB%E5%8A%A0%E5%88%B0coding%E8%B4%A6%E6%88%B7\&#34;&gt;把生成的公钥添加到Coding账户：&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E9%85%8D%E7%BD%AE_configyml\&#34;&gt;配置&lt;code&gt;_config.yml&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E9%83%A8%E7%BD%B2%E5%88%B0github\&#34;&gt;部署到Github&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#hexo%E6%97%A5%E5%B8%B8%E7%AE%A1%E7%90%86%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4\&#34;&gt;Hexo日常管理相关命令：&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&#34;},{&#34;content&#34;:&#34;&lt;p&gt;本地搭建好hexo静态博客后 &lt;a href=\&#34;\&#34;&gt;不会参考另一篇&lt;/a&gt;&lt;/p&gt;\n&lt;h4 id=\&#34;在github上创建token\&#34;&gt;在Github上创建token&lt;/h4&gt;\n&lt;p&gt;点击右上角你的头像，选择&lt;a href=\&#34;https://github.com/settings/profile\&#34;&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/a&gt;，在左侧栏选择&lt;a href=\&#34;https://github.com/settings/apps\&#34;&gt;&lt;strong&gt;Developer settings&lt;/strong&gt;&lt;/a&gt;选择&lt;a href=\&#34;https://github.com/settings/tokens\&#34;&gt;&lt;strong&gt;Personal access tokens&lt;/strong&gt;&lt;/a&gt;，点击&lt;a href=\&#34;https://github.com/settings/tokens/new\&#34;&gt;Generate new token&lt;/a&gt;创建一个新的token，名称随便填，只勾选第一项&lt;strong&gt;repo&lt;/strong&gt;即可，点击下方&lt;strong&gt;Generate token&lt;/strong&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/eCDjns.jpg\&#34; alt=\&#34;eCDjns.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n把生成的一串token复制保存起来一会要用。&lt;br&gt;\n&lt;code&gt;a08ee50a6ae24debedb3944b8c565111068a6697&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/eCDOXj.jpg\&#34; alt=\&#34;eCDOXj.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;h4 id=\&#34;在github上创建pages仓库\&#34;&gt;在Github上创建Pages仓库&lt;/h4&gt;\n&lt;p&gt;点击右上角的&lt;strong&gt;＋&lt;/strong&gt; 选择&lt;a href=\&#34;https://github.com/new\&#34;&gt; New repository&lt;/a&gt;，&lt;br&gt;\n仓库名取固定格式&lt;code&gt;你的用户名.github.io&lt;/code&gt;,其他不变，点&lt;strong&gt;Create repository&lt;/strong&gt;创建&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/22/eCDLcQ.jpg\&#34; alt=\&#34;eCDLcQ.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;h2 id=\&#34;配置travis-ci\&#34;&gt;配置Travis CI&lt;/h2&gt;\n&lt;p&gt;&lt;img src=\&#34;https://avatars3.githubusercontent.com/oa/1508?s=100&amp;amp;u=bf603d782b6026ffb9d2d665d34c3a4d7192e260&amp;amp;v=4\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;a href=\&#34;https://www.travis-ci.org/\&#34;&gt;Travis CI&lt;/a&gt; https://www.travis-ci.org/&lt;br&gt;\nTravis CI 提供的是持续集成服务（Continuous Integration，简称 CI）。它绑定 Github 上面的项目，只要有新的代码，就会自动抓取。然后，提供一个运行环境，执行测试，完成构建，还能部署到服务器。&lt;br&gt;\n持续集成指的是只要代码有变更，就自动运行构建和测试，反馈运行结果。确保符合预期以后，再将新代码&amp;quot;集成&amp;quot;到主干。&lt;br&gt;\n持续集成的好处在于，每次代码的小幅变更，就能看到运行结果，从而不断累积小的变更，而不是在开发周期结束时，一下子合并一大块代码。&lt;br&gt;\nTravis CI 只支持 Github，不支持其他代码托管服务。&lt;br&gt;\n&lt;img src=\&#34;http://www.ruanyifeng.com/blogimg/asset/2017/bg2017121901.png\&#34; alt=\&#34;Travis CI\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n1、首先打开&lt;a href=\&#34;https://www.travis-ci.org/\&#34;&gt;Travis CI&lt;/a&gt;官网，点击右上角的&lt;strong&gt;Sign in with GitHub&lt;/strong&gt;，使用&lt;strong&gt;Github&lt;/strong&gt;账号登录&lt;strong&gt;Travis CI&lt;/strong&gt;。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/21/eCuRV1.jpg\&#34; alt=\&#34;eCuRV1.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\nTravis 会列出 Github 上面你的所有仓库，以及你所属于的组织。此时，选择你需要 Travis 帮你构建的仓库，打开仓库旁边的开关。一旦激活了一个仓库，Travis 会监听这个仓库的所有变化。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/21/eCugbR.jpg\&#34; alt=\&#34;eCugbR.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;h3 id=\&#34;新建travisyml\&#34;&gt;新建.travis.yml&lt;/h3&gt;\n&lt;p&gt;Travis 要求项目的根目录下面，必须有一个.travis.yml文件。这是配置文件，指定了 Travis 的行为。该文件必须保存在 Github 仓库里面，一旦代码仓库有新的 Commit，Travis 就会去找这个文件，执行里面的命令。&lt;br&gt;\n这个文件采用 YAML 格式。下面是一个最简单的 Python 项目的.travis.yml文件。&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;language: python\nscript: true\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;上面代码中，设置了两个字段。language字段指定了默认运行环境，这里设定使用 Python 环境。script字段指定要运行的脚本，script: true表示不执行任何脚本，状态直接设为成功。&lt;br&gt;\nTravis 默认提供的运行环境，请参考&lt;a href=\&#34;https://docs.travis-ci.com/user/languages\&#34;&gt;官方文档&lt;/a&gt; 。目前一共支持31种语言，以后还会不断增加。&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;shi-yong-travis-ci-zi-dong-hua-bu-shu-hexo-jing-tai-bo-ke-dao-github&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;使用Travis CI自动化部署hexo静态博客到Github&#34;,&#34;tags&#34;:[{&#34;name&#34;:&#34;Travis CI&#34;,&#34;slug&#34;:&#34;vViX5Kj78O&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/vViX5Kj78O/&#34;},{&#34;name&#34;:&#34;hexo&#34;,&#34;slug&#34;:&#34;FKV9zW6gYw&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/FKV9zW6gYw/&#34;},{&#34;name&#34;:&#34;静态博客&#34;,&#34;slug&#34;:&#34;1Ka1mm47en&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/1Ka1mm47en/&#34;},{&#34;name&#34;:&#34;Github&#34;,&#34;slug&#34;:&#34;kXhqnbr3rW&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/kXhqnbr3rW/&#34;}],&#34;date&#34;:&#34;2019-07-21 22:49:30&#34;,&#34;dateFormat&#34;:&#34;2019-07-21&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/shi-yong-travis-ci-zi-dong-hua-bu-shu-hexo-jing-tai-bo-ke-dao-github/&#34;,&#34;hideInList&#34;:true,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;3 min read&#34;,&#34;time&#34;:141000,&#34;words&#34;:636,&#34;minutes&#34;:3},&#34;description&#34;:&#34;本地搭建好hexo静态博客后 不会参考另一篇\n在Github上创建token\n点击右上角你的头像，选择Settings，在左侧栏选择Developer settings选择Personal access tokens，点击Generate ...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;\n&lt;ul&gt;\n&lt;li&gt;\n&lt;ul&gt;\n&lt;li&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%9C%A8github%E4%B8%8A%E5%88%9B%E5%BB%BAtoken\&#34;&gt;在Github上创建token&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%9C%A8github%E4%B8%8A%E5%88%9B%E5%BB%BApages%E4%BB%93%E5%BA%93\&#34;&gt;在Github上创建Pages仓库&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E9%85%8D%E7%BD%AEtravis-ci\&#34;&gt;配置Travis CI&lt;/a&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E6%96%B0%E5%BB%BAtravisyml\&#34;&gt;新建.travis.yml&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&#34;},{&#34;content&#34;:&#34;&lt;p&gt;&lt;strong&gt;VMware Workstation Pro 15.1.0 官方版&lt;/strong&gt;&lt;br&gt;\n&lt;strong&gt;官方下载地址&lt;/strong&gt; &lt;a href=\&#34;https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.1.0-13591040.exe\&#34;&gt;VMware-workstation-full-15.1.0-13591040&lt;/a&gt;&lt;br&gt;\n&lt;strong&gt;序列号15.x&lt;/strong&gt;：FC7D0-D1YDL-M8DXZ-CYPZE-P2AY6&lt;br&gt;\n&lt;strong&gt;VMware Workstation Pro 15 解锁工具&lt;/strong&gt;&lt;br&gt;\n虚拟机解锁工具 MacOS Unlocker for VMware v3.0.2&lt;br&gt;\n百度网盘：&lt;a href=\&#34;https://pan.baidu.com/s/1Drj2GUdtxV1cZitSoH9D7Q\&#34;&gt;下载&lt;/a&gt; (提取码: bdhc)&lt;br&gt;\n蓝奏云：&lt;a href=\&#34;https://www.lanzous.com/i23440d\&#34;&gt;下载&lt;/a&gt;&lt;br&gt;\n更新日志 &lt;a href=\&#34;https://github.com/DrDonk/unlocker\&#34;&gt;https://github.com/DrDonk/unlocker&lt;/a&gt;&lt;br&gt;\n&lt;strong&gt;macOS Mojave 10.14.5【18F132】虚拟机用原版镜像（物理机安装勿下！）&lt;/strong&gt;&lt;br&gt;\n本地下载：&lt;a href=\&#34;http://www.misonsky.cn/storge/?/%E9%BB%91%E8%8B%B9%E6%9E%9C%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%A8/Install%20macOS%20Mojave%2010.14.5%E3%80%9018F132%E3%80%91%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%A8%E5%8E%9F%E7%89%88%E9%95%9C%E5%83%8F/Install%20macOS%20Mojave%2010.14.5%E3%80%9018F132%E3%80%91%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%A8%E5%8E%9F%E7%89%88%E9%95%9C%E5%83%8F.cdr\&#34;&gt;下载&lt;/a&gt;（建议使用FDM软件下载）&lt;br&gt;\n百度网盘：&lt;a href=\&#34;https://pan.baidu.com/s/1oyvyqUud9oK5S3VNbcgtOQ\&#34;&gt;下载&lt;/a&gt;（提取码：f8s7）&lt;/p&gt;\n&lt;h1 id=\&#34;安装步骤\&#34;&gt;&lt;strong&gt;安装步骤&lt;/strong&gt;&lt;/h1&gt;\n&lt;p&gt;1、安装好VMware后，关闭VMware软件，停止其服务&lt;br&gt;\nWin10系统：右键单击左下角&lt;strong&gt;开始&lt;/strong&gt;菜单，选择&lt;strong&gt;计算机管理&lt;/strong&gt;在&lt;strong&gt;服务&lt;/strong&gt;里停止&lt;strong&gt;VMware&lt;/strong&gt;开头的五个服务进程。&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/21/epYLSx.png\&#34; alt=\&#34;epYLSx.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n2、下载 MacOS Unlocker for VMware v3.0.2 压缩包，解压缩后，找到里面的 &lt;strong&gt;win-install.cmd&lt;/strong&gt;，然后右键以管理员身份运行它。&lt;br&gt;\n如在命令行界面卡住了，就需要需要手动下载VMware最新补丁文件到当前目录&lt;br&gt;\n&lt;strong&gt;VMware补丁下载最新版&lt;/strong&gt;：&lt;a href=\&#34;http://softwareupdate.vmware.com/cds/vmw-desktop/fusion/11.1.0/13668589/packages/\&#34;&gt;com.vmware.fusion.tools.darwin.zip.tar&lt;/a&gt;&lt;br&gt;\n11.1.0/13668589/packages/com.vmware.fusion.tools.darwin.zip.tar&lt;br&gt;\n然后再右键&lt;strong&gt;win-install.cmd&lt;/strong&gt;以管理员身份运行它，等它运行完毕后会自动关闭窗口。&lt;br&gt;\n3、接下来打开 VMware &lt;strong&gt;创建新的虚拟机&lt;/strong&gt;，选择&lt;strong&gt;典型&lt;/strong&gt;下一步，在选择：&lt;strong&gt;安装程序光盘进行文件(iso)&lt;/strong&gt; 选择下载好的cdr镜像，在下一步就可以选择 &lt;strong&gt;Apple Mac OS X(M)&lt;/strong&gt; 系统了，如下图所示：&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/21/eptPfI.jpg\&#34; alt=\&#34;eptPfI.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n4、需要注意的是，当我们创建好 Mac OS X 虚拟机后，我们先找到刚刚创建的虚拟机所在的目录，比如在 D:\\Program Files\\VMware\\Virtual Machines\\macOS Mojave 10.14，如果你的路径不一样，请找到你自己设置的路径，然后在这路径下找到后缀名为 .vmx 的文件，比如是 macOS Mojave 10.14.vmx，接着以记事本的方式将其打开，在里面先找到 &lt;code&gt;smc.present = &amp;quot;TRUE&amp;quot;&lt;/code&gt;，然后在它下面添加一行：&lt;br&gt;\n&lt;code&gt;smc.version = &amp;quot;0&amp;quot;&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/21/eptHHg.jpg\&#34; alt=\&#34;eptHHg.jpg\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n完事后保存。接下来就可以享受 VMware 安装 Mac OS X 系统的过程了。&lt;br&gt;\n5、进入系统后，首先推出安装磁盘，在VMware上方&lt;strong&gt;虚拟机&lt;/strong&gt;选择&lt;strong&gt;安装VMware Toos&lt;/strong&gt;,安装完VMware Toos后重启系统即可实现全屏盒文件共享功能,安装过程中被阻止的按提示操作允许，到&lt;strong&gt;偏好设置-安装与隐私&lt;/strong&gt;中允许。&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;vmware-workstation-pro-15-xu-ni-ji-an-zhuang-macos&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;VMware Workstation Pro 15 虚拟机安装 MacOS&#34;,&#34;tags&#34;:[{&#34;name&#34;:&#34;MacOS&#34;,&#34;slug&#34;:&#34;2hxiOOamT&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/2hxiOOamT/&#34;},{&#34;name&#34;:&#34;虚拟机&#34;,&#34;slug&#34;:&#34;LaBJ10rdoQ&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/LaBJ10rdoQ/&#34;}],&#34;date&#34;:&#34;2019-07-21 12:34:42&#34;,&#34;dateFormat&#34;:&#34;2019-07-21&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/vmware-workstation-pro-15-xu-ni-ji-an-zhuang-macos/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;3 min read&#34;,&#34;time&#34;:145000,&#34;words&#34;:612,&#34;minutes&#34;:3},&#34;description&#34;:&#34;VMware Workstation Pro 15.1.0 官方版\n官方下载地址 VMware-workstation-full-15.1.0-13591040\n序列号15.x：FC7D0-D1YDL-M8DXZ-CYPZE-P2AY6\nV...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4\&#34;&gt;&lt;strong&gt;安装步骤&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&#34;},{&#34;content&#34;:&#34;&lt;p&gt;&lt;a href=\&#34;https://mega.nz/cmd\&#34;&gt;MEGAcmd&lt;/a&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/20/ZzNQbQ.jpg\&#34; alt=\&#34;MEGAcmd-Win\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;!-- more --&gt;\n&lt;h1 id=\&#34;win10使用megacmd\&#34;&gt;Win10使用MEGAcmd&lt;/h1&gt;\n&lt;p&gt;&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lfQSgJ.png\&#34; alt=\&#34;Win10使用MEGAcmd.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n&lt;code&gt;MEGA CMD&amp;gt; login zikercn@gmail.com 密码&lt;/code&gt;&lt;br&gt;\n下次打开MEGAcmd会自动登录，直接ls就可以看远程目录&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/20/ZzNMDg.jpg\&#34; alt=\&#34;MEGAcmd-Win2\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n&lt;code&gt;zikercn@gmail.com:/$ sync Win本地文件夹 MEGA远程文件夹&lt;/code&gt;&lt;br&gt;\n&lt;code&gt;zikercn@gmail.com:/$ sync E:/MEGA/Gridea MEGAcmd/Gridea&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/20/ZzNKKS.jpg\&#34; alt=\&#34;MEGAcmd-Win-sync\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;h1 id=\&#34;macos使用megacmd\&#34;&gt;MacOS使用MEGAcmd&lt;/h1&gt;\n&lt;p&gt;&lt;img src=\&#34;https://s2.ax1x.com/2019/07/20/ZzOnDx.png\&#34; alt=\&#34;ZzOnDx.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/20/ZzOmK1.png\&#34; alt=\&#34;ZzOmK1.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2020/01/09/lfQwbq.png\&#34; alt=\&#34;MacOS使用MEGAcmd.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n&lt;code&gt;MEGA CMD&amp;gt; login zikercn@gmail.com 密码&lt;/code&gt;&lt;br&gt;\n&lt;code&gt;zikercn@gmail.com:/$ sync Mac本地文件夹 MEGA远程文件夹&lt;/code&gt;&lt;br&gt;\n&lt;code&gt;zikercn@gmail.com:/$ sync /Users/zhm/MEGA/Gridea MEGAcmd/Gridea&lt;/code&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/20/ZzOMVK.png\&#34; alt=\&#34;ZzOMVK.png\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;shi-yong-megacmd-guan-li-mega-wen-jian-yu-tong-bu&#34;,&#34;abstract&#34;:&#34;&lt;p&gt;&lt;a href=\&#34;https://mega.nz/cmd\&#34;&gt;MEGAcmd&lt;/a&gt;&lt;br&gt;\n&lt;img src=\&#34;https://s2.ax1x.com/2019/07/20/ZzNQbQ.jpg\&#34; alt=\&#34;MEGAcmd-Win\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;使用MEGAcmd管理MEGA文件与同步&#34;,&#34;tags&#34;:[{&#34;name&#34;:&#34;MEGA&#34;,&#34;slug&#34;:&#34;YXiE8_2l5a&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/YXiE8_2l5a/&#34;},{&#34;name&#34;:&#34;同步&#34;,&#34;slug&#34;:&#34;Wh6qnc0Mok&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/Wh6qnc0Mok/&#34;}],&#34;date&#34;:&#34;2019-07-20 09:52:17&#34;,&#34;dateFormat&#34;:&#34;2019-07-20&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/shi-yong-megacmd-guan-li-mega-wen-jian-yu-tong-bu/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:28000,&#34;words&#34;:97,&#34;minutes&#34;:1},&#34;description&#34;:&#34;MEGAcmd\n\n\nWin10使用MEGAcmd\n\nMEGA CMD&amp;gt; login zikercn@gmail.com 密码\n下次打开MEGAcmd会自动登录，直接ls就可以看远程目录\n\nzikercn@gmail.com:/$ sy...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;&lt;a href=\&#34;#win10%E4%BD%BF%E7%94%A8megacmd\&#34;&gt;Win10使用MEGAcmd&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#macos%E4%BD%BF%E7%94%A8megacmd\&#34;&gt;MacOS使用MEGAcmd&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&#34;},{&#34;content&#34;:&#34;&lt;blockquote&gt;\n&lt;p&gt;欢迎来到我的小站呀，很高兴遇见你！🤝&lt;/p&gt;\n&lt;/blockquote&gt;\n&lt;h2 id=\&#34;关于本站\&#34;&gt;🏠 关于本站&lt;/h2&gt;\n&lt;h2 id=\&#34;博主是谁\&#34;&gt;👨‍💻 博主是谁&lt;/h2&gt;\n&lt;h2 id=\&#34;兴趣爱好\&#34;&gt;⛹ 兴趣爱好&lt;/h2&gt;\n&lt;h2 id=\&#34;联系我呀\&#34;&gt;📬 联系我呀&lt;/h2&gt;\n&#34;,&#34;fileName&#34;:&#34;about&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;关于&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-01-25 19:09:48&#34;,&#34;dateFormat&#34;:&#34;2019-01-25&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/about/&#34;,&#34;hideInList&#34;:true,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:6000,&#34;words&#34;:31,&#34;minutes&#34;:1},&#34;description&#34;:&#34;\n欢迎来到我的小站呀，很高兴遇见你！🤝\n\n🏠 关于本站\n👨‍💻 博主是谁\n⛹ 兴趣爱好\n📬 联系我呀\n...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99\&#34;&gt;🏠 关于本站&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81\&#34;&gt;👨‍💻 博主是谁&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD\&#34;&gt;⛹ 兴趣爱好&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80\&#34;&gt;📬 联系我呀&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&#34;},{&#34;content&#34;:&#34;&lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;\n✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;\n&lt;!-- more --&gt;\n&lt;p&gt;&lt;a href=\&#34;https://github.com/getgridea/gridea\&#34;&gt;Github&lt;/a&gt;&lt;br&gt;\n&lt;a href=\&#34;https://gridea.dev/\&#34;&gt;Gridea 主页&lt;/a&gt;&lt;br&gt;\n&lt;a href=\&#34;http://fehey.com/\&#34;&gt;示例网站&lt;/a&gt;&lt;/p&gt;\n&lt;h2 id=\&#34;特性\&#34;&gt;特性👇&lt;/h2&gt;\n&lt;p&gt;📝  你可以使用最酷的 &lt;strong&gt;Markdown&lt;/strong&gt; 语法，进行快速创作&lt;/p&gt;\n&lt;p&gt;🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片&lt;/p&gt;\n&lt;p&gt;🏷️  你可以对文章进行标签分组&lt;/p&gt;\n&lt;p&gt;📋  你可以自定义菜单，甚至可以创建外部链接菜单&lt;/p&gt;\n&lt;p&gt;💻  你可以在 &lt;strong&gt;Windows&lt;/strong&gt;，&lt;strong&gt;MacOS&lt;/strong&gt; 或 &lt;strong&gt;Linux&lt;/strong&gt; 设备上使用此客户端&lt;/p&gt;\n&lt;p&gt;🌎  你可以使用 &lt;strong&gt;𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌&lt;/strong&gt; 或 &lt;strong&gt;Coding Pages&lt;/strong&gt; 向世界展示，未来将支持更多平台&lt;/p&gt;\n&lt;p&gt;💬  你可以进行简单的配置，接入 &lt;a href=\&#34;https://github.com/gitalk/gitalk\&#34;&gt;Gitalk&lt;/a&gt; 或 &lt;a href=\&#34;https://github.com/SukkaW/DisqusJS\&#34;&gt;DisqusJS&lt;/a&gt; 评论系统&lt;/p&gt;\n&lt;p&gt;🇬🇧  你可以使用&lt;strong&gt;中文简体&lt;/strong&gt;或&lt;strong&gt;英语&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力&lt;/p&gt;\n&lt;p&gt;🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步&lt;/p&gt;\n&lt;p&gt;🌱 当然 &lt;strong&gt;Gridea&lt;/strong&gt; 还很年轻，有很多不足，但请相信，它会不停向前 🏃&lt;/p&gt;\n&lt;p&gt;未来，它一定会成为你离不开的伙伴&lt;/p&gt;\n&lt;p&gt;尽情发挥你的才华吧！&lt;/p&gt;\n&lt;p&gt;😘 Enjoy~&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;hello-gridea&#34;,&#34;abstract&#34;:&#34;&lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;\n✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;Hello Gridea&#34;,&#34;tags&#34;:[{&#34;name&#34;:&#34;Gridea&#34;,&#34;slug&#34;:&#34;evF44YBRI&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;https://zikercn.com/tag/evF44YBRI/&#34;}],&#34;date&#34;:&#34;2018-12-12 00:00:00&#34;,&#34;dateFormat&#34;:&#34;2018-12-12&#34;,&#34;feature&#34;:&#34;https://zikercn.com/post-images/hello-gridea.png&#34;,&#34;link&#34;:&#34;https://zikercn.com/post/hello-gridea/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;2 min read&#34;,&#34;time&#34;:62000,&#34;words&#34;:298,&#34;minutes&#34;:2},&#34;description&#34;:&#34;👏  欢迎使用 Gridea ！\n✍️  Gridea 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...\n\nGithub\nGridea 主页\n示例网站\n特性👇\n📝  你可以使用最酷的 Markdo...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E7%89%B9%E6%80%A7\&#34;&gt;特性👇&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&#34;}]";
+  // var json = escape.substr(1, escape.length - 2);
+  // var datas = json.split(',');
+  // for (let i=0; i < datas.length; i++) {
+  //   let item = datas[i];
+  //   let attrs = item.split('34;:&#34')
+  //   debugger
+  //   console.log(datas[i])
+  // }
+  let escapeMap = new Map();
+  escapeMap.set('&#34;', '"');
+  escapeMap.set('&gt;', '>');
+  escapeMap.set('&#39;', "'");
+  escapeMap.set('&lt;', '<');
+  escapeMap.set('&quot;', '"');
+  escapeMap.set('&amp;', '&');
+</script> -->
+
+
+</html>
