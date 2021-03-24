@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zikercn.com</id>
     <title>张慧敏的博客</title>
-    <updated>2021-03-22T13:08:16.491Z</updated>
+    <updated>2021-03-24T04:44:40.816Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zikercn.com"/>
     <link rel="self" href="https://zikercn.com/atom.xml"/>
@@ -10,6 +10,61 @@
     <logo>https://zikercn.com/images/avatar.png</logo>
     <icon>https://zikercn.com/favicon.ico</icon>
     <rights>All rights reserved 2021, 张慧敏的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[使用HiveOS挖矿安装超频教程以太坊ETH]]></title>
+        <id>https://zikercn.com/post/shi-yong-hiveos-wa-kuang-an-zhuang-chao-pin-jiao-cheng-yi-tai-fang-eth/</id>
+        <link href="https://zikercn.com/post/shi-yong-hiveos-wa-kuang-an-zhuang-chao-pin-jiao-cheng-yi-tai-fang-eth/">
+        </link>
+        <updated>2021-03-24T00:11:22.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://hiveos.farm/">Hive OS官网</a></p>
+<p>下载显卡挖矿系统 <a href="https://download.hiveos.farm/latest/">Hive OS Rigs for Rigs稳定版</a></p>
+<p>下载写U盘镜像工具<a href="https://www.balena.io/etcher/">Etcher</a>或<a href="https://rufus.akeo.ie/">Rufus</a>,准备一个至少8G的U盘写入下载好的镜像</p>
+<p><a href="https://the.hiveos.farm/register/">注册Hive OS</a>网站账户,注册好后登录</p>
+<p><a href="">账户后台</a>开启 二步验证,建议使用 <a href="https://authy.com/">Authy</a></p>
+<p><a href="https://the.hiveos.farm/">管理页面</a>,选择或点右上角的+号新建一个矿场<br>
+新进入矿场后,没有找到矿机，你可以添加一个,确定后下载这个rig.conf到U盘根目录</p>
+<p>在电脑上插入U盘开始装Hive OS系统,装好后保持开机状态</p>
+<p>进入<a href="https://the.hiveos.farm/">Hive OS后台</a>,刷新矿机页面,即可看到在线的矿机<br>
+选择钱包,添加一个钱包,选择货币种类,钱包地址,钱包名称,来源,创建<br>
+具体在哪里挖矿,挖什么矿等设置,在飞行表中设置<br>
+数字货币:ETH 钱包:选择名称 矿池:选择至少一个服务器 挖矿软件:随便选 名称:好记随便<br>
+飞行表创建后,点后面的小火箭开启挖矿工作</p>
+<p>其他挖矿系统<br>
+<a href="https://www.nicehash.com/nhos-mining">NiceHash OS</a><br>
+Nhos Flash Tool 烧录镜像需要填写 BTC 地址,在你的网站后台,挖矿地址</p>
+<p>其他挖矿软件</p>
+<p>比特币相关<br>
+<a href="https://bitcoin.org/zh_CN/">比特币官网</a><br>
+<a href="https://bitpay.com/wallet">BitPay Wallet</a><br>
+<a href="https://electrum.org/">Electrum</a><br>
+<a href="https://www.nicehash.com/my/tradeview/BTCUSDT">NiceHash交易所</a></p>
+<p><a href="https://www.binance.com/zh-CN/register?ref=103747290&amp;utm_campaign=web_share_copy">币安Binance.com</a></p>
+<p><a href="https://www.coinbase.com/">Coinbase</a><br>
+<a href="https://www.okexcn.com/join/6170735">欧易OKEx</a><br>
+<a href="https://www.huobi.com/zh-cn/">火币huobi</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[局域网共享文件夹与磁盘映射-PC手机可播放文件]]></title>
+        <id>https://zikercn.com/post/ju-yu-wang-gong-xiang-wen-jian-jia-yu-ci-pan-ying-she-pc-shou-ji-ke-bo-fang-wen-jian/</id>
+        <link href="https://zikercn.com/post/ju-yu-wang-gong-xiang-wen-jian-jia-yu-ci-pan-ying-she-pc-shou-ji-ke-bo-fang-wen-jian/">
+        </link>
+        <updated>2021-03-23T02:24:41.000Z</updated>
+        <content type="html"><![CDATA[<p>1</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[将网盘映射为本地网络磁盘-软件推荐]]></title>
+        <id>https://zikercn.com/post/jiang-wang-pan-ying-she-wei-ben-di-wang-luo-ci-pan-ruan-jian-tui-jian/</id>
+        <link href="https://zikercn.com/post/jiang-wang-pan-ying-she-wei-ben-di-wang-luo-ci-pan-ruan-jian-tui-jian/">
+        </link>
+        <updated>2021-03-23T01:53:35.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="http://www.raidrive.com/">Raidrive官网</a><br>
+<a href="">Raidrive本地下载</a></p>
+<p><a href="https://www.netdrive.net/">Netdrive官网</a><br>
+<a href="">Netdrive本地下载</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[在VS Code中编译C++使用Mingw-w64]]></title>
         <id>https://zikercn.com/post/zai-vs-code-zhong-bian-yi-cshi-yong-mingw-w64/</id>
@@ -536,116 +591,6 @@ gcc hello.cpp -o hello.exe　　# -o表示输出<br>
 gcc hello.cpp -o ./tmp/hello.exe　　# -o后面也可以跟其他目录，注意tmp目录必须存在，否则gcc会抛出异常</p>
 <p>2.运行可执行文件<br>
 hello.exe　　　　　　# 运行hello.exe文件，如果是Linux系统，是./hello.out文件</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Win10下使用VS2019自带的MSVC CL命令行编译C/C++程序]]></title>
-        <id>https://zikercn.com/post/Win10-Visual-Studio-MSVC-CL-C-C++/</id>
-        <link href="https://zikercn.com/post/Win10-Visual-Studio-MSVC-CL-C-C++/">
-        </link>
-        <updated>2019-10-22T01:14:31.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>1.工具介绍</strong><br>
-Windows下VS套件自带的编译程序有以下这些：<br>
-cl.exe：编译程序<br>
-link.exe：链接程序<br>
-lib.exe：加载lib库的程序<br>
-nmake.exe：用Makefile进行构建、编译的工具<br>
-<strong>2.cl使用方法</strong><br>
-用法: cl [ 选项... ] 文件名... [ /link 链接选项... ]<br>
-1.设置Path环境变量：<code>bin</code>目录cl.exe所在路径路径<br>
-D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.23.28105\bin\Hostx86\x86;<br>
-D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build;<br>
-D:\Program Files\Microsoft Visual Studio\2019\Enterprise\Common7\IDE;<br>
-D:\Windows Kits\10\Include\10.0.18362.0\ucrt;<br>
-2.新建<code>include</code>环境变量，设置头文件路径：<br>
-D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.23.28105\include;<br>
-D:\Windows Kits\10\Include\10.0.18362.0\ucrt;<br>
-3.新建<code>lib</code>环境变量，设置头文件路径：<br>
-D:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.23.28105\lib\x86;<br>
-D:\Windows Kits\10\Lib\10.0.18362.0\ucrt\x86;<br>
-C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm64.microsoft.net.native.compiler\2.2.7-rel-27913-00\tools\arm64\ilc\tools\link<br>
-完成三步骤，Windows命令行C++编译环境配置成功。<br>
-注:lib目录还需要<code>uuid.lib</code>,<code>kernel32.lib</code>两个文件,VS2019以前在类似<br>
-<code>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib</code><br>
-VS2019已经找不到这个目录,所以我们就到<code>C:\Program Files (x86)\Microsoft SDKs\</code>目录手动搜索<code>uuid.lib</code>文件名,找到后打开这个文件夹,路径添加到lib环境变量中.<br>
-<strong>3.Windows不重启就使环境变量修改生效</strong><br>
-在“我的电脑”-&gt;“属性”-&gt;“高级”-&gt;“环境变量”中增加或修改环境变量后，需重启系统才能使之生效。有没有什么方法可让它即时生效呢？下面介绍一种方法：</p>
-<p>以修改环境变量“PATH”为例，修改完成后，进入DOS命令提示符，输入：set PATH=C: ，关闭DOS窗口。再次打开DOS窗口，输入：echo %PATH% ，可以发现“我的电脑”-&gt;“属性”-&gt;“高级”-&gt;“环境变量”中设置的 PATH 值已经生效。</p>
-<p>不用担心DOS窗口中的修改会影响环境变量的值，DOS窗口中的环境变量只是Windows环境变量的一个副本而已。但是对副本的修改却会引发Windows环境变量的刷新，这正是我们想要的！</p>
-<p>5.测试编写hello.cpp代码如下：</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;iostream&gt;
- 
-int main(){
-	printf(&quot;hello world&quot;);
-	return 0;
-}
-</code></pre>
-<p><strong>6.CMD执行命令</strong></p>
-<pre><code>cl.exe hello.cpp
-</code></pre>
-<p><strong>7.Makefile的编写和nmake使用方法</strong><br>
-编写Makefile：</p>
-<pre><code># Specify compiler
-CC=cl.exe
-  
-.PHONY : all
-all : hello-world.exe
-  
-hello-world.exe : hello-world.cpp
-	$(CC)  hello-world.cpp
-</code></pre>
-<p><strong>8.运行nmake:</strong></p>
-<pre><code>E:\C\Hello&gt;nmake
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[对VS2019进行32位汇编环境配置]]></title>
-        <id>https://zikercn.com/post/32-bit-assembly-environment-configuration-for-vs2019/</id>
-        <link href="https://zikercn.com/post/32-bit-assembly-environment-configuration-for-vs2019/">
-        </link>
-        <updated>2019-10-21T01:23:45.000Z</updated>
-        <content type="html"><![CDATA[<p>1.库文件（很重要）<br>
-用我这一份就行：https://www.lanzous.com/i6364hg<br>
-http://kipirvine.com/asm/examples/index.htm<br>
-2.VS依赖库<br>
-打开VS2019，选择桌面向导<br>
-<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909084838434-353952510.png" alt="" loading="lazy"><br>
-配置项目时，选择空项目。<br>
-<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085049633-145023122.png" alt="" loading="lazy"><br>
-项目右键,选择生成依赖项-生成自定义<br>
-<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085555422-619624429.png" alt="" loading="lazy"><br>
-选中masm<br>
-<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085646866-895171305.png" alt="" loading="lazy"><br>
-3.asm项目配置<br>
-新建一个C++的源文件，将后缀改为asm<br>
-<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909085836499-433031139.png" alt="" loading="lazy"><br>
-选择上面的项目，再选择&quot;项目名&quot;+属性。<br>
-配置的具体看图，链接后面记得加上分号，链接地址就是之前我上传那个irvine文件的文件绝对路径。<br>
-<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090305324-1594431552.png" alt="" loading="lazy"><br>
-<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090319094-1585005821.png" alt="" loading="lazy"><br>
-<img src="https://img2018.cnblogs.com/blog/1228809/201909/1228809-20190909090424955-210674537.png" alt="" loading="lazy"><br>
-在“链接器”——“输入”——“附加依赖项”中输入Irvine32的库名称“Irvine32.lib;”，同样是以分号结束（原本输入框是有数据的，直接在前面输入，以分号结束），回车确认，点击确定关闭窗口。<br>
-<img src="https://img-blog.csdn.net/20180808215513298?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2Zlbmd5YWt1bg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="" loading="lazy"><br>
-4.汇编程序测试</p>
-<figure data-type="image" tabindex="1"><img src="" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[游戏逆向路线图]]></title>
-        <id>https://zikercn.com/post/Reverse-game-roadmap/</id>
-        <link href="https://zikercn.com/post/Reverse-game-roadmap/">
-        </link>
-        <updated>2019-10-20T09:31:03.000Z</updated>
-        <summary type="html"><![CDATA[<p>逆向工程实战 揭秘汇编/反汇编（win32+游戏逆向实战）<br>
-https://www.bilibili.com/video/av48021550<br>
-前提条件-C C++语言基础</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>逆向工程实战 揭秘汇编/反汇编（win32+游戏逆向实战）<br>
-https://www.bilibili.com/video/av48021550<br>
-前提条件-C C++语言基础</p>
-<!-- more -->
 ]]></content>
     </entry>
 </feed>
